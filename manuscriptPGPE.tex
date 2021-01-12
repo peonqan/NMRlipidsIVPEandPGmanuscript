@@ -364,23 +364,6 @@ reorient the headgroup dipole in PC lipids, thereby affecting the order paramete
 lipid headgroups \cite{seelig87}. However, detailed understanding on
 lipid conformational ensembles in membranes bearing electric charge is still lacking \cite{Semchyschyn04}.
 
-\begin{figure*}[]
-  \centering
-  \includegraphics[width=18.0cm]{./Figs/CHANGESwithCaClPG1PC1.eps}
-  \caption{\label{changesWITHCaClPG}
-    Modulation of headgroup order parameters of POPC ({\it left}) and POPG ({\it right}) in POPC:POPG (1:1)
-    mixture upon addition of CaCl$_2$ in 298 K temperature from experiments \cite{borle85,macdonald87} and simulations.
-    The $\beta$-carbon order parameter of POPC (dashed line on top left) is not directly measured but
-    calculated from empirical relation $\Delta S_{\beta}=0.43\Delta S_{\alpha}$ \cite{akutsu81}.
-    The changes with respect to the systems without CaCl$_2$ are shown for other data than
-    for the $\alpha$-carbon of POPG for which experimental order parameter is not available.
-    Calsium density distributions are shown in figure \ref{CAdensPG}.
-    %(right) The headgroup order parameters of PG from PC:PG mixtures as a function CaCl$_2$
-    %concentration from experiments \cite{borle85} and CHARMM36 simulations.
-  }
-\end{figure*}
-
-
 To resolve lipid headgroup conformational ensembles in cell membrane bearing positive charge, we first analyzed CHARMM36 simulations which correctly captures the experimentally measured decrease in PC headgroup order parameters upon addition of cationic surfactants into a bilayer in figure \ref{changesWITHsurf} A).
 Heavy atom dihedral angle distributions in figure \ref{changesWITHsurf} B
 reveal that the decrease of trans state probabilities in g$_2$-g$_3$-O$_{g_3}$-P and g$_3$-O$_{g_3}$-P-O$_\alpha$
@@ -392,15 +375,25 @@ negatively charged lipids \cite{scherer87},
 but the accuracy of currently available force fields
 was not sufficient for this (Fig. \ref{HGorderparametersPCvsPEPG}).
 
-
 Also binding of ions may affect the lipid headgroup conformational ensembles in physiological conditions.
-The resolve this effect, we compared the changes of headgroup order parameters
-in POPC:POPG mixtures  upon addition of CaCl$_2$ between different simulations and experiments \cite{borle85,macdonald87} in figures \ref{changesWITHCaClPG} (molar ratio 1:1) and \ref{changesWITHCaClPG1PC4} (molar ratio 4:1). The results are in line with our previous studies:
-most force fields overestimate the calcium binding \cite{catte16,antila19}, but CHARMM36 with the NBfix correction underestimates the binding affinity \cite{antila19}, and the implicit inclusion of electronic polarizability using the electronic continuum correction (ECC) improves the results \cite{melcr18,melcr20}.
-The most realistic response of PC lipid headgroup order parameters to the calcium binding
-is observed in the Lipid17ecc simulations with the ECC included, where the decreased probability for trans state of g$_3$-O$_{g3}$-P-O$_\alpha$ dihedral is the main structural consequence of bound ions (Fig. \ref{DIHSwithCAlipid17eccPOPC}). Similar but smaller effect is seen in CHARMM36 simulations with less bound calcium (Fig. \ref{DIHSwithCAcharmm36POPC}).
-
-Also the headgroup order parameters of charged lipids are affected by the binding of ions, but their response is less well understood and more difficult to capture in MD simulations \cite{antila19,melcr20}. In our simulations, the Lipid17 and Slipids force fields give the most realistic response of PG $\beta$-carbon to CaCl$_2$ in figure \ref{changesWITHCaClPG} even thought the calcium binding affinity was overestimated in these models. These models suggest that the upward tilting of the headgroup dipole is weaker in PG than in PC headgroup (\ref{changesWITHCaClPG}), but dihedral distributions are more sensitive to the bound ions in PG (Figs \ref{DIHSwithCAslipidsPOPG} and \ref{DIHSwithCAlipid17POPG}). However, none of the simulations captures the calcium binding affinity and conformational ensemble of PG lipids simultaneously, experimental data to evaluate the response of $\alpha$-carbon order parameters to the added calcium in PG is not available, and the changes in dihedrals upon addition of cacium differ between the best models (Figs \ref{DIHSwithCAslipidsPOPG} and \ref{DIHSwithCAlipid17POPG}). Therefore, more accurate force fields are required for the detailed analysis of the interactions between ions and charged lipids, as concluded previously also for PS lipids \cite{antila19,melcr20}.
+In line with the results from cationic surfactants, 
+the decreased probability for the trans state of g$_3$-O$_{g3}$-P-O$_\alpha$ dihedral is the main structural consequence of
+bound ion to PC headgroup (Fig. \ref{DIHSwithCAlipid17eccPOPC} and \ref{DIHSwithCAcharmm36POPC}) in
+Lipid17ecc (having the most realistic response of PC lipid headgroup order parameters to the calcium binding in Fig. \ref{changesWITHCaClPG})
+and CHARMM36 simulations.
+%simulations with the ECC included, where
+%Similar but smaller effect is seen in CHARMM36 simulations with less bound calcium (Fig. \ref{DIHSwithCAcharmm36POPC}).
+%Also the headgroup order parameters of
+Response of charged lipids to the ion binding is less well understood and more difficult to capture in MD simulations \cite{antila19,melcr20}.
+The most realistic simulations (Lipid17 and Slipids in figure \ref{changesWITHCaClPG}) suggest
+%istic response of PG $\beta$-carbon to CaCl$_2$  even thought the calcium binding affinity was overestimated in these models.
+%These models suggest
+that the upward tilting of the headgroup dipole upon addition of CaCl$_2$ is weaker in PG than in PC headgroup,
+%(\ref{changesWITHCaClPG}),
+but dihedral distributions are more sensitive to the bound ions in PG (Figs \ref{DIHSwithCAslipidsPOPG} and \ref{DIHSwithCAlipid17POPG}).
+However, the changes in dihedrals upon addition of calcium differ between the best models (Figs \ref{DIHSwithCAslipidsPOPG} and \ref{DIHSwithCAlipid17POPG}),
+none of the simulations captures the calcium binding affinity and conformational ensemble of PG lipids simultaneously, and experimental data to evaluate the response of $\alpha$-carbon order parameters to the added calcium in PG is not available.
+Therefore, more accurate force fields are required for the detailed analysis of the interactions between ions and charged lipids, as concluded previously also for PS lipids \cite{antila19,melcr20}.
 
 Despite the limited capability of simulations to interpret some of the experimental data due to
 the inaccuries in force fields, we conclude that the experimentally observed changes
