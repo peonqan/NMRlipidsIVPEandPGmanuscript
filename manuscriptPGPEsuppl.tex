@@ -236,6 +236,29 @@ to resolve the PG conformational ensembles in mixtures with other lipids.
 \clearpage
 \section{Calcium binding to POPC:POPG mixtures}
 
+The changes of headgroup order parameters in POPC:POPG mixtures upon addition of CaCl$_2$ between different simulations
+and experiments \cite{borle85,macdonald87} are compared in figures \ref{changesWITHCaClPG} (molar ratio 1:1) and \ref{changesWITHCaClPG1PC4} (molar ratio 4:1).
+The results are in line with our previous studies:
+most force fields overestimate the calcium binding \cite{catte16,antila19}, but CHARMM36 with the NBfix correction underestimates the binding affinity \cite{antila19}, and the implicit inclusion of electronic polarizability using the electronic continuum correction (ECC) improves the results \cite{melcr18,melcr20}.
+
+
+\begin{figure*}[]
+  \centering
+  \includegraphics[width=18.0cm]{./Figs/CHANGESwithCaClPG1PC1.eps}
+  \caption{\label{changesWITHCaClPG}
+    Modulation of headgroup order parameters of POPC ({\it left}) and POPG ({\it right}) in POPC:POPG (1:1)
+    mixture upon addition of CaCl$_2$ in 298 K temperature from experiments \cite{borle85,macdonald87} and simulations.
+    The $\beta$-carbon order parameter of POPC (dashed line on top left) is not directly measured but
+    calculated from empirical relation $\Delta S_{\beta}=0.43\Delta S_{\alpha}$ \cite{akutsu81}.
+    The changes with respect to the systems without CaCl$_2$ are shown for other data than
+    for the $\alpha$-carbon of POPG for which experimental order parameter is not available.
+    Calsium density distributions are shown in figure \ref{CAdensPG}.
+    %(right) The headgroup order parameters of PG from PC:PG mixtures as a function CaCl$_2$
+    %concentration from experiments \cite{borle85} and CHARMM36 simulations.
+  }
+\end{figure*}
+
+
 \begin{figure}[]
   \centering
   \includegraphics[width=8.0cm]{./Figs/CAdensPG1PC1.eps}
@@ -272,12 +295,13 @@ to resolve the PG conformational ensembles in mixtures with other lipids.
 
 \begin{figure}[]
   \centering
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_Mlipid17ecc.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17ecc.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17ecc.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17ecc.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17ecc.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17ecc.png}  
+  \includegraphics[width=12.0cm]{../Figs/DIHEDRALSlipid17eccWITHCaClPOPC.eps}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_Mlipid17ecc.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17ecc.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17ecc.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17ecc.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17ecc.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17ecc.png}  
   \caption{\label{DIHSwithCAlipid17eccPOPC}
     Changes in POPC lipid17ecc dihedrals with increasing amount of CaCl$_2$.
   }
@@ -285,12 +309,13 @@ to resolve the PG conformational ensembles in mixtures with other lipids.
 
 \begin{figure}[]
   \centering
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_MCHARMM36.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_MCHARMM36.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_MCHARMM36.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_MCHARMM36.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_MCHARMM36.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_MCHARMM36.png}  
+   \includegraphics[width=12.0cm]{../Figs/DIHEDRALScharmm36WITHCaClPOPC.eps}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_MCHARMM36.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_MCHARMM36.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_MCHARMM36.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_MCHARMM36.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_MCHARMM36.png}
+%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_MCHARMM36.png}  
   \caption{\label{DIHSwithCAcharmm36POPC}
     Changes in POPC CHARMM36 dihedrals with increasing amount of CaCl$_2$.
   }
@@ -312,7 +337,7 @@ to resolve the PG conformational ensembles in mixtures with other lipids.
 
 \begin{figure}[]
   \centering
-  \includegraphics[width=18.0cm]{./Figs/DIHEDRALSslipidsWITHCaCl.eps}
+  \includegraphics[width=16.0cm]{../Figs/DIHEDRALSslipidsWITHCaClPOPG.eps}
   %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3C6_MSlipids.png}
   %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_MSlipids.png}
   %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_MSlipids.png}
@@ -339,12 +364,13 @@ to resolve the PG conformational ensembles in mixtures with other lipids.
 
 \begin{figure}[]
   \centering
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3C6_Mlipid17.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17.png}
-  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17.png}  
+  \includegraphics[width=16.0cm]{../Figs/DIHEDRALSlipid17WITHCaClPOPG.eps}
+  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3C6_Mlipid17.png}
+  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17.png}
+  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17.png}
+  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17.png}
+  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17.png}
+  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17.png}  
   \caption{\label{DIHSwithCAlipid17POPG}
     Changes in POPG lipid17 dihedrals with increasing amount of CaCl$_2$.
   }
