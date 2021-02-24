@@ -24,7 +24,7 @@
 \affiliation{CIQUP, Centro de Investigação em Química, Departamento de Química e Bioquímica, Faculdade de Ciências, Universidade do Porto, Porto, Portugal}
 
 \author{Fernando Favela-Rosales}
-\affiliation[Tecnol\'{o}gico Nacional de M\'{e}xico]{Departamento de Investigaci\'{o}n, Tecnol\'{o}gico Nacional de M\'{e}xico, Campus Zacatecas Occidente, M\'{e}xico}
+\affiliation[Tecnol\'{o}gico Nacional de M\'{e}xico]{Departamento de Ciencias B\'{a}sicas, Tecnol\'{o}gico Nacional de M\'{e}xico, Campus Zacatecas Occidente, M\'{e}xico}
 
 \author{Tiago Ferreira}
 \affiliation{Halle, Germany}
@@ -653,17 +653,17 @@ no ion \todo{Full simulation details by Fuchs et al.}
   I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.
 }
 
-\noindent {\it DPPE} Data is available at \cite{slipidsDPPEfiles}. \todo{Simulation details by F. Favela.}
+\noindent {\it DPPE with 288 lipids.} The starting structure for simulation was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}: 288 DPPE lipids and 9386 water molecules. The TIP3P~\cite{jorgensen83} water model was used to solvate the system.
+Simulation was performed for 200~ns, and the last 100~ns were used for the analysis. Simulation was carried out within the NPT ensemble using the GROMACS 5.0.4 package~\cite{abraham2015gromacs}. Timestep of 2~fs was used with the leapfrog integrator. The Nos\'{e}--Hoover thermostat~\cite{nose84,hoover85} was used with reference temperature of 336~K and a relaxation time constant of 0.5~ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1.013~bar using a semi--isotropic Parrinello--Rahman
+barostat~\cite{parrinello81} with a time constant of 10.0~ps. Long-range electrostatic interactions were calculated using the PME method~\cite{darden93,essman95}. A real space cut-off of 1.0~nm was employed with grid spacing of 0.12~nm in the reciprocal space. Lennard-Jones potentials were cut off at 1.4~nm, with a dispersion correction applied to both energy and pressure. All covalent bonds in lipids were constrained using the LINCS algorithm~\cite{hess97}, whereas water molecules were constrained using SETTLE~\cite{miyamoto92}. Twin-range cutoffs, 1.0~nm and 1.6~nm, were used for the neighbor lists with the long-range neighbor list updated every 10 steps.
 
-\noindent {\it POPG} Data is available at \cite{slipidsPOPGfiles}. \todo{Simulation details by F. Favela.
-  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
+\noindent {\it POPG with 288 lipids.} The starting structure for simulation was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}: 288 POPG lipids, 10664 water molecules and 288 Na ions. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by Aqvist~\cite{aqvist90}.
+Simulation was performed for 250~ns, and the last 100~ns were used for the analysis. Same simulation conditions as DPPE with reference temperature of 298~K.
 
 \noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.
   I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
 
-\noindent {\it DPPG} Data in 298~K is available at \cite{slipidsDPPGfilesT298K} and in 314~K at \cite{slipidsDPPGfiles}.
-\todo{Simulation details by F. Favela.
-  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
+\noindent {\it DPPG with 288 lipids.} The starting structure for simulation was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}: 288 DPPG lipids, 11232 water molecules and 288 Na ions. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by Aqvist~\cite{aqvist90}. For the 298~K temperature, simulation was performed for 400~ns, and the last 100~ns were used for the analysis. For the 314~K temperature, simulation was performed for 200~ns, and the last 100~ns were used for the analysis. Same simulation conditions as DPPE for both temperatures.
 
 \noindent {\it POPC:POPG mixture with additional NaCl} \todo{Simulation details by A. Peon.
   I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
