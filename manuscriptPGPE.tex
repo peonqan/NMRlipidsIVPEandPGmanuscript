@@ -313,8 +313,8 @@ Experimental order parameters of POPC, POPE, POPG and POPS glycerol backbones an
   \caption{\label{changesWITHsurf}
     \textbf{A)} Modulation of PC headgroup order parameters and P--N vector angle upon addition of cationic surfactant
     from CHARMM36 simulations compared with the experimental data \cite{scherer89}.
-    \textbf{B)} Changes in PC headgroup conformational ensembles upon increasing the amount of positive charge in bilayer,
-    characterized by the heavy atom dihedral distributions, from CHARMM36 simulations.
+    \textbf{B)} Relative energies for individual dihedral angles estimated from inverse Boltzmann distributions of heavy atom dihedral angles
+    with different amounts of cationic surfactant from CHARMM36 simulations.
   }
 \end{figure*}
 
@@ -356,27 +356,36 @@ The wide range of observed conformations suggest that the structures in lipid cr
 
 Charged entities, such as lipids, proteins, surfactants, drugs, and ions incorporated in membranes reorient the headgroup dipole in PC lipids, thereby affecting the order parameters of lipid headgroups \cite{seelig87}. However, the detailed understanding on structural and energetic response of lipids to membrane bound electric charge is still lacking \cite{Semchyschyn04}.
 
-To resolve lipid headgroup conformational ensembles in cell membrane bearing positive charge, we analyzed the simulations (CHARMM36) that correctly capture the experimentally measured decrease in PC headgroup order parameters upon addition of cationic surfactants into a bilayer in figure \ref{changesWITHsurf} A). Heavy atom dihedral angle distributions in figure \ref{changesWITHsurf} B reveal that the decrease of trans state probabilities in g$_2$-g$_3$-O$_{g_3}$-P and g$_3$-O$_{g_3}$-P-O$_\alpha$
-dihedrals are the major effects of positive charge on lipid headgroup conformations. Choline region remains essentially unchanged and only minor changes are observed in other dihedrals even though almost half of the molecules in membranes are cationic surfactants. 
+To resolve lipid headgroup conformational ensembles in cell membrane bearing positive charge,
+we calculated the heavy atom dihedral angle distributions from 
+simulations %(CHARMM36)
+that correctly captured the experimentally measured decrease in PC headgroup order parameters upon addition of cationic surfactants into a bilayer in figure \ref{changesWITHsurf} A).
+The dihedral angle distributions and relative energies
+in figures \ref{HGorderparametersPCvsSURFdihedrals} and \ref{changesWITHsurf} B reveal that the
+addition positive charge into a membrane 
+decrease the abundance of trans states in g$_2$-g$_3$-O$_{g_3}$-P and g$_3$-O$_{g_3}$-P-O$_\alpha$
+dihedrals.
+Choline region remains essentially unchanged and only minor changes are observed in other dihedrals even though almost half of the molecules in membranes are cationic surfactants. 
 
-Also binding of ions may affect the lipid headgroup conformational ensembles in physiological conditions. In line with the results from cationic surfactants, the decreased probability for the trans state of g$_3$-O$_{g3}$-P-O$_\alpha$ dihedral is the main structural consequence of
-bound Ca$^{2+}$ ion to PC headgroup (Fig.~\ref{DIHSwithCAlipid17eccPOPC} and \ref{DIHSwithCAcharmm36POPC}) in the most realistic MD simulations models (lipid17ecc and CHARMM36 in Fig.~\ref{changesWITHCaClPG}).
-%Lipid17ecc (having the most realistic response of PC lipid headgroup order parameters to the calcium binding in Fig.~\ref{changesWITHCaClPG}) and CHARMM36 simulations. 
-%Response of charged lipids to the ion binding is less well understood and more difficult to capture in MD simulations \cite{antila19,melcr20}.
-The most realistic simulations suggest
-%istic response of PG $\beta$-carbon to CaCl$_2$  even thought the calcium binding affinity was overestimated in these models.
-%These models suggest
-that the upward tilting of the headgroup dipole upon addition of CaCl$_2$ is weaker in PG than in PC headgroup,
-%(\ref{changesWITHCaClPG}),
-but dihedral distributions are more sensitive to the bound ions in PG (Lipid17 and Slipids in Figs.~\ref{changesWITHCaClPG},~\ref{DIHSwithCAslipidsPOPG} and \ref{DIHSwithCAlipid17POPG}).
-However, the changes in dihedrals upon addition of calcium differ between the best models (Figs.~\ref{DIHSwithCAslipidsPOPG} and~\ref{DIHSwithCAlipid17POPG}), none of the simulations captures the calcium binding affinity and conformational ensemble of PG lipids simultaneously, and experimental data to evaluate the response of $\alpha$-carbon order parameters to the added calcium in PG is not available. Also the lipid headgroup conformational ensembles in mixed PC:PE and PC:PG membranes were not possible to resolve with the currently available force fields and experimental data (Figs.~\ref{HGorderparametersPCvsPEPG} and~\ref{HGorderparametersPGvsPCchange}).
+Also binding of ions to membranes may affect the lipid headgroup conformational ensembles in physiological conditions.
+The bound Ca$^{2+}$ ion to PC headgroup leads to similar decrease in trans state probability for g$_3$-O$_{g3}$-P-O$_\alpha$ dihedral
+as observed for cationic surfactants in the most realistic MD simulations models
+(lipid17ecc and CHARMM36 in Figs.~\ref{DIHSwithCAlipid17eccPOPC}, \ref{DIHSwithCAcharmm36POPC} and Fig.~\ref{changesWITHCaClPG}).
+The dihedral distributions of PG headgroup are more sensitive to the bound ions in the most realistic simulations,
+but upward tilting of the headgroup dipole upon addition of CaCl$_2$ is weaker than in PC
+(Lipid17 and Slipids in Figs.~\ref{changesWITHCaClPG},~\ref{DIHSwithCAslipidsPOPG} and \ref{DIHSwithCAlipid17POPG}).
+However, the changes in PG lipid dihedrals upon addition of CaCl$_2$ differ between the best models (Figs.~\ref{DIHSwithCAslipidsPOPG} and~\ref{DIHSwithCAlipid17POPG}), none of the simulations captures the Ca$^{2+}$ ion binding affinity and conformational ensemble of PG lipids simultaneously, and experimental data to evaluate the response of $\alpha$-carbon order parameters to the added CaCl$_2$ in PG is not available.
+Also the headgroup conformational ensembles in mixtures of PC and charged (PG or PS) or zwitterionic (PE)
+lipids could not be resolve with the currently available force fields and experimental data
+(Figs.~\ref{HGorderparametersPCvsPEPG} and~\ref{HGorderparametersPGvsPCchange}, and Ref. \cite{antila19,melcr20}).
 
-%Therefore, more accurate force fields are required for the detailed analysis of the interactions between ions and charged lipids, as concluded previously also for PS lipids \cite{antila19,melcr20}.
-
-Despite the 
-%limited capability of simulations to interpret some of the experimental data due to the 
-inaccuries in simulations in some cases, we can conclude that the experimentally observed changes in headgroup order parameters upon addition of charges into bilayer arise from relatively small changes in conformational ensembles. These changes eventuate from mild changes in dihedral angle distributions, rather than from restriction of lipids into
-fixed conformations. Therefore, lipid headgroups remain in disordered state sampling large space of different conformations, thereby being able to interact with different molecules in various ways, also in membranes bearing electric charge.
+Despite the difficulties in simulations to capture the headgroup conformations in mixtures involving charged lipids,
+we can conclude that the structural response of lipid headgroups to 
+%experimentally observed changes in headgroup order parameters upon addition of
+membrane bound charges arise from relatively small changes in conformational ensembles.
+These changes eventuate from mild changes in dihedral angle distributions, rather than from restriction of lipids into
+fixed conformations. Therefore, lipid headgroups remain in disordered state sampling large space of different conformations
+also in charged membranes, thereby being able to interact with different molecules in multiple ways.
 
 
 
