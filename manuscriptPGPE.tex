@@ -326,7 +326,7 @@ Then, we used the inverse Boltzmann distributions to estimate the
 energy costs for different dihedral angle orientations.
 The results in Fig.~\ref{structures}C) suggest that all lipid headgroups are very flexible and
 energy costs for rotating individual dihedrals to almost any angle is low (below 7 kT).
-Only trans states of P-O$_\alpha$-C$_\alpha$-C$_\beta$ and g$_2$-g$_3$-O$_{g_3}$-P have larger relative
+Only $cis$ states of P-O$_\alpha$-C$_\alpha$-C$_\beta$ and g$_2$-g$_3$-O$_{g_3}$-P have larger relative
 energies and are not observed for any lipids during the simulations.
 
 
@@ -391,48 +391,54 @@ also in charged membranes, thereby being able to interact with different molecul
 
 \subsection{Protein-bound lipid conformations}
 
-To analyze the alterations in lipid conformations when bound to proteins,
-we calculated the heavy atom dihedral distributions from lipid conformations within protein structures deposited in the PDB \cite{berman00} in Fig.~\ref{dihedralsFROMpdb}.
-\todo{This part is to be finished once the analysis if finalized}
-We found 176 PC, 198 PE, 70 PG, and 41 PS conformations, which
-present lipids that are tightly bound to proteins in fixed conformations
-that can be determined as a part of protein structure using crystallography or cryo-EM. 
-
-
-\begin{figure}[]
+\begin{figure*}[]
   \centering
-  \includegraphics[width=8.0cm]{./Figs/DIHEDRALSALLfromPDB.eps}
-%  \includegraphics[width=8.0cm]{../Figs/DIHEDRALSPEfromPDB.eps}
-%  \includegraphics[width=8.0cm]{../Figs/DIHEDRALSPGfromPDB.eps}
-%  \includegraphics[width=8.0cm]{../Figs/DIHEDRALSPSfromPDB.eps}
+  \includegraphics[width=19.0cm]{./Figs/figure4.eps}
   \caption{\label{dihedralsFROMpdb}
-    Dihedral distributions from simulations and lipid structures in PDB.
+    A) Dihedral distributions fromm lipid structures in PDB.
+    B) Identical structures of PE and PC, and PG and PC headgroups found from PDB.
   }
-\end{figure}
+\end{figure*}
 
-Similarly to the liquid lamellar state, lipid dihedrals have very wide range of angles
-when bound to proteins. Only %restrictions seem to be in 
-P-O$_\alpha$-C$_\alpha$-C$_\beta$ and g$_2$-g$_3$-O$_{g_3}$-P dihedrals
-seem to avoid $cis$ conformations as observed also in liquid lamellar state.
-The %range of available angles for
-O$_\alpha$-C$_\alpha$-C$_\beta$-N/C$_\gamma$ and
-g$_1$-g$_2$-g$_3$-O$_{g_3}$ dihedrals are even less restricted in protein bound state
-than in liquid lamellar phase where $cis$ and $anti$ eclipsed state were not present (Fig.~\ref{structures}). 
-Major differences between different lipid headgroups are not observed when bound to proteins.
-Slight preference for the trans state in O$_\alpha$-C$_\alpha$-C$_\beta$-/C$_\gamma$ dihedral of PC,
-and for positive angles in P-O$_\alpha$-C$_\alpha$-C$_\gamma$ dihedral of PS lipids with respect
-to other lipids could be present in the data, but the statistics is not sufficient for conclusions.
-Therefore, the differences in conformational ensembles between different
-lipids in liquid lamellar state in Fig.~\ref{structures} are not seen in the protein bound states.
 
-This suggests that lipids can bind to proteins in wide range of conformations independently
-of headgroup chemistry. Thereby, lipids compromise their preferred conformations when binding
-to proteins and the binding of lipids to specific locations would be driven by 
-the intermolecular interactions between proteins and lipids.
-However, it is important to note that lipids are often not the main target in
-structures deposited in PDB and therefore their conformations may be less reliable than those of proteins.
-Stereochemical violations and structures deviating from lipid crystals have been
-previously proposed to indicate inaccuracies in lipid structures in PDB \cite{marsh13b,pezeshkian18}. 
+Interpretation of experimental order parameters using MD simulations
+in previous sections suggest that PC, PE, PG and PS lipid headgroups are very flexible,
+thereby being able to bind proteins in various different conformations.
+To test this prediction, we analyze the protein bound lipid conformations
+from structures structures deposited in the PDB \cite{berman00}.
+We found 311 PC, 394 PE, 154 PG, and 35 PS conformations presenting
+lipids that are tightly bound to proteins in fixed conformations
+such that their structures were determined as a part of protein structure using crystallography or cryo-EM. 
+
+The heavy atom dihedral angle distributions calculated from these conformations 
+in Fig.~\ref{dihedralsFROMpdb} A) reveal that indeed lipids are bound to proteins in wide
+range of conformations independently on the heasgroup type.
+As observed also in liquid lamellar state, only conformations
+with P-O$_\alpha$-C$_\alpha$-C$_\beta$ and g$_2$-g$_3$-O$_{g_3}$-P dihedrals in $cis$ from are almost
+completely absent in all lipids.
+Significant differences in bound conformations between different headgroups could not be
+observed with the available data.
+%The %range of available angles for
+%O$_\alpha$-C$_\alpha$-C$_\beta$-N/C$_\gamma$ and
+%g$_1$-g$_2$-g$_3$-O$_{g_3}$ dihedrals are even less restricted in protein bound state
+%than in liquid lamellar phase where $cis$ and $anti$ eclipsed state were not present (Fig.~\ref{structures}). 
+%Major differences between different lipid headgroups are not observed when bound to proteins.
+%Slight preference for the trans state in O$_\alpha$-C$_\alpha$-C$_\beta$-/C$_\gamma$ dihedral of PC,
+%and for positive angles in P-O$_\alpha$-C$_\alpha$-C$_\gamma$ dihedral of PS lipids with respect
+%to other lipids could be present in the data, but the statistics is not sufficient for conclusions.
+%Therefore, the differences in conformational ensembles between different
+%lipids in liquid lamellar state in Fig.~\ref{structures} are not seen in the protein bound states.
+
+Altogether our results suggest that lipids can bind to proteins in wide range of conformations
+compromising their preferred structure to optimize the intermolecular interactions with proteins.
+Therefore, the specific binding of lipids to proteins is not driven by the structural differences between
+headgroups. This is demonstrated in Fig.~\ref{dihedralsFROMpdb} B) showing different lipids bound
+to different proteins with identical structures.
+%However, it is important to note that lipids are often not the main target in
+%structures deposited in PDB and therefore their conformations may be less reliable than those of proteins.
+Structures deviating from lipid crystals
+%and stereochemical violations
+have been previously proposed to indicate inaccuracies in lipid structures in PDB \cite{marsh13b,pezeshkian18}. 
 However, we see large deviations from lipid crystals structures also in conformational ensembles
 that reproduce the NMR data in liquid lamellar phase, thereby proposing that such deviations
 are realistic also in protein-bound states.
