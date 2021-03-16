@@ -444,9 +444,9 @@ used for all atom simulations are available in Ref.~\citenum{MATCHgit}
 The number density profiles of ions were calculated using the \texttt{gmx density} tool of the GROMACS sofware package \cite{gromacsMANUAL}.
 
 
-%\begin{table*}[htb]
+\begin{table*}[htb]
 %
-\begin{sidewaystable*}[!p]
+%\begin{sidewaystable*}[!p]
   \centering
   \caption{List of MD simulations with PE lipids.
     % The salt concentrations calculated as [salt]=N$_{\rm c} \times$[water]\,/\,N$_{\rm w}$, where [water]\,=\,55.5~M.
@@ -454,10 +454,11 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
     % The lipid force fields named as in our previous work~\cite{botan15}.
   }\label{systemsPE}
   \begin{minipage}[t]{\textwidth}
+  \resizebox{\columnwidth}{!}{
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
-      lipid/counter-ions & force field for lipids / ions  & NaCl (M) & \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$   & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
+      lipid & force field for lipids / ions  & NaCl (M) & \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$   & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
       POPE  & CHARMM36 \cite{??}           &0       & 144	& 5760  &0    & 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
       POPE  & CHARMM36 \cite{??}           & 0      & 500       & 25000 & 0   &  310  & 500 & 100 & \cite{POPEcharmm} \\
@@ -491,6 +492,7 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
       POPE             & LIPID17 \cite{gould18} & 0      & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17} \\
       POPE             & LIPID17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
     \end{tabular}
+    }
   \end{minipage}
   \todo{Simulations with added NaCl are not currently used here, maybe should be removed from the table?} \\
   \todo{Citation for CHARMM36 PE?} \\
@@ -500,11 +502,11 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
   \todo{Citation for OPLS-UA models?} \\
   \todo{Citations for Berger-* simulations?} \\
   \todo{LIPID17 simulations with correct dihedrals still coming}
-%\end{table*}
-  \end{sidewaystable*} 
+\end{table*}
+%  \end{sidewaystable*} 
 
-  %    \begin{table*}[htb]
-  \begin{sidewaystable*}[!p]
+      \begin{table*}[htb]
+  %\begin{sidewaystable*}[!p]
   \centering
   \caption{List of MD simulations with PG lipids.
     % The salt concentrations calculated as [salt]=N$_{\rm c} \times$[water]\,/\,N$_{\rm w}$, where [water]\,=\,55.5~M.
@@ -512,6 +514,7 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
     % The lipid force fields named as in our previous work~\cite{botan15}.
   }\label{systemsPG}
   \begin{minipage}[t]{\textwidth}
+  \resizebox{\columnwidth}{!}{
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
@@ -533,17 +536,18 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
       POPG             & GROMOS-CKP \cite{??}         & 0              & 500 & 25000 & 0  &  310  & 500 & 100 & \cite{POPGgromosCKP} \\
       POPG             & GROMOS-CKP \cite{??}         & 0.11           & 500 & 25000 & 49 &  310  & 500 & 100 & \cite{POPGgromosCKP150mMNaCl} \\
     \end{tabular}
+    }
   \end{minipage}
     \todo{Simulations with added NaCl are not currently used here, maybe should be removed from the table?} \\
     \todo{Citations and ion model for CHARMM36?} \\
   \todo{Lipid17 simulation with ions with correct dihedral potentials still coming?} \\
   \todo{Citation and ion model for GROMOS-CKP?}
-%\end{table*}
- \end{sidewaystable*}
+\end{table*}
+% \end{sidewaystable*}
 
 
-%\begin{table*}[htb]
-  \begin{sidewaystable*}[!p]
+\begin{table*}[htb]
+%  \begin{sidewaystable*}[!p]
   \centering
   \caption{List of MD simulations with PE and PG lipids mixed with PC.
     % The salt concentrations calculated as [salt]=N$_{\rm c} \times$[water]\,/\,N$_{\rm w}$, where [water]\,=\,55.5~M.
@@ -551,6 +555,7 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
     % The lipid force fields named as in our previous work~\cite{botan15}.
   }\label{systemsMIX}
   \begin{minipage}[t]{\textwidth}
+    \resizebox{\columnwidth}{!}{
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
@@ -587,12 +592,14 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
       POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 0.5  & 128:128 & 12800 & 115 &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
       POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 1.0  & 128:128 & 12800 & 230 &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
     \end{tabular}
+    }
   \end{minipage}
     \todo{Citation and ion model for GROMOS-CKP?} \\
-%\end{table*}
-\end{sidewaystable*}
+\end{table*}
+%\end{sidewaystable*}
 
-  \begin{sidewaystable*}[!p]
+\begin{table*}
+%  \begin{sidewaystable*}[!p]
   \centering
   \caption{List of MD simulations with PE and PG lipids mixed with PC.
     % The salt concentrations calculated as [salt]=N$_{\rm c} \times$[water]\,/\,N$_{\rm w}$, where [water]\,=\,55.5~M.
@@ -600,6 +607,7 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
     % The lipid force fields named as in our previous work~\cite{botan15}.
   }\label{systemsMIX2}
   \begin{minipage}[t]{\textwidth}
+    \resizebox{\columnwidth}{!}{
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
@@ -626,10 +634,11 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
       DOPC             & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 256 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPCberger300K} \\
       DOPC:DOPE (1:1)  & Berger \cite{??}   \todoi{This is probable not plain berger, correct force filed should be described.}  &0          & 0  & 128 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPC1DOPE1berger} \\
     \end{tabular}
+    }
   \end{minipage}
   \todo{Citation and description for ''Berger'' model?} \\
-%\end{table*}
-\end{sidewaystable*}
+\end{table*}
+%\end{sidewaystable*}
 
 
 \subsection{CHARMM36}
