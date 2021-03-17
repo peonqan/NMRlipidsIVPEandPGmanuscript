@@ -258,19 +258,20 @@ The quality of lipid headgroup and glycerol backbone conformational ensembles in
 
 
 \subsection{Analysis of conformations of protein-bound lipids}
-\todo{This is to be finished once the final analysis is done as discussed in this issue: https://github.com/NMRLipids/NMRlipidsIVPEandPG/issues/40}
-
 Lipid structures from Protein Data Bank (PDB, \url{http://www.rcsb.org/})
-were searched using PDBe REST API (\url{www.ebi.ac.uk/pdbe/pdbe-rest-api}).
-First, all PDB entries containing PC, PE, PG, or PS lipid headgroups were collected.
-The ligand names to identify the lipids were:
-PLC, PX4, 6PL, LIO, HGX, PC7, PC8, P1O, 6O8, XP5, EGY, PLD, SBM, HXG, and PCW for PC;
-8PE, PTY, 3PE, PEH, PEF, 6OE, 6O9, 9PE, PEV, 46E, SBJ, L9Q, PEK, EPH, ZPE, 9TL, 9Y0, 6OU, LOP, and PEE for PE;
-PGT, PGK, LHG, 44G, PGV, OZ2, D3D, PGW, DR9, P6L, PG8, H3T, and GOT for PG; and
-PSF, PS6, Q3G, P5S, D39, PS2, 17F, and 8SP for PS.
-Secondly, all PDB structures containing these ligands were downloaded and the dihedral angles of the first lipid in the latest version of the structures within each PDB code were calculated using the MDTraj python library \cite{mcgibbon15}.
-The used Jupyter notebook is available from the project's GitHub repository (\textit{ scripts/pdbSEARCH.ipynb}).
-
+were searched using PDBe REST API (\url{www.ebi.ac.uk/pdbe/pdbe-rest-api})
+using the ligand names listed in the supplementary information.
+Heavy atom dihedral distributions from the lipid structures were calculated
+using the MDAnalysis python library \cite{agrawal11,gowers16} and
+Jupyter notebook available from \url{https://github.com/pbuslaev/scr/blob/master/PDB%20analysis.ipynb}.
+Only structures from X-ray and Cryo-EM with higher than 3.2~\AA~resolution were used in the analysis.
+Lipids from same PDBID with all dihedrals angles within 3 degrees were discarded from the analysis
+to avoid overweighting of lipid structures present, e.g., due to rotational symmetries.
+  
+To demonstrate the existence of similar structures of different lipids bound to different proteins,
+we searched pairs having the last five dihedral angles (excluding g$_1$-g$_2$-g$_3$-O$_{g3}$) within
+30 degrees from structures with resolution higher than 2.5~\AA. The two most representative examples
+were handpicked from the results.
 
 
 \section{Results and Discussion}
