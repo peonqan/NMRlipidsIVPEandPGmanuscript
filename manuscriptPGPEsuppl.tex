@@ -32,6 +32,9 @@
 \author{Patrick Fuchs}
 \affiliation{Paris, France}
 
+\author{Ivan Gushchin}
+\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
+
 \author{Matti Javanainen}
 \affiliation[Czech Academy of Sciences]{Institute of Organic Chemistry and Biochemistry of the 
 Czech Academy of Sciences, Flemingovo n\'{a}m. 542/2, CZ-16610 Prague 6, Czech Republic}
@@ -132,6 +135,12 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
   }
 \end{figure}
 
+\clearpage
+\section{Lipid ligand names in PDB used in the analysis of conformations of protein-bound lipids}
+{\bf PC:} PLC, PX4, 6PL, LIO, HGX, PC7, PC8, P1O, 6O8, XP5, EGY, PLD, SBM, HXG, and PCW \\
+{\bf PE:} 8PE, PTY, 3PE, PEH, PEF, 6OE, 6O9, 9PE, PEV, 46E, SBJ, L9Q, PEK, EPH, ZPE, 9TL, 9Y0, 6OU, LOP, and PEE \\
+{\bf PG:} PGT, PGK, LHG, 44G, PGV, OZ2, D3D, PGW, DR9, P6L, PG8, H3T, and GOT \\
+{\bf PS:} PSF, PS6, Q3G, P5S, D39, PS2, 17F, and 8SP.
 
 \clearpage
 \section{Evaluation of simulations against NMR experiments}
@@ -160,7 +169,6 @@ It should be noted that the PG headgroup is biologically abundant R enantiomer i
   \todo{This should be clarified as in NMRlipidsI and error bars should be added.
     Probably larger error bars for united atom models based on the report by Fuchs et al.
   } \\
-  \todo{Lipid17 data should be updated to the one with correct dihedrals reported here https://github.com/NMRLipids/NMRlipidsIVPEandPG/issues/12\#issuecomment-756641407}
 \end{figure}
 
 \begin{figure}[!h]
@@ -173,7 +181,6 @@ It should be noted that the PG headgroup is biologically abundant R enantiomer i
     and E.Coli PG results from Ref.~\citenum{gally81})
     and simulations with different force fields.
   }
-   \todo{Lipid17 data should be updated to the one with correct dihedrals reported here https://github.com/NMRLipids/NMRlipidsIVPEandPG/issues/12\#issuecomment-756641407}
 \end{figure}
 
 \clearpage
@@ -315,12 +322,6 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 \begin{figure}[]
   \centering
   \includegraphics[width=12.0cm]{./Figs/DIHEDRALSlipid17eccWITHCaClPOPC.eps}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17ecc.png}  
   \caption{\label{DIHSwithCAlipid17eccPOPC}
     Changes in POPC lipid17ecc dihedrals with increasing amount of CaCl$_2$.
   }
@@ -329,87 +330,26 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 \begin{figure}[]
   \centering
    \includegraphics[width=12.0cm]{./Figs/DIHEDRALScharmm36WITHCaClPOPC.eps}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_MCHARMM36.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_MCHARMM36.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_MCHARMM36.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_MCHARMM36.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_MCHARMM36.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_MCHARMM36.png}  
   \caption{\label{DIHSwithCAcharmm36POPC}
     Changes in POPC CHARMM36 dihedrals with increasing amount of CaCl$_2$.
   }
 \end{figure}
 
-
-%\begin{figure}[]
-%  \centering
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_MSlipids.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_MSlipids.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_MSlipids.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_MSlipids.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_MSlipids.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_MSlipids.png}  
-%  \caption{\label{DIHSwithCA}
-%    Changes in POPC Slipids dihedrals with increasing amount of CaCl$_2$.
-%  }
-%\end{figure}
-
 \begin{figure}[]
   \centering
   \includegraphics[width=16.0cm]{./Figs/DIHEDRALSslipidsWITHCaClPOPG.eps}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3C6_MSlipids.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_MSlipids.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_MSlipids.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_MSlipids.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_MSlipids.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G1_M_M_G2_M_M_G3_M_M_G3O1_MSlipids.png}  
   \caption{\label{DIHSwithCAslipidsPOPG}
     Changes in POPG Slipids dihedrals with increasing amount of CaCl$_2$.
   }
 \end{figure}
 
-%\begin{figure}[]
-%  \centering
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3N6_Mlipid17.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPC_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17.png}  
-%  \caption{\label{DIHSwithCA}
-%    Changes in POPC lipid17 dihedrals with increasing amount of CaCl$_2$.
-%  }
-%\end{figure}
-
 \begin{figure}[]
   \centering
   \includegraphics[width=16.0cm]{./Figs/DIHEDRALSlipid17WITHCaClPOPG.eps}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3C6_Mlipid17.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17.png}
-  %\includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17.png}  
   \caption{\label{DIHSwithCAlipid17POPG}
     Changes in POPG lipid17 dihedrals with increasing amount of CaCl$_2$.
   }
 \end{figure}
-
-
-%\begin{figure}[]
-%  \centering
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O3_M_M_G3C4_M_M_G3C5_M_M_G3C6_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3P2_M_M_G3O3_M_M_G3C4_M_M_G3C5_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3O1_M_M_G3P2_M_M_G3O3_M_M_G3C4_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G3_M_M_G3O1_M_M_G3P2_M_M_G3O3_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G2_M_M_G3_M_M_G3O1_M_M_G3P2_Mlipid17ecc.png}
-%  \includegraphics[width=6.0cm]{./Figs/dihedralFIGS/POPG_M_G1_M_M_G2_M_M_G3_M_M_G3O1_Mlipid17ecc.png}  
-%  \caption{\label{DIHSwithCA}
-%    Changes in POPG lipid17ecc dihedrals with increasing amount of CaCl$_2$.
-%  }
-%\end{figure}
-
-
 
 
 \clearpage
@@ -418,13 +358,13 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 The simulated systems of pure PE and PG bilayers without additional ions
 are listed in Tables~\ref{systemsPE} and \ref{systemsPG},
 and lipid mixtures with additional ions in Tables~\ref{systemsMIX} and \ref{systemsMIX2}.
-the simulation data are indexed in a
-searchable database available at \url{www.nmrlipids.fi},
-and in the NMRlipids/MATCH repository (\url{github.com/NMRlipids/MATCH}).
-The large set of MD simulation data was analysed using the development version of NMRlipids databank.
-Unique naming convention for lipid atoms in each force field was defined using the mapping files
-and analysis for all simulations indexed in NMRlipids databank manner were performed
-using Python codes.
+The simulations were analyzed using preliminary versions of the NMRlipids databank
+(\url{www.nmrlipids.fi}, \url{github.com/NMRlipids/MATCH} and \url{https://github.com/NMRLipids/NMRlipidsIVPEandPG/tree/master/Data/Simulations})
+and unique naming convention for lipid atoms (\url{http://nmrlipids.blogspot.com/2015/03/mapping-scheme-for-lipid-atom-names-for.html}),
+which enable automatic analysis of simulations with different force fields with varying atom naming conventions.
+The automatic analyses were implemented using MDAnalysis \cite{agrawal11,gowers16} and MDTraj \cite{mcgibbon15}
+python libraries, and tools in the GROMACS sofware package \cite{gromacsMANUAL}.
+All codes are available from the project's GitHub repository \cite{NMRlipidsIVbgit}.
 
 The C--H bond order parameters were calculated directly
 from the carbon and hydrogen positions using the definition
@@ -437,11 +377,10 @@ Angular brackets denote average over all sampled configurations.
 The order parameters were first calculated averaging over time separately
 for each lipid in the system. The average and
 the standard error of the mean were then calculated over different lipids.
-Python programs that use the MDAnalysis library \cite{agrawal11,gowers16}
-used for all atom simulations are available in Ref.~\citenum{MATCHgit}
-(\texttt{scripts/calcOrderParameters.py}). For united atom simulations, the trajectories with hydrogens having ideal geometry were constructed first using either \texttt{buildH} program~\cite{buildH} or (\texttt{scratch/opAAUA\_prod.py}) in  Ref.~\citenum{MATCHgit}, and the order parameters were then calculated from these trajectories. This approach has been tested against trajectories with explicit hydrogens and the deviations in order parameters are small \cite{buildH,piggot17}.\\
+Code for all atom simulations is available in Ref.~\citenum{MATCHgit} (\texttt{scripts/calcOrderParameters.py}).
+For united atom simulations, we first constructed trajectories including hydrogens with ideal geometry using either \texttt{buildH} program~\cite{buildH} or (\texttt{scratch/opAAUA\_prod.py}) in  Ref.~\citenum{MATCHgit}, and the order parameters were then calculated from these trajectories. This approach has been tested against trajectories with explicit hydrogens and the deviations in order parameters are small \cite{buildH,piggot17}.\\
 %\todo{BuildH program is now cited with a direct link to the GitHub repo. I think that a release to Zenodo would be nice in the final publication.}\\
-The number density profiles of ions were calculated using the \texttt{gmx density} tool of the GROMACS sofware package \cite{gromacsMANUAL}.
+
 
 
 \begin{table*}[htb]
@@ -494,14 +433,12 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
     \end{tabular}
     }
   \end{minipage}
-  \todo{Simulations with added NaCl are not currently used here, maybe should be removed from the table?} \\
   \todo{Citation for CHARMM36 PE?} \\
   \todo{Which ion model is used in \cite{POPEcharmm150mMNaCl}?} \\
   \todo{Citation for GROMOS-CKP?} \\
   \todo{Citation for GROMOS 43A1-S3?} \\
   \todo{Citation for OPLS-UA models?} \\
   \todo{Citations for Berger-* simulations?} \\
-  \todo{LIPID17 simulations with correct dihedrals still coming}
 \end{table*}
 %  \end{sidewaystable*} 
 
@@ -538,9 +475,7 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
     \end{tabular}
     }
   \end{minipage}
-    \todo{Simulations with added NaCl are not currently used here, maybe should be removed from the table?} \\
     \todo{Citations and ion model for CHARMM36?} \\
-  \todo{Lipid17 simulation with ions with correct dihedral potentials still coming?} \\
   \todo{Citation and ion model for GROMOS-CKP?}
 \end{table*}
 % \end{sidewaystable*}
@@ -647,7 +582,12 @@ The number density profiles of ions were calculated using the \texttt{gmx densit
 
 \noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}
 
-\noindent {\it POPG} \todo{Simulation details by Ollila}.
+\noindent {\it POPG} Lipid bilayer containing 118 POPG molecules, 4110 TIP3P water molecules, and 118 potassium ions was build using CHARMM-GUI \cite{lee16}.
+The system was simulated 100~ns, coupled to 298 K using Nose-Hoover~\cite{nose84,hoover85} thermostat and 1 bar with
+semi-isotropic Parrinello-Rahman~\cite{parrinello81} pressure coupling.
+The used default parameters and force field files from CHARMM-GUI are available from \citenum{CHARMM36popg}.
+
+\todo{Simulation details for larger simulation by A. Peon.}
 
 \noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
 
@@ -659,7 +599,10 @@ rcoulomb and rvdw 1.0,
 128 lipids per leaflet,
 no ion \todo{Full simulation details by Fuchs et al.}
 
-\noindent {\it POPC:POPG mixture with additional calcium} \todo{Simulation details by A. Kiirikki.}
+\noindent {\it POPC:POPG 1:1 and POPC:POPG 4:1 mixtures with additional calcium} 
+The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}. The TIP3P water model was used to solvate the systems. The simulations were run for 400~ns with timestep 2~fs and the first 100~ns were discarded as equilibration time. The simulations were run with GROMACS version 2020.2~\cite{pall20}. The Nose-Hoover thermostat~\cite{nose84,hoover85} was used with temperature of 298~K and the time constant for temperature coupling was 1.0~ps. The semi-isotropic Parinello-Rahman barostat~\cite{parrinello81} was used with reference pressure 1.0~bar and with a time constant of 5.0~ps with compressibility of 4.5e-5~bar$^{-1}$. Long range electrostatic interactions were calculated with the PME method. All bonds with hydrogen atoms were constrained with LINCS algorithm.
+The simulation files are available from Refs.~\citenum{CHARMM36POPCPOPG5050,CHARMM36POPCPOPG5050100mMCaCl,CHARMM36POPCPOPG50501000mMCaCl,CHARMM36POPCPOPG4010,CHARMM36POPCPOPG4010100mMCaCl,CHARMM36POPCPOPG40101000mMCaCl}.
+
 
 \noindent {\it POPC and POPC:POPG (7:3) mixture} \todo{Simulation details by A. Peon.}
 
@@ -744,7 +687,19 @@ no ion \todo{Simulation details by Fuchs et al.}
 
 \noindent {\it POPG} \todo{Simulation details by A. Peon.}
 
-\noindent {\it POPC:POPG} \todo{Simulation details by S. Virtanen or O. H. S. Ollila.}
+\noindent {\it POPC:POPG 4:1 and POPC:POPG 1:1 mixtures}
+Initial structures were build by removing appropriate amount of lipids from POPC:POPG 7:3 mixture available at Ref.~\cite{POPCPOPG73lipid17}.
+Force field parameters from the same reference were used \todo{We still need description from A. Peon how these were obtained},
+except that incorrect dihedrals with type 1 were changed to type 9
+(for details, see discussion in here \url{https://github.com/NMRLipids/NMRlipidsIVPEandPG/issues/12}).
+Simulations were performed using the Gromacs simulation package~\cite{pall20} with time step of 2~fs. 
+The non-bonded interactions were calculated directly within 1.0~nm cutoff; the Verlet scheme was used\cite{Pall13};
+and the long-range electrostatic forces were calculated using particle mesh Ewald~\cite{essman95}. 
+The bond lengths of hydrogen atoms were constrained using LINCS~\cite{hess97}.
+Temperature was coupled to the velocity rescaling thermostat \cite{bussi07} at 298~K with a coupling constant of 1~ps.
+Pressure was coupled to the Parrinello--Rahman barostat \cite{parrinello81} at 1~bar with a coupling constant of 10~ps. 
+
+
 
 \subsection{Lipid17ecc}
 
