@@ -158,7 +158,7 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 \section{Evaluation of simulations against NMR experiments}
 \subsection{Conformational ensembles of headgroup and glycerol backbone in PE and PG lipids}
 
-The quality of PE and PG headgroup conformational ensembles in different simulations against NMR experiments is evaluated in figures \ref{HGorderParametersPE} and \ref{HGorderParametersPOPG} using C-H bond order parameters as in our previous studies for PC and PS lipids \cite{botan15,antila19}. Conclusions are the same for all lipids: None of the force fields correctly captures the lipid headgroup conformational ensembles, but CHARMM36 gives results closest to experiments.
+The quality of PE and PG headgroup conformational ensembles in different simulations against NMR experiments is evaluated in figures \ref{HGorderParametersPE} and \ref{HGorderParametersPOPG} using C-H bond order parameters as in our previous studies for PC and PS lipids \cite{botan15,antila19}. Conclusions are the same for all lipids: None of the force fields correctly captures the lipid headgroup conformational ensembles, but CHARMM36 gives results closest to experiments. Most importantly for this work, the CHARMM36 captures the distinct headgroup order parameters for PG and PS lipids observed in NMR experiments (Figs. \ref{HGorderParameters} and \ref{structures} in the main text). 
 
 It should be noted that the PG headgroup is biologically abundant R enantiomer in all simulations, while our $^{13}$C NMR experiments has a racemic mixture. Nevertheless, previous $^{2}$H NMR experiments comparing results between different enantiomers concluded that the structural differences between these are minor \cite{wohlgemuth80}.
 
@@ -219,11 +219,11 @@ from different simulations is compared with experiments in figure~\ref{HGorderpa
 None of the simulations reproduce neither the experimentally observed increase in PC headgroup order parameters
 with increasing amount of PG nor the related tilting of the headgroup more parallel with the membrane.
 Similar observations in our previous work for PS lipids were explained by the overestimated counterion
-binding affinity that neturalizes the effect of added negative charge \cite{antila19}.
+binding affinity that neutralizes the effect of added negative charge \cite{antila19}.
 All simulations except Berger-OPLS predict tilting of P-N headgroup outwards from the membrane and
 decrease of PC headgroup order parameters upon addition of PE lipids.
 These results are not in line with experiments where the PC headgroup order parameters are not affected by zwitterionic lipids \cite{scherer87}.
-The good performance of Berger-OPLS simulations in here is surprising because
+The good performance of Berger-OPLS simulations is surprising here because
 headgroup conformational enemble is not very close to experiments in this model and
 the response of headgroup order parameters
 to cholesterol was significantly overestimated by the Berger/H{\"o}ltje force field in our previous work \cite{botan15}.
@@ -309,9 +309,18 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 \section{Dihedral angle distributions and the analysis of relative energies}
   
 
+\subsection{Dihedral angles and relative energies of PC, PE, PG and PS headgroups}
+
+We estimated the relative energies of each dihedral angle value
+with respect to the most probable value (lowest energy) 
+from the inverse Boltzmann formula $\Delta E(\theta) = -kT \left[\ln\left[p(\theta)\right]-\ln\left[p(\theta_0)\right] \right]$,
+where $p(\theta)$ is the dihedral angle distribution and $\theta_0$ is the most probable angle from MD simulation.
+The dihedral angle distributions are shown in Fig. \ref{DIHdists}
+and relative energies in Fig. \ref{structures} in the main text.
+
 \begin{figure}[]
   \centering
-  \includegraphics[width=8.0cm]{./Figs/DIHEDRALS.eps}
+  \includegraphics[width=7.0cm]{./Figs/DIHEDRALS.eps}
   \caption{\label{DIHdists}
     Heavy atom dihedral angle distributions from CHARMM36 simulations that correctly capture the
     order parameter differences between the force fields.
@@ -319,8 +328,10 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 \end{figure}
 
 
+
+
 \clearpage
-\section{Changes in headgroup conformations upon addition of charged surfactants or CaCl$_2$}
+\subsection{Changes in headgroup conformations upon addition of charged surfactants or CaCl$_2$}
 
 \begin{figure}[]
   \centering
@@ -411,20 +422,20 @@ For united atom simulations, we first constructed trajectories including hydroge
       % some footnotes are not visible in typeset-MS (pdf)
       lipid & force field for lipids / ions  & NaCl (M) & \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$   & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
-      POPE  & CHARMM36 \cite{??}           &0       & 144	& 5760  &0    & 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
-      POPE  & CHARMM36 \cite{??}           & 0      & 500       & 25000 & 0   &  310  & 500 & 100 & \cite{POPEcharmm} \\
-      POPE  & CHARMM36 \cite{??}           & 0.11   & 500       & 25000 & 50  &  310  & 500 & 100 & \cite{POPEcharmm150mMNaCl} \\
+      POPE  & CHARMM36 \cite{klauda10}           &0       & 144	& 5760  &0    & 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
+      POPE  & CHARMM36 \cite{klauda10}           & 0      & 500       & 25000 & 0   &  310  & 500 & 100 & \cite{POPEcharmm} \\
+%      POPE  & CHARMM36 \cite{klauda10}           & 0.11   & 500       & 25000 & 50  &  310  & 500 & 100 & \cite{POPEcharmm150mMNaCl} \\
       POPE  & CHARMM36-UA \cite{??}         &0       & 336	& 15254 &0    & 310  & 2$\times$200 & 2$\times$100 & \cite{charmm36uaPOPEfiles}  \\
       \hline
       DPPE  & Slipids \cite{jambeck12b}    &0    & 288 	& 9386  &0    & 336  & 200 & 100 & \cite{slipidsDPPEfiles}  \\
       POPE  & Slipids \cite{jambeck12b} &0    & 336	& ?     &0    & 310  & 2$\times$200 &  2$\times$100 & \cite{slipidsPOPEfiles}  \\
       POPE  & Slipids \cite{jambeck12b}            & 0    & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPEslipids} \\
-      POPE  & Slipids / {\AA}qvist \cite{jambeck12b,aqvist90}  & 0.11 & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPEslipids150mMNaCl} \\
+%      POPE  & Slipids / {\AA}qvist \cite{jambeck12b,aqvist90}  & 0.11 & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPEslipids150mMNaCl} \\
       \hline
       DPPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 3655  &0    & 342  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdppe} \\
 %      POPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 3552  &0    & 313  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPpope} \\
       POPE  & GROMOS-CKP    \cite{??}      &0    & 500	& 25000 &0    & 310  & 500 & 100 & \cite{gromosCKPpopeT310} \\
-      POPE  & GROMOS-CKP    \cite{??}      &0.11 & 500	& 25000 &50   & 310  & 500 & 100 & \cite{gromosCKPpopeT310150mMNaCl} \\
+%      POPE  & GROMOS-CKP    \cite{??}      &0.11 & 500	& 25000 &50   & 310  & 500 & 100 & \cite{gromosCKPpopeT310150mMNaCl} \\
 %      DOPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdope} \\
       \hline
       POPE  & GROMOS 43A1-S3 \cite{??}     &0    & 128	& 3552     &0    & 313  & 2$\times$200 & 2$\times$100 & \cite{gromos43a1s3POPEfiles}  \\
@@ -441,11 +452,11 @@ For united atom simulations, we first constructed trajectories including hydroge
 %      DOPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$300 & 2$\times$100 & \cite{berger2DOPEfiles} \\ 
       \hline
       POPE             & Lipid17 \cite{gould18} & 0      & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17} \\
-      POPE             & Lipid17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
+%      POPE             & Lipid17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
     \end{tabular}
     }
   \end{minipage}
-  \todo{Citation for CHARMM36 PE?} \\
+  \todo{Citation for CHARMM36ua?} \\
   \todo{Which ion model is used in \cite{POPEcharmm150mMNaCl}?} \\
   \todo{Citation for GROMOS-CKP?} \\
   \todo{Citation for GROMOS 43A1-S3?} \\
@@ -469,25 +480,24 @@ For united atom simulations, we first constructed trajectories including hydroge
       % some footnotes are not visible in typeset-MS (pdf)
       lipid/counter-ions & force field for lipids / ions & NaCl (M) &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$  & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
-      POPG/K$^+$  & CHARMM36 \cite{??} \todoi{Correct citation for CHARMM POPG}    &0         & 118& 4110   &0    & 298  & 100 & 100 & \cite{CHARMM36popg}  \\
-      POPG             & CHARMM36 \cite{??}        & 0.11           & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGcharmm150mMNaCl} \\
-      POPG             & CHARMM36 \cite{??}        & 0              & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPGcharmm} \\
+      POPG/K$^+$  & CHARMM36 \cite{venable13}       &0         & 118& 4110   &0    & 298  & 100 & 100 & \cite{CHARMM36popg}  \\
+%      POPG             & CHARMM36 \cite{venable13}        & 0.11           & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGcharmm150mMNaCl} \\
+      POPG             & CHARMM36 \cite{venable13}        & 0              & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPGcharmm} \\
       \hline
       POPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    &0         & 288 	& 10664   &0     & 298  & 250 & 100 & \cite{slipidsPOPGfiles} \\
       DPPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    &0         & 288 	& 11232  &0     & 314  & 200 & 100 & \cite{slipidsDPPGfiles} \\
       DPPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    &0         & 288 	& 11232   &0     & 298  & 400 & 100 & \cite{slipidsDPPGfilesT298K} \\
       POPG         & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    & 0    & 500 & 25000 & 0  &  310  & 500 & 100 & \cite{POPGslipids} \\
-      POPG         & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    & 0.11    & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGslipids150mMNaCl} \\
+%      POPG         & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    & 0.11    & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGslipids150mMNaCl} \\
       \hline
-      POPG             & LIPID17 / Dang \cite{gould18,smith94}         & 0              & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPGlipid17} \\
-      POPG             & LIPID17 \cite{??}         & 0.11           & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGlipid17150mMNaCl} \\
+      POPG             & LIPID17 / Dang \cite{gould18,smith94,dang06}         & 0              & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPGlipid17} \\
+%      POPG             & LIPID17 \cite{gould18}         & 0.11           & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGlipid17150mMNaCl} \\
       \hline
       POPG             & GROMOS-CKP \cite{??}         & 0              & 500 & 25000 & 0  &  310  & 500 & 100 & \cite{POPGgromosCKP} \\
-      POPG             & GROMOS-CKP \cite{??}         & 0.11           & 500 & 25000 & 49 &  310  & 500 & 100 & \cite{POPGgromosCKP150mMNaCl} \\
+%      POPG             & GROMOS-CKP \cite{??}         & 0.11           & 500 & 25000 & 49 &  310  & 500 & 100 & \cite{POPGgromosCKP150mMNaCl} \\
     \end{tabular}
     }
   \end{minipage}
-    \todo{Citations and ion model for CHARMM36?} \\
   \todo{Citation and ion model for GROMOS-CKP?}
 \end{table*}
 % \end{sidewaystable*}
@@ -510,17 +520,17 @@ For united atom simulations, we first constructed trajectories including hydroge
       \hline
 %      POPC                   & CHARMM36 \cite{??}        & 0.11      & 0  & 500     & 25000 & 48  &  310  & 500 & 100 & \cite{POPCcharmm150mMNaCl301K}  \\
 %      POPC:POPG (7:3)        & CHARMM36 \cite{??}        & 0.11      & 0  & 350     & ?     & ?   &  310  & 500 & 100 & \cite{POPC7POPG1charmm36NaCl}  \\
-      POPC                   & CHARMM36 \cite{??}        & 0         & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCcharmmT310K}  \\
-      POPC:POPG (7:3)        & CHARMM36 \cite{??}        & 0         & 0  & 350     & 25000 & 0   &  310  & 500 & 100 & \cite{POPC7POPG1charmm36}  \\
-      POPC:POPG (1:1)        & CHARMM36 \cite{??}        &0          & 0  & 150:150 & 31500 & 0   &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG5050} \\ 
-      POPC:POPG (1:1)        & CHARMM36 \cite{??}        &0          & 0.1 & 150:150 & 31329 & 57 &  298  & 400 & 300 & \cite{CHARMM36POPCPOPG5050100mMCaCl} \\
-      POPC:POPG (1:1)        & CHARMM36 \cite{??}        &0          & 1.08 & 150:150 & 29766 & 578  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG50501000mMCaCl} \\
-      POPC:POPG (4:1)        & CHARMM36 \cite{??}        &0          & 0  & 350:88 & 26280 & 0  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010} \\
-      POPC:POPG (4:1)        & CHARMM36 \cite{??}        &0          & 0.1 & 350:88 & 26280 & 47  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010100mMCaCl} \\
-      POPC:POPG (4:1)        & CHARMM36 \cite{??}        &0          & 1.0 & 350:88 & 24927 & 451  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG40101000mMCaCl} \\
+      POPC                   & CHARMM36 \cite{klauda10}        & 0         & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCcharmmT310K}  \\
+      POPC:POPG (7:3)        & CHARMM36 \cite{klauda10,venable13}        & 0         & 0  & 350     & 25000 & 0   &  310  & 500 & 100 & \cite{POPC7POPG1charmm36}  \\
+      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0  & 150:150 & 31500 & 0   &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG5050} \\ 
+      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0.1 & 150:150 & 31329 & 57 &  298  & 400 & 300 & \cite{CHARMM36POPCPOPG5050100mMCaCl} \\
+      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 1.08 & 150:150 & 29766 & 578  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG50501000mMCaCl} \\
+      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0  & 350:88 & 26280 & 0  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010} \\
+      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0.1 & 350:88 & 26280 & 47  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010100mMCaCl} \\
+      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 1.0 & 350:88 & 24927 & 451  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG40101000mMCaCl} \\
       \hline
-      POPC             & CHARMM36 \cite{??}        &0          & 0  & 256 & 8704 & 0  &  300  & 300 & 250 & \cite{POPCcharmm300K} \\
-      POPC:POPE (1:1)  & CHARMM36 \cite{??}        &0          & 0  & 128 & 8704 & 0  &  300  & 300 & 250 & \cite{POPC1POPE1charmm36} \\
+      POPC             & CHARMM36 \cite{klauda10}        &0          & 0  & 256 & 8704 & 0  &  300  & 300 & 250 & \cite{POPCcharmm300K} \\
+      POPC:POPE (1:1)  & CHARMM36 \cite{klauda10,venable13}        &0          & 0  & 128 & 8704 & 0  &  300  & 300 & 250 & \cite{POPC1POPE1charmm36} \\
       \hline
       POPC             & OPLS-MacRog \cite{rog16}     &0          & 0  & 128 & 5120 & 0  &  300  & 500 & 300 & \cite{POPCmacrog300K} \\
       POPC:POPE (1:1)  & OPLS-MacRog \cite{rog16}     &0          & 0  & 128 & 5120 & 0  &  300  & 500 & 300 & \cite{POPC1POPE1macrogT300K} \\
@@ -576,10 +586,10 @@ For united atom simulations, we first constructed trajectories including hydroge
       \hline
       POPC             & Berger \cite{??} \todoi{This is probable not plain berger, correct force filed should be described.}  &0  & 0  & 256 & 10240 & 0  &  300  & 300 & 200 & \cite{POPCberger300K} \\
       POPC:POPE (1:1)  & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 128 & 11008 & 0  &  300  & 300 & 200 & \cite{POPC1POPE1berger} \\
-      POPC:DOPE (1:1)  & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 128 & 10240 & 0  &  300  & 300 & 200 & \cite{POPC1DOPE1berger} \\
-     \hline
-      DOPC             & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 256 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPCberger300K} \\
-      DOPC:DOPE (1:1)  & Berger \cite{??}   \todoi{This is probable not plain berger, correct force filed should be described.}  &0          & 0  & 128 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPC1DOPE1berger} \\
+      %POPC:DOPE (1:1)  & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 128 & 10240 & 0  &  300  & 300 & 200 & \cite{POPC1DOPE1berger} \\
+    % \hline
+    %  DOPC             & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 256 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPCberger300K} \\
+      %DOPC:DOPE (1:1)  & Berger \cite{??}   \todoi{This is probable not plain berger, correct force filed should be described.}  &0          & 0  & 128 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPC1DOPE1berger} \\
     \end{tabular}
     }
   \end{minipage}
@@ -587,21 +597,23 @@ For united atom simulations, we first constructed trajectories including hydroge
 \end{table*}
 %\end{sidewaystable*}
 
+\clearpage
 
 \subsection{CHARMM36}
 
 \noindent {\it POPE} \todo{Simulation details by M. Javanainen}.
 
-\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}
+%\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}
 
 \noindent {\it POPG} Lipid bilayer containing 118 POPG molecules, 4110 TIP3P water molecules, and 118 potassium ions was build using CHARMM-GUI \cite{lee16}.
 The system was simulated 100~ns, coupled to 298 K using Nose-Hoover~\cite{nose84,hoover85} thermostat and 1 bar with
 semi-isotropic Parrinello-Rahman~\cite{parrinello81} pressure coupling.
-The used default parameters and force field files from CHARMM-GUI are available from \citenum{CHARMM36popg}.
+The used default parameters and force field files from CHARMM-GUI were used.
+The used files are available from \citenum{CHARMM36popg}.
 
 \todo{Simulation details for larger simulation by A. Peon.}
 
-\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
+%\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
 
 \noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCcharmm300K,POPC1POPE1charmm36}.
 300 K with v-rescale (tau=0.1 ps),
@@ -612,11 +624,24 @@ rcoulomb and rvdw 1.0,
 no ion \todo{Full simulation details by Fuchs et al.}
 
 \noindent {\it POPC:POPG 1:1 and POPC:POPG 4:1 mixtures with additional calcium} 
-The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}. The TIP3P water model was used to solvate the systems. The simulations were run for 400~ns with timestep 2~fs and the first 100~ns were discarded as equilibration time. The simulations were run with GROMACS version 2020.2~\cite{pall20}. The Nose-Hoover thermostat~\cite{nose84,hoover85} was used with temperature of 298~K and the time constant for temperature coupling was 1.0~ps. The semi-isotropic Parinello-Rahman barostat~\cite{parrinello81} was used with reference pressure 1.0~bar and with a time constant of 5.0~ps with compressibility of 4.5e-5~bar$^{-1}$. Long range electrostatic interactions were calculated with the PME method. All bonds with hydrogen atoms were constrained with LINCS algorithm.
+The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}. The TIP3P water model was used to solvate the systems. The simulations were run for 400~ns with timestep 2~fs and the first 100~ns were discarded as equilibration time. The simulations were run with GROMACS version 2020.2~\cite{pall20}. The Nose-Hoover thermostat~\cite{nose84,hoover85} was used with temperature of 298~K and the time constant for temperature coupling was 1.0~ps. The semi-isotropic Parrinello-Rahman barostat~\cite{parrinello81} was used with reference pressure 1.0~bar and with a time constant of 5.0~ps with compressibility of 4.5e-5~bar$^{-1}$. Long range electrostatic interactions were calculated with the PME method. All bonds with hydrogen atoms were constrained with LINCS algorithm.
 The simulation files are available from Refs.~\citenum{CHARMM36POPCPOPG5050,CHARMM36POPCPOPG5050100mMCaCl,CHARMM36POPCPOPG50501000mMCaCl,CHARMM36POPCPOPG4010,CHARMM36POPCPOPG4010100mMCaCl,CHARMM36POPCPOPG40101000mMCaCl}.
 
 
 \noindent {\it POPC and POPC:POPG (7:3) mixture} \todo{Simulation details by A. Peon.}
+
+\noindent {\it POPC and cationic surfactant (dihexadecyldimethylammonium) mixture}
+Intial structures were taken from similar previously published \cite{melcr18} simulations with Amber lipid14 force field,
+which are available from Ref. \citenum{POPClipid14T313K,POPClipid1410perCATsurfT313K,POPClipid1420perCATsurfT313K,POPClipid1430perCATsurfT313K,POPClipid1442perCATsurfT313K,POPClipid1450perCATsurfT313K}.
+Default simulations parameters and force field files from CHARMM-GUI \cite{lee16} were used, except for dihexadecyldimethylammonium
+for which the atom types and partial charges of Amber lipid14 parameters from previous work \cite{melcr18} were modified to correspond Charmm36
+force field. 
+Systems contained 50 POPC molecules, 3983 water molecules, and 12, 30, 44, or 88 dihexadecyldimethylammonium molecules.
+Chloride ions were used as counterions for dihexadecyldimethylammonium.
+Reference system without cationic surfactants contained 200 POPC and 9000 water molecules.
+Systems were simulated 200 ns (the first 20 ns was discarded as an equilibration period)
+using Gromacs 5 \cite{abraham2015gromacs} at the temperature of 313 K.
+All simulation files are available from Refs. \citenum{charmmPOPC313K,CHARMM36cationicSURF}.
 
 \subsection{CHARMM36ua}
 
@@ -629,24 +654,30 @@ The simulation files are available from Refs.~\citenum{CHARMM36POPCPOPG5050,CHAR
 \subsection{Slipids}
 \noindent {\it POPE} Data is available at \cite{slipidsPOPEfiles}. \todo{Simulation details by  T. Piggot.}
 
-\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.
-  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.
-}
+%\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.
+%  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.
+%}
 
-\noindent {\it DPPE with 288 lipids.} The starting structure for simulation was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}: 288 DPPE lipids and 9386 water molecules. The TIP3P~\cite{jorgensen83} water model was used to solvate the system.
+\noindent {\it DPPE with 288 lipids.} The starting structure for simulation
+with 288 DPPE lipids and 9386 water molecules
+was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}. The TIP3P~\cite{jorgensen83} water model was used to solvate the system.
 Simulation was performed for 200~ns, and the last 100~ns were used for the analysis. Simulation was carried out within the NPT ensemble using the GROMACS 5.0.4 package~\cite{abraham2015gromacs}. Timestep of 2~fs was used with the leapfrog integrator. The Nos\'{e}--Hoover thermostat~\cite{nose84,hoover85} was used with reference temperature of 336~K and a relaxation time constant of 0.5~ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1.013~bar using a semi--isotropic Parrinello--Rahman
 barostat~\cite{parrinello81} with a time constant of 10.0~ps. Long-range electrostatic interactions were calculated using the PME method~\cite{darden93,essman95}. A real space cut-off of 1.0~nm was employed with grid spacing of 0.12~nm in the reciprocal space. Lennard-Jones potentials were cut off at 1.4~nm, with a dispersion correction applied to both energy and pressure. All covalent bonds in lipids were constrained using the LINCS algorithm~\cite{hess97}, whereas water molecules were constrained using SETTLE~\cite{miyamoto92}. Twin-range cutoffs, 1.0~nm and 1.6~nm, were used for the neighbor lists with the long-range neighbor list updated every 10 steps.
 
-\noindent {\it POPG with 288 lipids.} The starting structure for simulation was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}: 288 POPG lipids, 10664 water molecules and 288 Na ions. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by Aqvist~\cite{aqvist90}.
+\noindent {\it POPG with 288 lipids.} The starting structure for simulation
+with 288 POPG lipids, 10664 water molecules and 288 Na ions
+was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by \AA qvist~\cite{aqvist90}.
 Simulation was performed for 250~ns, and the last 100~ns were used for the analysis. Same simulation conditions as DPPE with reference temperature of 298~K.
 
-\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.
-  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
+%\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.
+%  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
 
-\noindent {\it DPPG with 288 lipids.} The starting structure for simulation was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}: 288 DPPG lipids, 11232 water molecules and 288 Na ions. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by Aqvist~\cite{aqvist90}. For the 298~K temperature, simulation was performed for 400~ns, and the last 100~ns were used for the analysis. For the 314~K temperature, simulation was performed for 200~ns, and the last 100~ns were used for the analysis. Same simulation conditions as DPPE for both temperatures.
+\noindent {\it DPPG with 288 lipids.} The starting structure for simulation
+with 288 DPPG lipids, 11232 water molecules and 288 Na ions
+was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by \AA qvist~\cite{aqvist90}. For the 298~K temperature, simulation was performed for 400~ns, and the last 100~ns were used for the analysis. For the 314~K temperature, simulation was performed for 200~ns, and the last 100~ns were used for the analysis. Same simulation conditions as DPPE for both temperatures.
 
-\noindent {\it POPC:POPG mixture with additional NaCl} \todo{Simulation details by A. Peon.
-  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
+%\noindent {\it POPC:POPG mixture with additional NaCl} \todo{Simulation details by A. Peon.
+%  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
 
 \noindent {\it POPC:POPG mixture with additional CaCl} \todo{Simulation details by M. Javanainen.}
 
@@ -665,7 +696,7 @@ Berger - \{{\it molecule name}\} - \{{\it year when model published first time}\
 
 %\noindent {\it DOPE} Data is available at \cite{bergerDOPEfiles,berger2DOPEfiles}. \todo{Simulation details by  T. Piggot.}
 
-\noindent {\it POPC:POPE, POPC:DOPE and DOPC:DOPE mixtures} Data is available at \cite{POPCberger300K,POPC1POPE1berger}. 
+\noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCberger300K,POPC1POPE1berger}. 
 300 K with v-rescale (tau=0.1 ps),
 1 bar with PR semiisotropic (tau=4 ps, compressibility=4.5e-5 bar$^{-1}$),
 PME order 4 and space 0.12,
@@ -707,35 +738,44 @@ no ion \todo{Simulation details by Fuchs et al.}
 
 \noindent {\it POPG} \todo{Simulation details by A. Peon.}
 
-\noindent {\it POPC:POPG 4:1 and POPC:POPG 1:1 mixtures}
-Initial structures were build by removing appropriate amount of lipids from POPC:POPG 7:3 mixture available at Ref.~\cite{POPCPOPG73lipid17}.
+\noindent {\it POPC:POPG 4:1 and POPC:POPG 1:1 mixtures with different CaCl$_2$ concentrations}
+Initial structures were build by removing appropriate amount of lipids from POPC:POPG 7:3 mixture available from Ref.~\citenum{POPCPOPG73lipid17}.
 Force field parameters from the same reference were used \todo{We still need description from A. Peon how these were obtained},
 except that incorrect dihedrals with type 1 were changed to type 9
-(for details, see discussion in here \url{https://github.com/NMRLipids/NMRlipidsIVPEandPG/issues/12}).
-Simulations were performed using the Gromacs simulation package~\cite{pall20} with time step of 2~fs. 
+(for details, see discussion in \url{https://github.com/NMRLipids/NMRlipidsIVPEandPG/issues/12}).
+Simulations were performed using the Gromacs simulation package~\cite{pall20} with the time step of 2~fs. 
 The non-bonded interactions were calculated directly within 1.0~nm cutoff; the Verlet scheme was used\cite{Pall13};
 and the long-range electrostatic forces were calculated using particle mesh Ewald~\cite{essman95}. 
 The bond lengths of hydrogen atoms were constrained using LINCS~\cite{hess97}.
 Temperature was coupled to the velocity rescaling thermostat \cite{bussi07} at 298~K with a coupling constant of 1~ps.
 Pressure was coupled to the Parrinello--Rahman barostat \cite{parrinello81} at 1~bar with a coupling constant of 10~ps. 
+For simulations with CaCl$_2$, appropriate amount of ions with Dang~\cite{smith94,dang06} parameters were added into the solvent.
+The simulation files are available from
+Refs.~\citenum{Lipid17POPCPOPG8020,Lipid17POPCPOPG8020100mMCaCl,Lipid17POPCPOPG80201000mMCaCl,Lipid17POPCPOPG5050,Lipid17POPCPOPG5050100mMCaCl,Lipid17POPCPOPG50501000mMCaCl}
+
 
 
 
 \subsection{Lipid17ecc}
-
-\todo{This is to be finished and POPC:POPG mixtures to be described}
-In ECC-lipid models, electronic continuum correction (ECC) is applied to 
-implicitly include the missing electronic polarizability into the force field description \cite{melcr18,melcr19}.
-In practise, this is implemented by scaling the charges and Lennard-Jones $\sigma$s of headgroup, glycerol backbone, and carbonyl regions
-of Amber Lipid14/17 models are scaled by constant factors.
-Here, we follow the approach that previously improved ion binding to bilayers containing negatively charged PS lipids \cite{melcr19}:
-ECC-POPC parameters (scaling factors $f_q$=0.8 and $f_\sigma$=0.89 applied to Lipid14 POPC parameters) \cite{melcr18} were used for POPC
-and scaling factors of $f_q$=0.75 and $f_\sigma$=0.89 were applied to the charges and Lennard-Jones $\sigma$s of headgroup, glycerol backbone, and carbonyl regions
-of Amber Lipid17 POPG parameters. The Lipid17 parameters (described above) and initial configurations
-were taken from Ref. \cite{POPGlipid17} with the correct dihedral type,
-and the resulting parameters are available from Ref. \citenum{??}. ECC-ion parameters with the scaled charges \cite{pluharova14,kohagen16,martinek18},
-downloaded from \url{bitbucket.org/hseara/ions/src/master/}, were used in these simulations. 
-
+\noindent {\it POPC:POPG 4:1 and POPC:POPG 1:1 mixtures with different CaCl$_2$ concentrations}
+Implicit inclusion of electronic polarizability by electronic continuum correction (ECC),
+implemented by scaling the partial charges in force fields, can be used to improve ion interactions with lipids
+and other biomolecules in classical MD simulations~\cite{dijon20}.
+For Amber Lipid14/17 force fields, ECC has been previously implemented by scaling the
+charges and Lennard-Jones~$\sigma$s of headgroup, glycerol backbone, and carbonyl regions
+by constant factors~\cite{melcr18,melcr20}.
+Here, we apply similar ECC approach to Amber Lipid17 PG parameters as done previously for PS \cite{melcr20}:
+charges and Lennard-Jones $\sigma$s of headgroup, glycerol backbone, and carbonyl regions
+of parameters POPG from Ref.~\citenum{POPCPOPG73lipid17} were scaled by factors of $f_q$=0.75 and $f_\sigma$=0.89, respectively
+(and the dihedral types were corrected to type 9 as in previous section).
+Previously introduced ECC-POPC parameters (scaling factors $f_q$=0.8 and $f_\sigma$=0.89 applied to Lipid14 POPC parameters)
+were used for POPC~\cite{melcr18}.
+ECC-ion parameters with the scaled charges \cite{pluharova14,kohagen16,martinek18}
+from \url{bitbucket.org/hseara/ions/src/master/}, and SPC/E water model~\cite{berendsen87} were used in these simulations. 
+Rest of the simulation parameters and initial configurations were taken from Lipid17
+simulations~\cite{Lipid17POPCPOPG8020,Lipid17POPCPOPG8020100mMCaCl,Lipid17POPCPOPG80201000mMCaCl,Lipid17POPCPOPG5050,Lipid17POPCPOPG5050100mMCaCl,Lipid17POPCPOPG50501000mMCaCl}.
+Simulation files of Lipid17ecc simulations are available from
+Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17eccPOPCPOPG80201000mMCaCl,Lipid17eccPOPCPOPG5050,Lipid17eccPOPCPOPG5050100mMCaCl,Lipid17eccPOPCPOPG50501000mMCaCl}.
 
 
 
