@@ -425,7 +425,7 @@ For united atom simulations, we first constructed trajectories including hydroge
       POPE  & CHARMM36 \cite{klauda10}           &0       & 144	& 5760  &0    & 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
       POPE  & CHARMM36 \cite{klauda10}           & 0      & 500       & 25000 & 0   &  310  & 500 & 100 & \cite{POPEcharmm} \\
 %      POPE  & CHARMM36 \cite{klauda10}           & 0.11   & 500       & 25000 & 50  &  310  & 500 & 100 & \cite{POPEcharmm150mMNaCl} \\
-      POPE  & CHARMM36ua \cite{??}         &0       & 336	& 15254 &0    & 310  & 2$\times$200 & 2$\times$100 & \cite{charmm36uaPOPEfiles}  \\
+      POPE  & CHARMM36-UA \cite{??}         &0       & 336	& 15254 &0    & 310  & 2$\times$200 & 2$\times$100 & \cite{charmm36uaPOPEfiles}  \\
       \hline
       DPPE  & Slipids \cite{jambeck12b}    &0    & 288 	& 9386  &0    & 336  & 200 & 100 & \cite{slipidsDPPEfiles}  \\
       POPE  & Slipids \cite{jambeck12b} &0    & 336	& ?     &0    & 310  & 2$\times$200 &  2$\times$100 & \cite{slipidsPOPEfiles}  \\
@@ -446,13 +446,13 @@ For united atom simulations, we first constructed trajectories including hydroge
       POPE  & OPLS-MacRog \cite{rog16}     &0    & 144	& 5760     &0    & 310  & 500 & 350 & \cite{MacRogPOPEfiles} \\
 %      POPE  & OPLS-MacRog \cite{rog16}     &0    & 128	& 5120     &0    & 300  & 500 & 300 & \cite{MacRogPOPEfilesT300K} \\
       \hline
-      POPE  & Berger-Vries \cite{??}       &0    & 128	& 3552  &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{bergerPOPEfiles}  \\
-      POPE  & Berger-largeH \cite{??}      &0    & 128	& 3552  &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{berger2POPEfiles}  \\
-%      DOPE  & Berger-Vries \cite{??}       &0    & 128	& 4789  &0    & 271  & 2$\times$200 & 2$\times$100 & \cite{bergerDOPEfiles}  \\
-%      DOPE  & Berger-largeH \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$300 & 2$\times$100 & \cite{berger2DOPEfiles} \\ 
+      POPE  & Berger-POPE-2004 \cite{??}       &0    & 128	& 3552  &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{bergerPOPEfiles}  \\
+      POPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 3552  &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{berger2POPEfiles}  \\
+%      DOPE  & Berger-POPE-2004 \cite{??}       &0    & 128	& 4789  &0    & 271  & 2$\times$200 & 2$\times$100 & \cite{bergerDOPEfiles}  \\
+%      DOPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$300 & 2$\times$100 & \cite{berger2DOPEfiles} \\ 
       \hline
-      POPE             & LIPID17 \cite{gould18} & 0      & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17} \\
-%      POPE             & LIPID17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
+      POPE             & Lipid17 \cite{gould18} & 0      & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17} \\
+%      POPE             & Lipid17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
     \end{tabular}
     }
   \end{minipage}
@@ -684,7 +684,15 @@ was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}. The TI
 
 \subsection{Berger}
 
-\noindent {\it POPE} Data is available at \cite{bergerPOPEfiles,berger2POPEfiles}. \todo{Simulation details by  T. Piggot.}
+Following the earlier convention in the NMRlipids Project~\cite{botan15}, 
+for the Berger-based models we use the following naming convention: 
+Berger - \{{\it molecule name}\} - \{{\it year when model published first time}\} \{{\it citation}\}.
+%The reason is that there are several different molecular topologies which are using the non-bonded parameters originally
+%developed by Berger et al.~\cite{berger97}. Thus the common factor in the Berger based models are the non-bonded parameters,
+%while the molecule specific parameters might somewhat vary. However, the majority of the molecular level topologies are 
+%relying (especially for the glycerol backbone and headgroup) on the parameters originally introduced by Marrink et al.~\cite{marrink98}.
+
+\noindent {\it POPE} Data are available at Ref.~\citenum{bergerPOPEfiles} for Berger-POPE-2004~\cite{??} and at Ref.~\citenum{berger2POPEfiles} for Berger-POPE-2018~\cite{??}. \todo{Simulation details by  T. Piggot.}
 
 %\noindent {\it DOPE} Data is available at \cite{bergerDOPEfiles,berger2DOPEfiles}. \todo{Simulation details by  T. Piggot.}
 
