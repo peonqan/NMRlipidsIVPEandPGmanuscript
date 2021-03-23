@@ -417,41 +417,77 @@ For united atom simulations, we first constructed trajectories including hydroge
   }\label{systemsPE}
   \begin{minipage}[t]{\textwidth}
   \resizebox{\columnwidth}{!}{
-    \begin{tabular}{l c c r r r r r r c c}
+%    \begin{tabular}{l c c r r r r r r c c}
+    \begin{tabular}{l c r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
-      lipid & force field for lipids / ions  & NaCl (M) & \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$   & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
+      lipid 	& force field for lipids  %& NaCl (M) 
+      		& \footnote{Number of lipid molecules}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   %& \footnote{Number of additional cations}N$_{\rm c}$   
+		& \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
-      POPE  & CHARMM36 \cite{klauda10}           &0       & 144	& 5760  &0    & 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
-      POPE  & CHARMM36 \cite{klauda10}           & 0      & 500       & 25000 & 0   &  310  & 500 & 100 & \cite{POPEcharmm} \\
-%      POPE  & CHARMM36 \cite{klauda10}           & 0.11   & 500       & 25000 & 50  &  310  & 500 & 100 & \cite{POPEcharmm150mMNaCl} \\
-      POPE  & CHARMM36-UA \cite{??}         &0       & 336	& 15254 &0    & 310  & 2$\times$200 & 2$\times$100 & \cite{charmm36uaPOPEfiles}  \\
+      POPE & CHARMM36 \cite{klauda10}           %&0       
+      		& 144	& 5760  %&0    
+		& 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
+      POPE & CHARMM36 \cite{klauda10}           %& 0      
+      		& 500       & 25000 %& 0   
+		&  310  & 500 & 100 & \cite{POPEcharmm} \\
+%   POPE	& CHARMM36 \cite{klauda10}           %& 0.11
+%		& 500       & 25000 & 50  &  310  & 500 & 100 & \cite{POPEcharmm150mMNaCl} \\
+      POPE	& CHARMM36-UA \cite{??}         %&0       
+      		& 336	& 15254 %&0    
+		& 310  & 2$\times$200 & 2$\times$100 & \cite{charmm36uaPOPEfiles}  \\
       \hline
-      DPPE  & Slipids \cite{jambeck12b}    &0    & 288 	& 9386  &0    & 336  & 200 & 100 & \cite{slipidsDPPEfiles}  \\
-      POPE  & Slipids \cite{jambeck12b} &0    & 336	& ?     &0    & 310  & 2$\times$200 &  2$\times$100 & \cite{slipidsPOPEfiles}  \\
-      POPE  & Slipids \cite{jambeck12b}            & 0    & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPEslipids} \\
-%      POPE  & Slipids / {\AA}qvist \cite{jambeck12b,aqvist90}  & 0.11 & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPEslipids150mMNaCl} \\
+      DPPE	& Slipids \cite{jambeck12b}    %&0    
+      		& 288 	& 9386  %&0    
+		& 336  & 200 & 100 & \cite{slipidsDPPEfiles}  \\
+      POPE	& Slipids \cite{jambeck12b} %&0    
+      		& 336	& ?     %&0    
+		& 310  & 2$\times$200 &  2$\times$100 & \cite{slipidsPOPEfiles}  \\
+      POPE	& Slipids \cite{jambeck12b}            %& 0
+		& 500 & 25000 %& 0   
+		&  310  & 500 & 100 & \cite{POPEslipids} \\
+%      POPE  & Slipids / {\AA}qvist \cite{jambeck12b,aqvist90}  %& 0.11
+%		& 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPEslipids150mMNaCl} \\
       \hline
-      DPPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 3655  &0    & 342  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdppe} \\
-%      POPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 3552  &0    & 313  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPpope} \\
-      POPE  & GROMOS-CKP    \cite{??}      &0    & 500	& 25000 &0    & 310  & 500 & 100 & \cite{gromosCKPpopeT310} \\
+      DPPE	& GROMOS-CKP    \cite{??}      %&0
+          	& 128	& 3655  %&0    
+		& 342  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdppe} \\
+%      POPE  & GROMOS-CKP    \cite{??}      %&0
+%    		& 128	& 3552  &0    & 313  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPpope} \\
+      POPE	& GROMOS-CKP    \cite{??}      %&0
+          	& 500	& 25000 %&0    
+		& 310  & 500 & 100 & \cite{gromosCKPpopeT310} \\
 %      POPE  & GROMOS-CKP    \cite{??}      &0.11 & 500	& 25000 &50   & 310  & 500 & 100 & \cite{gromosCKPpopeT310150mMNaCl} \\
 %      DOPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdope} \\
       \hline
-      POPE  & GROMOS 43A1-S3 \cite{??}     &0    & 128	& 3552     &0    & 313  & 2$\times$200 & 2$\times$100 & \cite{gromos43a1s3POPEfiles}  \\
+      POPE	& GROMOS 43A1-S3 \cite{??}     %&0
+          	& 128	& 3552     %&0    
+		& 313  & 2$\times$200 & 2$\times$100 & \cite{gromos43a1s3POPEfiles}  \\
       \hline
-      POPE  & OPLS-UA vdW on H \cite{??}   &0    & 128	& 3328     &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{OPLSuaWvdWPOPEfiles} \\
-      POPE  & OPLS-UA \cite{??}            &0    & 128	& 3328     &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{OPLSuaPOPEfiles} \\
+      POPE	& OPLS-UA/HG-H \cite{??}   %&0    
+      		& 128	& 3328     %&0    
+		& 303  & 2$\times$200 & 2$\times$100 & \cite{OPLSuaWvdWPOPEfiles} \\
+      POPE	& OPLS-UA \cite{??}            %&0
+      		& 128	& 3328     %&0    
+		& 303  & 2$\times$200 & 2$\times$100 & \cite{OPLSuaPOPEfiles} \\
       \hline
-      POPE  & OPLS-MacRog \cite{rog16}     &0    & 144	& 5760     &0    & 310  & 500 & 350 & \cite{MacRogPOPEfiles} \\
-%      POPE  & OPLS-MacRog \cite{rog16}     &0    & 128	& 5120     &0    & 300  & 500 & 300 & \cite{MacRogPOPEfilesT300K} \\
+      POPE	& OPLS-MacRog \cite{rog16}     %&0    
+      		& 144	& 5760     %&0    
+		& 310  & 500 & 350 & \cite{MacRogPOPEfiles} \\
+%   POPE	& OPLS-MacRog \cite{rog16}     &0    & 128	& 5120     &0    & 300  & 500 & 300 & \cite{MacRogPOPEfilesT300K} \\
       \hline
-      POPE  & Berger-POPE-2004 \cite{??}       &0    & 128	& 3552  &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{bergerPOPEfiles}  \\
-      POPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 3552  &0    & 303  & 2$\times$200 & 2$\times$100 & \cite{berger2POPEfiles}  \\
-%      DOPE  & Berger-POPE-2004 \cite{??}       &0    & 128	& 4789  &0    & 271  & 2$\times$200 & 2$\times$100 & \cite{bergerDOPEfiles}  \\
-%      DOPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$300 & 2$\times$100 & \cite{berger2DOPEfiles} \\ 
+      POPE	& Berger-POPE-2004 \cite{??}       %&0    
+      		& 128	& 3552  %&0    
+		& 303  & 2$\times$200 & 2$\times$100 & \cite{bergerPOPEfiles}  \\
+      POPE	& Berger-POPE-2018 \cite{??}      %&0    
+      		& 128	& 3552  %&0    
+		& 303  & 2$\times$200 & 2$\times$100 & \cite{berger2POPEfiles}  \\
+%   DOPE  & Berger-POPE-2004 \cite{??}       &0    & 128	& 4789  &0    & 271  & 2$\times$200 & 2$\times$100 & \cite{bergerDOPEfiles}  \\
+%   DOPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$300 & 2$\times$100 & \cite{berger2DOPEfiles} \\ 
       \hline
-      POPE             & Lipid17 \cite{gould18} & 0      & 500 & 25000 & 0  &  310  & 500 & 100 & \cite{POPElipid17} \\
+      POPE	& Lipid17 \cite{gould18} %& 0      
+      		& 500 & 25000 %& 0  
+		&  310  & 500 & 100 & \cite{POPElipid17} \\
 %      POPE             & Lipid17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
     \end{tabular}
     }
@@ -711,8 +747,10 @@ no ion \todo{Simulation details by Fuchs et al.}
 \subsection{OPLS-UA}
 
 \noindent {\it POPE} Data is available at \cite{OPLSuaPOPEfiles}. \todo{Simulation details by  T. Piggot.}
+%From Zenodo: The PE parameters were constructed by modifying the OPLS-UA POPC of Ulmschneider and Ulmschneider with the standard OPLS lysine parameters.
 
-\noindent {\it POPE with vdW interaction in H} Data is available at \cite{OPLSuaWvdWPOPEfiles}. \todo{Simulation details by  T. Piggot.}
+\noindent {\it POPE with vdW interaction in H (OPLS-UA/HG-H)} Data is available at \cite{OPLSuaWvdWPOPEfiles}. \todo{Simulation details by  T. Piggot.}
+%From Zenodo: The PE parameters were constructed by modifying the OPLS-UA POPC of Ulmschneider and Ulmschneider with the standard OPLS lysine parameters and the addition of LJ parameters on the hydrogen atoms in the head group (designed to increase the area per lipid).
 
 \subsection{GROMOS-CKP and GROMOS-CKPM}
 
