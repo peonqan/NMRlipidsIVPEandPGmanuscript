@@ -27,7 +27,7 @@
 }
 
 \author{\scriptsize Am{\'e}lie Bacle}
-\affiliation{Paris, France}
+\affiliation{Laboratoire Coopératif "Lipotoxicity and Channelopathies – ConicMeds", Université de Poitiers, 1 rue Georges Bonnet, 86000 Poitiers, France }
 
 \author{\scriptsize Pavel Buslaev}
 \affiliation{\tiny Nanoscience Center and Department of Chemistry, University of Jyv{\"a}skyl{\"a}, Finland}
@@ -43,8 +43,9 @@
 \author{Tiago Ferreira}
 \affiliation{Halle, Germany}
 
-\author{Patrick Fuchs}
-\affiliation{Paris, France}
+\author{Patrick F.J. Fuchs}
+\affiliation{Sorbonne Université, Ecole Normale Supérieure, PSL University, CNRS, Laboratoire des Biomolécules (LBM), 75005 Paris, France}
+\alsoaffiliation{Université de Paris, UFR Sciences du Vivant, 75013, Paris, France}
 
 \author{Ivan Gushchin}
 \affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
@@ -67,8 +68,8 @@ Czech Academy of Sciences, Flemingovo n\'{a}m. 542/2, CZ-16610 Prague 6, Czech R
 and The Zernike Institute for Advanced Materials, 
 University of Groningen, 9747 AG Groningen, The Netherlands}
 
-\author{Paula Milan Rodriguez}
-\affiliation{Paris, France}
+\author{Paula Milán Rodríguez}
+\affiliation{Sorbonne Université, Ecole Normale Supérieure, PSL University, CNRS, Laboratoire des Biomolécules (LBM), 75005 Paris, France}
 
 \author{Markus S. Miettinen}
 % \affiliation[Max Planck Institute of Colloids and Interfaces]{Department of Theory and Bio-Systems, Max Planck Institute of Colloids and Interfaces, 14424 Potsdam, Germany}
@@ -79,7 +80,7 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 \affiliation{Institute of Biotechnology, University of Helsinki}
 
 \author{Chris G. Papadopoulos}
-\affiliation[]{I2BC - University Paris Sud}
+\affiliation{Université Paris-Saclay, CEA, CNRS, Institute for Integrative Biology of the Cell (I2BC), 91198, Gif-sur-Yvette, France}
 
 
 \author{Antonio Pe{\'o}n}
@@ -223,7 +224,7 @@ All simulations except Berger-OPLS predict tilting of P-N headgroup outwards fro
 decrease of PC headgroup order parameters upon addition of PE lipids.
 These results are not in line with experiments where the PC headgroup order parameters are not affected by zwitterionic lipids \cite{scherer87}.
 The good performance of Berger-OPLS simulations is surprising here because
-headgroup conformational enemble is not very close to experiments in this model and
+headgroup conformational ensemble is not very close to experiments in this model and
 the response of headgroup order parameters
 to cholesterol was significantly overestimated by the Berger/H{\"o}ltje force field in our previous work \cite{botan15}.
 
@@ -651,12 +652,7 @@ The used files are available from \citenum{CHARMM36popg}.
 %\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
 
 \noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCcharmm300K,POPC1POPE1charmm36}.
-300 K with v-rescale (tau=0.1 ps),
-1 bar with PR semiisotropic (tau=4 ps, compressibility=4.5e-5 bar$^{-1}$),
-PME order 4 and space 0.12,
-rcoulomb and rvdw 1.0,
-128 lipids per leaflet,
-no ion \todo{Full simulation details by Fuchs et al.}
+A pure POPC system and a 50:50 POPC:POPE mixture were built and equilibrated using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935]. They contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and 34 water molecules per lipid. No ions were added. The production simulations were run for 300 ns with a time step of 2 fs. The first 50 ns were discarded for the analysis. The simulations were run with the GROMACS 2016.4 [https://doi.org/10.1016/j.softx.2015.06.001] version. The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 5.0 ps. A real space cut-off of 1.2 nm was employed for electrostatic interactions while the long-range part was evaluated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117]. A force-based switching function was used to switch the Lennard-Jones forces to zero over a range of 1−1.2 nm. All bonds with hydrogen atoms were constrained with the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H]. Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805]. The simulation files are available from ref 64 [https://doi.org/10.5281/zenodo.1306800] (pure POPC) and 65 [https://doi.org/10.5281/zenodo.1306821] (POPC:POPE mixture).
 
 \noindent {\it POPC:POPG 1:1 and POPC:POPG 4:1 mixtures with additional calcium} 
 The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}. The TIP3P water model was used to solvate the systems. The simulations were run for 400~ns with timestep 2~fs and the first 100~ns were discarded as equilibration time. The simulations were run with GROMACS version 2020.2~\cite{pall20}. The Nose-Hoover thermostat~\cite{nose84,hoover85} was used with temperature of 298~K and the time constant for temperature coupling was 1.0~ps. The semi-isotropic Parrinello-Rahman barostat~\cite{parrinello81} was used with reference pressure 1.0~bar and with a time constant of 5.0~ps with compressibility of 4.5e-5~bar$^{-1}$. Long range electrostatic interactions were calculated with the PME method. All bonds with hydrogen atoms were constrained with LINCS algorithm.
@@ -732,12 +728,9 @@ Berger - \{{\it molecule name}\} - \{{\it year when model published first time}\
 %\noindent {\it DOPE} Data is available at \cite{bergerDOPEfiles,berger2DOPEfiles}. \todo{Simulation details by  T. Piggot.}
 
 \noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCberger300K,POPC1POPE1berger}. 
-300 K with v-rescale (tau=0.1 ps),
-1 bar with PR semiisotropic (tau=4 ps, compressibility=4.5e-5 bar$^{-1}$),
-PME order 4 and space 0.12,
-rcoulomb and rvdw 1.0,
-128 lipids per leaflet,
-no ion \todo{Simulation details by Fuchs et al.}
+Two systems were simulated using the Berger force field [https://doi.org/10.1016/S0006-3495(97)78845-3], pure POPC and a mixture 50:50 POPC:POPE. For POPE, we additionnally used the de Vries modification implementing a repulsion of the hydrogen atoms located on the amino group of ethanolamine [https://doi.org/10.1021/jp0366926].
+Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 POPC:POPE mixture was built by mutating randomly methyl groups to hydrogens (POPC -> POPE). Each system contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and about 40 water molecules per lipid. No ions were added. Both systems were minimized and equilibrated. The production simulations were run for 300 ns with a time step of 2 fs. The first 100 ns were discarded for the analysis (@Samuli: this sentence may be removed if the analysis was done on a different time window). The simulations were run with GROMACS 4.5.3 [https://doi.org/10.1093/bioinformatics/btt055] version. The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 0.1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 4.0 ps. A real space cut-off of 1.0 nm was employed for van der Waals and electrostatic interactions. The long-range part of electrostatic interactions was evaluated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117] with a grid spacing of 0.12 nm and an interpolation order of 4. All bonds with hydrogen atoms were constrained with the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H]. Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805]. The simulation files are available from ref 91 [https://doi.org/10.5281/zenodo.1402417] (pure POPC) and 92 [https://doi.org/10.5281/zenodo.1402449] (POPC:POPE mixture).
+
 
 \subsection{GROMOS 43A1-S3}
 
@@ -767,7 +760,16 @@ no ion \todo{Simulation details by Fuchs et al.}
 
 \noindent {\it POPE} \todo{Simulation details by M. Javanainen} % and P. Fuchs.}
 
-\noindent {\it POPC:POPE mixtures} \todo{Simulation details by P. Fuchs.}
+\noindent {\it POPC:POPE mixtures} 
+
+Force field details
+Simulations of POPC:POPE mixtures using the OPLS-MacRog force field [https://doi.org/10.1021/jp5016627] were performed. The initial force field parameter files in GROMACS format were taken from ref [https://doi.org/10.1016/j.dib.2016.03.067]. However, a number of errors were detected in the published files so we fixed them in the following way. For POPE, the two aliphatic chains sn-1 and sn-2 were switched (in the file the lipid was in fact OPPE); one atom (named C27) was not connected to the previous atom in the aliphatic chain so bonds, angles, dihedrals, pairs were included to create the connection; two atoms were called C27 thus one of them was renamed C28. For POPC, some impropers were missing leading to non planar systems for double bonds (in particular the carbonyls of sn-1 and sn-2 as well as the double bond of the oleoyl chain), we thus added back those impropers. The resulting fixed files can be found on Zenodo (https://zenodo.org/record/3741793/files/popc_fixed.itp, https://zenodo.org/record/3725637/files/pope_fixed.itp). To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results of ref [https://doi.org/10.1021/acs.jpcb.5b04878]. We found very similar values.
+All the details of the procedure described here are described in https://www.dsimb.inserm.fr/~fuchs/project_Samuli/POPC_POPE/report_results_comparison.pdf.
+The data for pure POPC are available from [https://zenodo.org/record/3741793], for the POPC:POPE mixture from [https://zenodo.org/record/3725637].
+
+Simulation details
+Two systems of pure POPC and 50:50 POPC:POPE mixture were built using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935]. They contained 128 lipids and 5120 TIP3 water molecules. The initial PDB file was modified to match OPLS-MacRog nomenclature and atom order. No ions were added. The production simulations were run for 500 ns with a time step of 2 fs. The first 200 ns were discarded for the analysis (@Samuli: this sentence may be removed if the analysis was done on a different time window). The simulations were run withthe GROMACS 2018.5 [https://doi.org/10.1016/j.softx.2015.06.001] version. The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 0.1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 4.0 ps. Long-range electrostatic interactions were calculated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117]. A real space cut-off of 1.0 nm was employed with a grid spacing of 0.1 nm in the reciprocal space. Lennard-Jones potentials were cut off at 1.0 nm. All covalent bonds in lipids were constrained using the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H]. Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805]. The simulation files are available from ref 66 [https://doi.org/10.5281/zenodo.3741793] (pure POPC) and 67 [https://doi.org/10.5281/zenodo.3725637] (POPC:POPE mixture).
+
 
 \subsection{Lipid17}
 
@@ -821,7 +823,7 @@ Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17ecc
 
 \section{Author contributions}
 \noindent
-{\it Am{\'e}lie Bacle}
+{\it Am{\'e}lie Bacle} Amélie Bacle set up, performed and analysed POPC and POPC:POPE (1:1) simulations with the Berger Force Field.
 %% Please write description of your contribution here
 
 \noindent
@@ -841,7 +843,7 @@ Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17ecc
 %% Please write description of your contribution here
 
 \noindent
-{\it Patrick Fuchs}
+{\it Patrick F.J. Fuchs} supervised Paula Milán Rodríguez, Amélie Bacle and Chris Papadopoulos, created the buildH software, contributed to many discussions.
 %% Please write description of your contribution here
 
 \noindent
@@ -865,7 +867,7 @@ Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17ecc
 %% Please write description of your contribution here
 
 \noindent
-{\it Paula Milan Rodriguez}
+{\it Paula Milán Rodríguez} set up, performed and analysed POPC and POPC:POPE (1:1) simulations with the MacRog Force Field. She also fixed the initial force field (itp) files prior to the simulations.
 %% Please write description of your contribution here
 
 \noindent
@@ -878,7 +880,7 @@ designed the project and managed the work.
 Ran and analysed several simulations. Wrote the manuscript.
 
 \noindent
-{\it Chris G. Papadopoulos}
+{\it Chris G. Papadopoulos} set up, performed and analysed POPC and POPC:POPE (1:1) simulations with the CHARMM36 Force Field.
 %% Please write description of your contribution here
 
 \noindent
