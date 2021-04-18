@@ -27,7 +27,7 @@
 }
 
 \author{\scriptsize Am{\'e}lie Bacle}
-\affiliation{Laboratoire Coopératif "Lipotoxicity and Channelopathies – ConicMeds", Université de Poitiers, 1 rue Georges Bonnet, 86000 Poitiers, France }
+\affiliation{Laboratoire Coop\'{e}ratif "Lipotoxicity and Channelopathies – ConicMeds", Universit\'{e} de Poitiers, 1 rue Georges Bonnet, 86000 Poitiers, France }
 
 \author{\scriptsize Pavel Buslaev}
 \affiliation{\tiny Nanoscience Center and Department of Chemistry, University of Jyv{\"a}skyl{\"a}, Finland}
@@ -44,8 +44,8 @@
 \affiliation{Halle, Germany}
 
 \author{Patrick F.J. Fuchs}
-\affiliation{Sorbonne Université, Ecole Normale Supérieure, PSL University, CNRS, Laboratoire des Biomolécules (LBM), 75005 Paris, France}
-\alsoaffiliation{Université de Paris, UFR Sciences du Vivant, 75013, Paris, France}
+\affiliation{Sorbonne Universit\'{e}, Ecole Normale Sup\'{e}rieure, PSL University, CNRS, Laboratoire des Biomol\'{e}cules (LBM), 75005 Paris, France}
+\alsoaffiliation{Universit\'{e} de Paris, UFR Sciences du Vivant, 75013, Paris, France}
 
 \author{Ivan Gushchin}
 \affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
@@ -113,7 +113,6 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 
 \begin{document}
 \tableofcontents{}
-
 
 \section{R-PDLF and SDROSS experiments}
 
@@ -660,7 +659,19 @@ The used files are available from \citenum{CHARMM36popg}.
 %\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
 
 \noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCcharmm300K,POPC1POPE1charmm36}.
-A pure POPC system and a 50:50 POPC:POPE mixture were built and equilibrated using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935]. They contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and 34 water molecules per lipid. No ions were added. The production simulations were run for 300 ns with a time step of 2 fs. The first 50 ns were discarded for the analysis. The simulations were run with the GROMACS 2016.4 [https://doi.org/10.1016/j.softx.2015.06.001] version. The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 5.0 ps. A real space cut-off of 1.2 nm was employed for electrostatic interactions while the long-range part was evaluated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117]. A force-based switching function was used to switch the Lennard-Jones forces to zero over a range of 1−1.2 nm. All bonds with hydrogen atoms were constrained with the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H]. Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805]. The simulation files are available from ref 64 [https://doi.org/10.5281/zenodo.1306800] (pure POPC) and 65 [https://doi.org/10.5281/zenodo.1306821] (POPC:POPE mixture).
+A pure POPC system and a 50:50 POPC:POPE mixture were built and equilibrated using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935].
+They contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and 34 water molecules per lipid.
+No ions were added.
+The production simulations were run for 300 ns with a time step of 2 fs.
+The first 50 ns were discarded for the analysis.
+The simulations were run with the GROMACS 2016.4 [https://doi.org/10.1016/j.softx.2015.06.001] version.
+The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 1 ps; lipids and water were coupled separately to the heat bath.
+Pressure was kept constant at 1 bar using a semi-isotropic Parrinello--Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 5.0 ps.
+A real space cut-off of 1.2 nm was employed for electrostatic interactions while the long-range part was evaluated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117].
+A force-based switching function was used to switch the Lennard-Jones forces to zero over a range of 1--1.2 nm.
+All bonds with hydrogen atoms were constrained with the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H].
+Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805].
+The simulation files are available from ref 64 [https://doi.org/10.5281/zenodo.1306800] (pure POPC) and 65 [https://doi.org/10.5281/zenodo.1306821] (POPC:POPE mixture).
 
 \noindent {\it POPC:POPG 1:1 and POPC:POPG 4:1 mixtures with additional calcium} 
 The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}. The TIP3P water model was used to solvate the systems. The simulations were run for 400~ns with timestep 2~fs and the first 100~ns were discarded as equilibration time. The simulations were run with GROMACS version 2020.2~\cite{pall20}. The Nose-Hoover thermostat~\cite{nose84,hoover85} was used with temperature of 298~K and the time constant for temperature coupling was 1.0~ps. The semi-isotropic Parrinello-Rahman barostat~\cite{parrinello81} was used with reference pressure 1.0~bar and with a time constant of 5.0~ps with compressibility of 4.5e-5~bar$^{-1}$. Long range electrostatic interactions were calculated with the PME method. All bonds with hydrogen atoms were constrained with LINCS algorithm.
@@ -771,8 +782,14 @@ Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 P
 \noindent {\it POPC:POPE mixtures} 
 
 Force field details
-Simulations of POPC:POPE mixtures using the OPLS-MacRog force field [https://doi.org/10.1021/jp5016627] were performed. The initial force field parameter files in GROMACS format were taken from ref [https://doi.org/10.1016/j.dib.2016.03.067]. However, a number of errors were detected in the published files so we fixed them in the following way. For POPE, the two aliphatic chains sn-1 and sn-2 were switched (in the file the lipid was in fact OPPE); one atom (named C27) was not connected to the previous atom in the aliphatic chain so bonds, angles, dihedrals, pairs were included to create the connection; two atoms were called C27 thus one of them was renamed C28. For POPC, some impropers were missing leading to non planar systems for double bonds (in particular the carbonyls of sn-1 and sn-2 as well as the double bond of the oleoyl chain), we thus added back those impropers. The resulting fixed files can be found on Zenodo (https://zenodo.org/record/3741793/files/popc_fixed.itp, https://zenodo.org/record/3725637/files/pope_fixed.itp). To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results of ref [https://doi.org/10.1021/acs.jpcb.5b04878]. We found very similar values.
-All the details of the procedure described here are described in https://www.dsimb.inserm.fr/~fuchs/project_Samuli/POPC_POPE/report_results_comparison.pdf.
+Simulations of POPC:POPE mixtures using the OPLS-MacRog force field [https://doi.org/10.1021/jp5016627] were performed.
+The initial force field parameter files in GROMACS format were taken from ref [https://doi.org/10.1016/j.dib.2016.03.067].
+However, a number of errors were detected in the published files so we fixed them in the following way.
+For POPE, the two aliphatic chains sn-1 and sn-2 were switched (in the file the lipid was in fact OPPE); one atom (named C27) was not connected to the previous atom in the aliphatic chain so bonds, angles, dihedrals, pairs were included to create the connection; two atoms were called C27 thus one of them was renamed C28.
+For POPC, some impropers were missing leading to non planar systems for double bonds (in particular the carbonyls of sn-1 and sn-2 as well as the double bond of the oleoyl chain), we thus added back those impropers.
+The resulting fixed files can be found on Zenodo {\url{https://zenodo.org/record/3741793/files/popc_fixed.itp}, \url{https://zenodo.org/record/3725637/files/pope_fixed.itp}).
+To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results of ref [https://doi.org/10.1021/acs.jpcb.5b04878]. We found very similar values.
+All the details of the procedure described here are described in \url{https://www.dsimb.inserm.fr/~fuchs/project_Samuli/POPC_POPE/report_results_comparison.pdf}.
 The data for pure POPC are available from [https://zenodo.org/record/3741793], for the POPC:POPE mixture from [https://zenodo.org/record/3725637].
 
 Simulation details
