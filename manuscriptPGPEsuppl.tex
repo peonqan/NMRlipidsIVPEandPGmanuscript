@@ -30,15 +30,15 @@
 \affiliation{Laboratoire Coop\'{e}ratif "Lipotoxicity and Channelopathies – ConicMeds", Universit\'{e} de Poitiers, 1 rue Georges Bonnet, 86000 Poitiers, France }
 
 \author{\scriptsize Pavel Buslaev}
-\affiliation{\tiny Nanoscience Center and Department of Chemistry, University of Jyv{\"a}skyl{\"a}, Finland}
-\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
+\affiliation{\tiny Nanoscience Center and Department of Chemistry, University of Jyväskylä, P.O. Box 35, 40014 Jyväskylä, Finland}
+\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, 141701 Dolgoprudny, Russia}
 
 \author{Rebeca Garc{\'i}a Fandi{\~n}o}
 \affiliation{Center for Research in Biological Chemistry and Molecular Materials (CiQUS), Universidade de Santiago de Compostela, E-15782 Santiago de Compostela, Spain}
 \affiliation{CIQUP, Centro de Investigação em Química, Departamento de Química e Bioquímica, Faculdade de Ciências, Universidade do Porto, Porto, Portugal}
 
 \author{Fernando Favela-Rosales}
-\affiliation[Tecnol\'{o}gico Nacional de M\'{e}xico]{Departamento de Ciencias B\'{a}sicas, Tecnol\'{o}gico Nacional de M\'{e}xico, Campus Zacatecas Occidente, M\'{e}xico}
+\affiliation[Tecnol\'{o}gico Nacional de M\'{e}xico]{Departamento de Ciencias B\'{a}sicas, Tecnol\'{o}gico Nacional de M\'{e}xico, ITS Zacatecas Occidente, M\'{e}xico}
 
 \author{Tiago Ferreira}
 \affiliation{Halle, Germany}
@@ -48,7 +48,7 @@
 \alsoaffiliation{Universit\'{e} de Paris, UFR Sciences du Vivant, 75013, Paris, France}
 
 \author{Ivan Gushchin}
-\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
+\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, 141701 Dolgoprudny, Russia}
 
 \author{Matti Javanainen}
 \affiliation[Czech Academy of Sciences]{Institute of Organic Chemistry and Biochemistry of the 
@@ -118,26 +118,24 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 
 \begin{figure}[]
 %  \centering
-  \includegraphics[width=0.8\textwidth]{./Figs/POPEexperiment.pdf}
+  \includegraphics[width=\textwidth]{./Figs/POPE_SI.pdf}
   \caption{\label{POPEspectra}
-    (A) Chemical structure of POPE with the labeling of headgroup and glycerol backbone carbons.
-    (B) INEPT spectra from POPE sample with the headgroup and glycerol backbone peaks labeled.
-    (C) 2D R-PDLF spectra
-    (D) Dipolar sliced from the  2D R-PDLF spectra with the resulting order parameters on top of figures.
-    (E) Experimetal S-DROSS curves giving signs of the order parameters.
+    (A) Chemical structure of POPE with carbon labels.
+    (B) Refocused INEPT $^{13}$C spectrum of POPE MLVs. The peak assignment was based on previous work. (\todo{citation}) 
+    (C) Headgroup and glycerol backbone R-PDLF dipolar slices. The arrows indicate the splittings used to determine the C--H bond order parameters by using  $|S_{\rm{CH}}|=\Delta\nu/0.315/d_{\rm{CH}}$. The rigid coupling $d_{\rm{CH}}$ used was 22 kHz.
+    (D) Experimental S-DROSS curves giving signs of the order parameters measured.
   }
   \todo{NMR figures in SI to be updated.}
 \end{figure}
 
 \begin{figure}[]
 %  \centering
-  \includegraphics[width=0.8\textwidth]{./Figs/PGexpRPDLF.eps}
+  \includegraphics[width=0.8\textwidth]{./Figs/POPG_SI.pdf}
   \caption{\label{POPGspectra}
     (A) Chemical structure of POPG with the labeling of headgroup and glycerol backbone carbons.
     (B) INEPT spectra from POPG sample with the headgroup and glycerol backbone peaks labeled.
-    (C) 2D R-PDLF spectra
-    (D) Dipolar sliced from the  2D R-PDLF spectra with the resulting order parameters on top of figures.
-    (E) Experimetal S-DROSS curves giving signs of the order parameters.
+    (C) Dipolar sliced from the  2D R-PDLF spectra with the resulting order parameters on top of figures.
+    (D) Experimetal S-DROSS curves giving signs of the order parameters.
   }
 \end{figure}
 
@@ -318,12 +316,8 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 
 \subsection{Dihedral angles and relative energies of PC, PE, PG and PS headgroups}
 
-We estimated the relative energies of each dihedral angle value
-with respect to the most probable value (lowest energy) 
-from the inverse Boltzmann formula $\Delta E(\theta) = -kT \left[\ln\left[p(\theta)\right]-\ln\left[p(\theta_0)\right] \right]$,
-where $p(\theta)$ is the dihedral angle distribution and $\theta_0$ is the most probable angle from MD simulation.
-The dihedral angle distributions are shown in Fig. \ref{DIHdists}
-and relative energies in Fig. \ref{structures} in the main text.
+%The dihedral angle distributions are shown in Fig. \ref{DIHdists}
+%and relative energies in Fig. \ref{structures} in the main text.
 
 \begin{figure}[]
   \centering
@@ -644,7 +638,11 @@ For united atom simulations, we first constructed trajectories including hydroge
 
 \subsection{CHARMM36}
 
-\noindent {\it POPE} \todo{Simulation details by M. Javanainen}.
+\noindent {\it POPE} A lipid bilayer, consisting of a total of 144 POPE molecules, distributed equally between the two leaflets was set using CHARMM-GUI \cite{lee2016charmm}. The bilayer was solvated by 5760 water molecules (40 per lipid). The random initial configuration and topologies were generated using the CHARMM-GUI web portal, which provides  GROMACS-compatible simulation input files \cite{lee16}. CHARMM36 lipid parameters \cite{klauda10} were used for POPE, whereas the CHARMM-specific TIP3P water model \cite{jorgensen1983comparison} was used for water. The bilayer was simulated for 500~ns using GROMACS 2018.6 at 310~K.
+
+The recommended simulation parameters for CHARMM36 force field in GROMACS were used \cite{lee16}. Namely, buffered Verlet lists were used to keep track of neighbouring atoms \cite{Pall13}. The Lennard-Jones potential was cut off at 1.2~nm with the forces switched to 0 between 1.0~nm and the cutoff value. The smooth PME algorithm \cite{darden93,essman95} was used to account for long-range electrostatics. The temperatures of the lipid and the solvent were separately coupled to a Nos\'{e}-Hoover thermostat \cite{nose84,hoover85} with a time constant of 1~ps and a target temperature of 310~K. The system was coupled to a semi-isotropic (isotropic on the membrane plane) Parrinello--Rahman barostat \cite{parrinello81} with a time constant of 5~ps, a reference pressure of 1~bar, and compressibility of 4.5$\times$10$^{-5}$~1/bar. The bonds with hydrogen atoms were constrained using p-LINCS \cite{hess07,hess97}.
+
+The simulation files are available at Ref.~\citenum{charmm36POPEfiles}.
 
 %\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}
 
@@ -726,11 +724,22 @@ Simulation was performed for 250~ns, and the last 100~ns were used for the analy
 with 288 DPPG lipids, 11232 water molecules and 288 Na ions
 was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}. The TIP3P~\cite{jorgensen83} water model was used to solvate the system and Ions are described by the parameters derived by \AA qvist~\cite{aqvist90}. For the 298~K temperature, simulation was performed for 400~ns, and the last 100~ns were used for the analysis. For the 314~K temperature, simulation was performed for 200~ns, and the last 100~ns were used for the analysis. Same simulation conditions as DPPE for both temperatures.
 
+\noindent{\it POPC:POPE mixture}
+A POPC/POPE bilayer with its lipids distributed evenly among the leaflets was generated by from a pure POPC bilayer by removing and renaming atoms in the head group region. The bilayer contained a total of 100 POPC and 100 POPE lipids, and it was solvated by 45 water molecules per lipid (for a total of 9000 water molecules).
+
+The Slipids force field \cite{jambeck12,jambeck12b,jambeck13} was used for lipids, and the TIP3P model \cite{jorgensen1983comparison} for water. A 300~ns-long simulation was performed using GROMACS 2019.4 \cite{abraham2015gromacs}. The simulation parameters were equal to those used for the POPC/POPG mixture with additional CaCl$_2$ (see below). 
+
+The simulation data are available at Ref.~\citenum{POPC1POPE1slipidT298K}.
+
 %\noindent {\it POPC:POPG mixture with additional NaCl} \todo{Simulation details by A. Peon.
 %  I have assumed that ion parameters are default Slipids, i.e., {\AA}qvist, please correct if this is not true.}
 
-\noindent {\it POPC:POPG mixture with additional CaCl} \todo{Simulation details by M. Javanainen.}
+\noindent {\it POPC:POPG mixture with additional CaCl$_2$} 
+A lipid bilayer consisting of a total of 256 lipids (128 POPC + 128 POPG) spread equally between the two leaflets was generated using CHARMM-GUI \cite{lee16}. The membrane was solvated by 50 water molecules per lipid (a total of 12800), and 128 Na$^{+}$ counter ions for the POPG charges. The initial random configuration was equilibrated using the CHARMM-GUI protocol and using the CHARMM36 force field \cite{klauda10}. Next, additional ions were added to obtain initial CaCl$_2$ concentrations of 0, 100, 200, 500, or 1000~mM (0/0, 23/46, 46/92, 115/230, 230/460 Ca$^{2+}$/Cl$^{-}$ ions) The systems were energy-minimized and equilibrated using the Slipids force field \cite{jambeck12,jambeck12b,jambeck13} before production simulations at 298~K. The ion parameters by \citeauthor{dang06} were used \cite{dang06}.
 
+The neighbour lists with a cutoff of 1.0~nm were updated every 10 simulation steps. The smooth PME algorithm was used to calculate long-range electrostatics \cite{darden93,essman95}. The Lennard-Jones potential was cut off at 1.0~nm, and the dispersion corrections \cite{shirts07} were applied to energy and pressure. The stochastic velocity rescaling thermostat \cite{bussi07} with a time constant of 0.5~ps and a target temperature of 298~K was applied separately to lipids and the solvent. A constant pressure of 1~bar was maintained by a Parrinello--Rahman barostat \cite{parrinello81} with a time constant of 10~ps and compressibility of 4.5$\times$10$^{-5}$~1/bar. The pressure coupling was performed semi-isotropically with the two simulation box vectors aligned along the membrane plane considered isotropic. All bonds were constrained using the p-LINCS algorithm \cite{hess97,hess07}.
+
+The systems simulated for 1500~ns (CaCl$_2$-containing systems) or 500~ns (systems without CaCl$_2$). The simulations were performed using GROMACS 2019.4 \cite{abraham2015gromacs}, and the simulation files are available at Ref.~\citenum{slipidPOPC50POPG50T298K}.
 
 \subsection{Berger}
 
@@ -777,19 +786,33 @@ Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 P
 
 \subsection{OPLS-MacRog}
 
-\noindent {\it POPE} \todo{Simulation details by M. Javanainen} % and P. Fuchs.}
+\noindent {\it POPE} 
+
+A bilayer patch with a total of 144 POPE molecules, distributed evenly between two leaflets, was created by reordering atoms in a final structure of a POPE simulation performed using the CHARMM36 force field. The bilayer was hydrated by 40 water molecules per lipid for a total of 5760 water molecules. The OPLS-based MacRog force field was used \cite{Kulig15b} for lipids and the TIP3P model \cite{jorgensen1983comparison} for water. 
+
+Buffered Verlet lists \cite{Pall13} were used to keep track of neighbours. The Lennard-Jones potential was cut off at 1.0~nm, and dispersion corrections were applied to energy and pressure \cite{shirts07}. Smooth PME algorithm was used to calculate long-range electrostatics \cite{darden93,essman95}. The Nos\'{e}--Hoover thermostat was used to keep the temperatures of the lipids and water at 310~K. These groups were coupled separately, and a time constat of 0.4~ps was used. The Parrinello--Rahman barostat was used to keep the pressures in the membrane plane as well as normal to it constant at 1~bar. For the barostat, a time constant of 10~ps was used, and the membrane compressibility was set to 4.5$\times$10$^{-5}$~1/bar. All bonds were constrained using p-LINCS \cite{hess97,hess07}.
+
+The system was simulated for 500~ns using GROMACS 2019.2 \cite{abraham2015gromacs}, and the simulation data are available at Ref.~\citenum{MacRogPOPEfiles}.
+
 
 \noindent {\it POPC:POPE mixtures} 
 
 Force field details
-Simulations of POPC:POPE mixtures using the OPLS-MacRog force field [https://doi.org/10.1021/jp5016627] were performed.
-The initial force field parameter files in GROMACS format were taken from ref [https://doi.org/10.1016/j.dib.2016.03.067].
-However, a number of errors were detected in the published files so we fixed them in the following way.
-For POPE, the two aliphatic chains sn-1 and sn-2 were switched (in the file the lipid was in fact OPPE); one atom (named C27) was not connected to the previous atom in the aliphatic chain so bonds, angles, dihedrals, pairs were included to create the connection; two atoms were called C27 thus one of them was renamed C28.
-For POPC, some impropers were missing leading to non planar systems for double bonds (in particular the carbonyls of sn-1 and sn-2 as well as the double bond of the oleoyl chain), we thus added back those impropers.
-The resulting fixed files can be found on Zenodo {\url{https://zenodo.org/record/3741793/files/popc_fixed.itp}, \url{https://zenodo.org/record/3725637/files/pope_fixed.itp}).
-To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results of ref [https://doi.org/10.1021/acs.jpcb.5b04878]. We found very similar values.
-All the details of the procedure described here are described in \url{https://www.dsimb.inserm.fr/~fuchs/project_Samuli/POPC_POPE/report_results_comparison.pdf}.
+Simulations of POPC:POPE mixtures using the OPLS-MacRog force field [https://doi.org/10.1021/jp5016627] were performed. 
+The initial force field parameter files in GROMACS format were taken from ref [https://doi.org/10.1016/j.dib.2016.03.067]. 
+However, a number of errors were detected in the published files so we fixed them in the following way. 
+For POPE, the two aliphatic chains sn-1 and sn-2 were switched (in the file the lipid was in fact OPPE); 
+one atom (named C27) was not connected to the previous atom in the aliphatic chain so bonds, angles, dihedrals, 
+pairs were included to create the connection; two atoms were called C27 thus one of them was renamed C28. 
+For POPC, some impropers were missing leading to non planar systems for double bonds 
+(in particular the carbonyls of sn-1 and sn-2 as well as the double bond of the oleoyl chain), 
+we thus added back those impropers. The resulting fixed files can be found on 
+Zenodo (https://zenodo.org/record/3741793/files/popc\_fixed.itp, https://zenodo.org/record/3725637/files/pope\_fixed.itp). 
+To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results 
+of ref [https://doi.org/10.1021/acs.jpcb.5b04878]. We found very similar values.
+All the details of the procedure described here are described 
+in https://www.dsimb.inserm.fr/~fuchs/project\_Samuli/POPC\_POPE/report\_results\_comparison.pdf.
+
 The data for pure POPC are available from [https://zenodo.org/record/3741793], for the POPC:POPE mixture from [https://zenodo.org/record/3725637].
 
 Simulation details
@@ -854,13 +877,14 @@ Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17ecc
 \noindent
 {\it Pavel Buslaev}
 %% Please write description of your contribution here
+Performed the analysis of dihedrals and isomers of lipids. Analysed lipid structures from Protein Data Bank. Prepared panels for figures 2 and 4. Participated in discussions.
 
 \noindent
 {\it Rebeca Garc{\'i}a Fandi{\~n}o}
 %% Please write description of your contribution here
 
 \noindent
-{\it Fernando Favela-Rosales}
+{\it Fernando Favela-Rosales} set up and performed DPPE, POPG and DPPG simulations with the Slipids Force Field.
 %% Please write description of your contribution here
 
 \noindent
@@ -872,11 +896,11 @@ Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17ecc
 %% Please write description of your contribution here
 
 \noindent
-{\it Ivan Gushchin}
+{\it Ivan Gushchin} supervised Pavel Buslaev and contributed to the analysis of lipid structures in the Protein Data Bank.
 %% Please write description of your contribution here
 
 \noindent
-{\it Matti Javanainen}
+{\it Matti Javanainen} set up and performed simulations using CHARMM36, Slipids, and MacRog lipid models. He contributed to the organization of the manuscript.
 %% Please write description of your contribution here
 
 \noindent
