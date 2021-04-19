@@ -82,15 +82,15 @@
 \affiliation{Laboratoire Coopératif "Lipotoxicity and Channelopathies – ConicMeds", Université de Poitiers, 1 rue Georges Bonnet, 86000 Poitiers, Franc }
 
 \author{Pavel Buslaev}
-\affiliation{Nanoscience Center and Department of Chemistry, University of Jyv{\"a}skyl{\"a}, Finland}
-\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
+\affiliation{Nanoscience Center and Department of Chemistry, University of Jyväskylä, P.O. Box 35, 40014 Jyväskylä, Finland}
+\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, 141701 Dolgoprudny, Russia}
 
 \author{Rebeca Garc{\'i}a Fandi{\~n}o}
 \affiliation{Center for Research in Biological Chemistry and Molecular Materials (CiQUS), Universidade de Santiago de Compostela, E-15782 Santiago de Compostela, Spain}
 \affiliation{CIQUP, Centro de Investigação em Química, Departamento de Química e Bioquímica, Faculdade de Ciências, Universidade do Porto, Porto, Portugal}
 
 \author{Fernando Favela-Rosales}
-\affiliation{Departamento de Ciencias B\'{a}sicas, Tecnol\'{o}gico Nacional de M\'{e}xico, Campus Zacatecas Occidente, M\'{e}xico}
+\affiliation{Departamento de Ciencias B\'{a}sicas, Tecnol\'{o}gico Nacional de M\'{e}xico - ITS Zacatecas Occidente, M\'{e}xico}
 
 \author{Tiago M. Ferreira}
 \affiliation{NMR group - Institute for Physics, Martin Luther University Halle-Wittenberg, 06120 Halle (Saale), Germany}
@@ -100,7 +100,7 @@
 \affiliation{Université de Paris, UFR Sciences du Vivant, 75013, Paris, France}
 
 \author{Ivan Gushchin}
-\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, Dolgoprudny, Russia}
+\affiliation{Research Center for Molecular Mechanisms of Aging and Age-related Diseases, Moscow Institute of Physics and Technology, 141701 Dolgoprudny, Russia}
 
 \author{Matti Javanainen}
 \affiliation{Institute of Organic Chemistry and Biochemistry of the 
@@ -163,7 +163,7 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
   Here, we combine solid state NMR experiments and molecular dynamics simulations from the NMRlipids open collaboration to resolve the conformational ensembles of the headgroups of key lipid types in their liquid lamellar phase under various biologically relevant conditions. Interpretation of NMR experiments using the plethora of simulation data collected in the NMRlipids project suggests that all lipid headgroups sample a wide range of conformations in neutral and charged cellular membranes.
   Differences in the headgroup chemistry between different lipid types manifest
   in probability distributions of conformations, but all lipid types can access almost any of the possible conformations.
-  Together with the analysis of protein-bound lipids from the protein data bank (PDB), this suggests that lipids can bind to proteins in wide range of conformations independently on the headgroup chemistry. Therefore, the selective adsorption of proteins to membranes is likely regulated by specific protein--lipid interactions rather than conformational restrictions of the bilayer lipids.
+  Together with the analysis of protein-bound lipids from the protein data bank (PDB), this suggests that lipids can bind to proteins in a wide range of conformations independently of their headgroup chemistry. Therefore, the selective adsorption of proteins to membranes is likely regulated by specific protein--lipid interactions rather than conformational restrictions of the bilayer lipids.
   Our results pave the way to comprehensive understanding of
   lipid mediated signaling and lipid--protein interactions in biomedical applications.
 
@@ -263,6 +263,7 @@ Best models for the interpretation of lipid headgroup conformational ensembles f
 using quality evaluation measures defined in the NMRlipids project.
 Conformational ensembles of headgroup and glycerol backbone in PE and PG simulations were evaluated using the C--H bond order parameters \cite{botan15}. Interactions between different headgroups were evaluated by monitoring the changes in headgroup order parameters upon mixing the lipids \cite{antila19}. The ion binding affinities and response of lipids to bound charge were evaluated by monitoring the changes in lipid headgroup order parameters \cite{catte16,antila19}.
 
+Relative energy costs for turning dihedral angles with respect to the most probable value (lowest energy) were estimated from the inverse Boltzmann formula $\Delta E(\theta) = -kT \left[\ln\left[p(\theta)\right]-\ln\left[p(\theta_0)\right] \right]$, where $p(\theta)$ is the dihedral angle distribution and $\theta_0$ is the most probable angle from MD simulation.
 
 
 %\clearpage
@@ -290,19 +291,18 @@ Conformational ensembles of headgroup and glycerol backbone in PE and PG simulat
 
 
 \subsection{Analysis of protein-bound lipid conformations}
-Lipid structures from Protein Data Bank (PDB, \url{http://www.rcsb.org/})
+Lipid structures from the Protein Data Bank (PDB, \cite{berman2000})
 were searched using PDBe REST API (\url{www.ebi.ac.uk/pdbe/pdbe-rest-api})
 using the ligand names listed in the supplementary information.
 Heavy atom dihedral distributions from the lipid structures were calculated
-using the MDAnalysis python library \cite{agrawal11,gowers16} and
+using the MDAnalysis Python library \cite{agrawal11,gowers16} and
 Jupyter notebook available from \url{https://github.com/pbuslaev/scr/blob/master/PDB%20analysis.ipynb}.
-Only structures from X-ray and Cryo-EM with a resolution higher than 3.2~\AA were used in the analysis.
-Lipids from same PDB identifier with all dihedrals angles within 3 degrees were discarded from the analysis
-to avoid overweighting of lipid structures present, \textit{e.g.}, due to rotational symmetries.
+Only the structures determined using X-ray crystallography or Cryo-EM with a resolution higher than 3.2~\text{\AA} were used in the analysis. Some structures of multimeric proteins contained multiple lipids in the same conformation (analyzed dihedral angles within 3 degrees of each other). In that case, this conformation was counted once for the subsequent analyses
+to avoid its overweighting.
   
 To demonstrate the existence of similar structures of different lipids bound to different proteins,
 we searched for pairs having the last five dihedral angles (excluding g$_1$-g$_2$-g$_3$-O$_{g3}$) within
-30 degrees from structures with resolution higher than 2.5~\AA. The two most representative examples
+30 degrees of each other among the structures with resolution higher than 2.5~\text{\AA}. The two most representative examples
 were handpicked from the results.
 
 
@@ -379,7 +379,7 @@ PS and PG lipids than for PC and PE lipids.
 Rest of the dihedrals are similar between different lipids,
 with the exception of PS lipids for which slightly larger energy for \textit{eclipsed anti} conformation
 in g$_3$-O$_{{\mathrm g}3}$-P-O$_\alpha$ dihedral was observed.
-Therefore we suggest that the main differences between lipid headgroups leading to distinct order parameters occur in the choline part, while also changes in phosphate region may contribute in PS lipids. The increased barriers for dihedral rotations may explain the more rigid headgroup structures in PS~\cite{browning80,buldt81}. Furthermore, the angle between headgroup dipole and membrane normal decreases in the order of PG $>$ PE  $>$ PC  $>$ PS (Fig.~\ref{structures}D)). However, the differences between PC and PE in P-O$_\alpha$-C$_\alpha$-C$_\beta$ dihedral
+Therefore we suggest that the main differences between lipid headgroups leading to distinct order parameters occur in the choline part, while also changes in phosphate region may contribute in PS lipids. The increased barriers for dihedral rotations may explain the more rigid headgroup structures in PS~\cite{browning80,buldt81}. Furthermore, the angle between headgroup dipole and membrane normal decreases in the order of PG $>$ PE  $>$ PC  $>$ PS (Fig.~\ref{structures}D). However, the differences between PC and PE in P-O$_\alpha$-C$_\alpha$-C$_\beta$ dihedral
 and P--N vector dipole may be artificial as the $\beta$-carbon order parameter in PC is too negative even in the best available force field, thereby not being equal to the order parameter in PE as observed in experiments \cite{botan15}.
 
 In conclusion, all studied lipid headgroups sample very broad conformational ensembles in the liquid lamellar phase and the sampled dihedral angles are within approximately same ranges for all headgroup types. % (Fig. \ref{structures}).
@@ -395,7 +395,7 @@ Therefore, the structures in lipid crystals \cite{buldt81,pascher92} play only a
 
 \subsection{Lipid conformational ensembles in charged membranes}
 
-Charged entities, such as lipids, proteins, surfactants, drugs, and ions incorporated in membranes can reorient the headgroup dipole in PC lipids and affect the order parameters of the lipid headgroups \cite{seelig87}. However, the detailed understanding the structural and energetic responses of lipids to membrane-bound electric charge is still lacking \cite{Semchyschyn04}.
+Charged entities, such as lipids, proteins, surfactants, drugs, and ions incorporated in membranes can reorient the headgroup dipole in PC lipids and affect the order parameters of the lipid headgroups \cite{seelig87}. However, the detailed understanding of the structural and energetic responses of lipids to membrane-bound electric charge is still lacking \cite{Semchyschyn04}.
 
 To resolve lipid headgroup conformational ensembles in cell membranes bearing positive charge,
 we calculated the heavy atom dihedral angle distributions from 
@@ -442,7 +442,7 @@ interacting with proteins or other molecules.
   \caption{\label{dihedralsFROMpdb}
     A) Heavy atom dihedral angle distributions calculated from lipid structures in PDB.
     B) The structure of PE headgroup bound to cytochrome {\it bc}$_1$ complex (PDB ID: 1PP9 \cite{huang05})
-    with identical conformation as the PC headgroup bound to yeast sec14 (PDB ID: 3B7Q \cite{schaaf08}),
+    with identical conformation as the PC headgroup bound to yeast Sec14 (PDB ID: 3B7Q \cite{schaaf08}),
     and the structure of PG headgroup bound to bovine cytochrome {\it c} oxidase (PDB ID: 3AG3 \cite{muramoto10})
     with identical conformation as PC to FraC, a pore-forming toxin (PDB ID: 4TSQ \cite{tanaka15}).
   }
@@ -482,11 +482,11 @@ are realistic also in protein-bound states.
 %lipids in liquid lamellar state in Fig.~\ref{structures} are not seen in the protein bound states.
 
 Our results suggest that flexible lipid headgroups can optimize the intermolecular interactions with proteins by binding
-in wide range of conformations.
+in a wide range of conformations.
 Therefore, the specific binding of lipids to proteins is not driven by the structural differences between headgroups.
 This is demonstrated in Fig.~\ref{dihedralsFROMpdb} B with two examples where different lipids bound to
-different proteins have identical conformations:
-PE in cytochrome {\it bc}$_1$ complex is similar to PC bound to yeast sec14,
+different proteins have almost identical headgroup conformations:
+PE in cytochrome {\it bc}$_1$ complex is similar to PC bound to yeast Sec14,
 and PG bound to bovine cytochrome {\it c} oxidase is similar to PC bound to pore-forming toxin (FraC).
 On the other hand, a single lipid headgroup type is capable of accommodating various binding positions and as such would 
 be able to specifically bind to many different kinds of binding sites in different proteins.
@@ -535,6 +535,12 @@ Terrae computer
 %
 MJ thanks CSC -- IT Center for Science for computational resources and the Emil Aaltonen foundation for financial support.s
     %     Put your acknowledgments here.
+
+P.B. was supportedby the Academy of Finland (Grant 311031)
+
+F.F.-R. acknowledges Tecnol\'{o}gico Nacional de M\'{e}xico Proyecto IT16C431, Direcci\'{o}n General de Asuntos del Personal Acad\'{e}mico (DGAPA) Programa de Apoyo a Proyectos de Investigaci\'{o}n e Innovaci\'{o}n Tecnol\’{o}gica (PAPIIT) IG100920, CONACyT Ciencia de Frontera 74884 for financial support and Miztli-Direcci\'{o}n de C\'{o}mputo y de Tecnolog\'{i}as de Informaci\'{o}n y Comunicaci\'{o}n (DGTIC) - Universidad Nacional Aut\'{o}noma de México (UNAM) (Project LANCAD-UNAM-DGTIC-057) facilities for computing-time allocation.
+
+I.G. was supported by the Ministry of Science and Higher Education of the Russian Federation (agreement #075-00337-20-03, project FSMG-2020-0003). 
 
 J.J.M. gratefully acknowledges financial support from the Carlsberg 
 Foundation in the form of a postdoctoral fellowship while at 
