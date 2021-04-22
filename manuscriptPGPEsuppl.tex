@@ -12,10 +12,8 @@
 \usepackage{multirow}
 \usepackage{lmodern}
 \usepackage{microtype}
-\usepackage{xr}
-\externaldocument{manuscriptPGPE}
+\usepackage{xr-hyper}
 \usepackage{soul} % for highlights with \hl{} 
-
 \usepackage{hyperref} % to make TOC titles clickable
 \hypersetup{
     colorlinks=true, %set true if you want colored links
@@ -25,6 +23,24 @@
     filecolor=black,
     urlcolor=black
 }
+
+\makeatletter
+\newcommand*{\addFileDependency}[1]{% argument=file name and extension
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+
+\newcommand*{\myexternaldocument}[1]{%
+    \externaldocument{#1}%
+    \addFileDependency{#1.tex}%
+    \addFileDependency{#1.aux}%
+}
+
+\myexternaldocument{manuscriptPGPE}
+
+
 
 \author{\scriptsize Am{\'e}lie Bacle}
 \affiliation{Laboratoire Coop\'{e}ratif "Lipotoxicity and Channelopathies – ConicMeds", Universit\'{e} de Poitiers, 1 rue Georges Bonnet, 86000 Poitiers, France }
@@ -124,12 +140,12 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 
 \begin{figure}[]
 %  \centering
-  \includegraphics[width=\textwidth]{./Figs/POPE_SI.pdf}
+  \includegraphics[width=0.9\textwidth]{./Figs/POPE_SI.pdf}
   \caption{\label{POPEspectra}
     Solid-state NMR spectroscopy for determining the C--H bond order parameters, $S_{\rm{CH}}$, in the POPE headgroup and glycerol backbone. (A) Chemical structure of POPE showing the labels used to identify different carbons.
     (B) Refocused INEPT $^{13}$C spectrum of POPE MLVs. 
-    (C) Headgroup and glycerol backbone R-PDLF dipolar slices. The arrows indicate the splittings used to determine the C--H bond order parameters by using  $|S_{\rm{CH}}|=\Delta\nu/0.315/d_{\rm{CH}}$. The rigid coupling $d_{\rm{CH}}$ used was 22 kHz.
-    (D) Experimental S-DROSS curves giving signs of the order parameters measured. Grey lines are noise-only profiles.}
+    (C) Headgroup and glycerol backbone R-PDLF dipolar slices. The arrows indicate the splittings used to determine the C--H bond order parameters by using  $|S_{\rm{CH}}|=\Delta\nu/(0.315 \times d_{\rm{CH}})$. The rigid coupling $d_{\rm{CH}}$ used was 22 kHz.
+    (D) Experimental S-DROSS curves giving signs of the order parameters measured.  Grey lines are a set of slices taken from a region of the spectrum without peaks, i.e. grey lines are noise profiles, to highlight the signal-to-noise ratio of the measured modulations.}
 \end{figure}
 
 \begin{figure}[]
@@ -138,8 +154,8 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
   \caption{\label{POPGspectra}
     Solid-state NMR spectroscopy for determining the C--H bond order parameters, $S_{\rm{CH}}$, in the POPG headgroup and glycerol backbone. (A) Chemical structure of POPG showing the labels used to identify different carbons.
     (B) Refocused INEPT $^{13}$C spectrum of POPG MLVs.
-    (C) Headgroup and glycerol backbone R-PDLF dipolar slices. The arrows indicate the splittings used to determine the C--H bond order parameters by using  $|S_{\rm{CH}}|=\Delta\nu/0.315/d_{\rm{CH}}$. The rigid coupling $d_{\rm{CH}}$ used was 22 kHz.
-    (D) Experimental S-DROSS curves giving signs of the order parameters measured. Grey lines are a set of slices taken from a region of the spectrum without peaks, i.e. grey lines are noise profiles, to highlight the signal-to-noise ratio of the measured modulations. Note that the S-DROSS modulation for $g_3$ is very close to the noise level. In this case, we have confirmed that the order parameter sign of $g_3$ was negative by performing a measurement with less points in the indirect dimension, more scans and using a higher MAS frequency of 8 kHz (not shown). 
+    (C) Headgroup and glycerol backbone R-PDLF dipolar slices. The arrows indicate the splittings used to determine the C--H bond order parameters by using  $|S_{\rm{CH}}|=\Delta\nu/(0.315 \times d_{\rm{CH}})$. The rigid coupling $d_{\rm{CH}}$ used was 22 kHz.
+    (D) Experimental S-DROSS curves giving signs of the order parameters measured.  Note that the S-DROSS modulation for $g_3$ is very close to the noise level. In this case, we have confirmed that the order parameter sign of $g_3$ was negative by performing a measurement with less points in the indirect dimension, more scans and using a higher MAS frequency of 8 kHz (not shown). 
   }
 \end{figure}
 
@@ -151,11 +167,12 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 {\bf PG:} PGT, PGK, LHG, 44G, PGV, OZ2, D3D, PGW, DR9, P6L, PG8, H3T, and GOT \\
 {\bf PS:} PSF, PS6, Q3G, P5S, D39, PS2, 17F, and 8SP.
 
+
 \clearpage
 \section{Evaluation of simulations against NMR experiments}
 \subsection{Conformational ensembles of headgroup and glycerol backbone in PE and PG lipids}
 
-The quality of PE and PG headgroup conformational ensembles in different simulations against NMR experiments is evaluated in figures \ref{HGorderParametersPE} and \ref{HGorderParametersPOPG} using C-H bond order parameters as in our previous studies for PC and PS lipids \cite{botan15,antila19}. Conclusions are the same for all lipids: None of the force fields correctly captures the lipid headgroup conformational ensembles, but CHARMM36 gives results closest to experiments. Most importantly for this work, the CHARMM36 captures the distinct headgroup order parameters for PG and PS lipids observed in NMR experiments (Figs. \ref{HGorderParameters} and \ref{structures} in the main text). 
+The quality of PE and PG headgroup conformational ensembles in different simulations are evaluated against NMR experiments in figures \ref{HGorderParametersPE} and \ref{HGorderParametersPOPG} using C-H bond order parameters as in our previous studies for PC and PS lipids \cite{botan15,antila19}. Conclusions are the same for all lipids: None of the force fields correctly captures the lipid headgroup conformational ensembles, but CHARMM36 gives results closest to experiments. Most importantly for this work, the CHARMM36 captures the distinct headgroup order parameters for PG and PS lipids observed in NMR experiments (Figs. \ref{HGorderParameters} and \ref{structures} in the main text). 
 
 It should be noted that the PG headgroup is biologically abundant R enantiomer in all simulations, while our $^{13}$C NMR experiments has a racemic mixture. Nevertheless, previous $^{2}$H NMR experiments comparing results between different enantiomers concluded that the structural differences between these are minor \cite{wohlgemuth80}.
 
@@ -215,7 +232,7 @@ Headgroup order parameters of PC lipids are unchanged upon addition
 of zwitterionic lipids or cholesterol in experiments, but increase
 upon addition of negatively charged PG or PS lipids because
 headgroup dipole tilts more parallel to the membrane plane after incorporation
-of negative charges into the membrane~\cite{seelig87, scherer87,antila18}.
+of negative charges into the membrane~\cite{seelig87, scherer87,antila19}.
 The response of PC headgroup order parameters to the addition of PE or PG lipids
 from different simulations is compared with experiments in figure~\ref{HGorderparametersPCvsPEPG}.
 None of the simulations reproduce neither the experimentally observed increase in PC headgroup order parameters
@@ -308,10 +325,10 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
 \end{figure}
 
 \clearpage
-\section{Dihedral angle distributions and the analysis of relative energies}
+\section{Dihedral angle distributions}
   
 
-\subsection{Dihedral angles and relative energies of PC, PE, PG and PS headgroups}
+\subsection{Dihedral angles of PC, PE, PG and PS headgroups}
 
 %The dihedral angle distributions are shown in Fig. \ref{DIHdists}
 %and relative energies in Fig. \ref{structures} in the main text.
@@ -320,8 +337,7 @@ most force fields overestimate the calcium binding \cite{catte16,antila19}, but 
   \centering
   \includegraphics[width=7.0cm]{./Figs/DIHEDRALS.eps}
   \caption{\label{DIHdists}
-    Heavy atom dihedral angle distributions from CHARMM36 simulations that correctly capture the
-    order parameter differences between the force fields.
+    Heavy atom dihedral angle distributions from CHARMM36 simulations that correctly capture the order parameter differences between lipid headgroups.
   }
 \end{figure}
 
@@ -425,67 +441,67 @@ For united atom simulations, we first constructed trajectories including hydroge
       \hline
       POPE & CHARMM36 \cite{klauda10}           %&0       
       		& 144	& 5760  %&0    
-		& 310  & 500          & 400          & \cite{charmm36POPEfiles} \\
+		& 310  & 500          & 400          & \citenum{charmm36POPEfiles} \\
       POPE & CHARMM36 \cite{klauda10}           %& 0      
       		& 500       & 25000 %& 0   
-		&  310  & 500 & 100 & \cite{POPEcharmm} \\
+		&  310  & 500 & 100 & \citenum{POPEcharmm} \\
 %   POPE	& CHARMM36 \cite{klauda10}           %& 0.11
 %		& 500       & 25000 & 50  &  310  & 500 & 100 & \cite{POPEcharmm150mMNaCl} \\
       POPE	& CHARMM36-UA \cite{??}         %&0       
       		& 336	& 15254 %&0    
-		& 310  & 2$\times$200 & 2$\times$100 & \cite{charmm36uaPOPEfiles}  \\
+		& 310  & 2$\times$200 & 2$\times$100 & \citenum{charmm36uaPOPEfiles}  \\
       \hline
       DPPE	& Slipids \cite{jambeck12b}    %&0    
       		& 288 	& 9386  %&0    
-		& 336  & 200 & 100 & \cite{slipidsDPPEfiles}  \\
+		& 336  & 200 & 100 & \citenum{slipidsDPPEfiles}  \\
       POPE	& Slipids \cite{jambeck12b} %&0    
       		& 336	& ?     %&0    
-		& 310  & 2$\times$200 &  2$\times$100 & \cite{slipidsPOPEfiles}  \\
+		& 310  & 2$\times$200 &  2$\times$100 & \citenum{slipidsPOPEfiles}  \\
       POPE	& Slipids \cite{jambeck12b}            %& 0
 		& 500 & 25000 %& 0   
-		&  310  & 500 & 100 & \cite{POPEslipids} \\
+		&  310  & 500 & 100 & \citenum{POPEslipids} \\
 %      POPE  & Slipids / {\AA}qvist \cite{jambeck12b,aqvist90}  %& 0.11
 %		& 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPEslipids150mMNaCl} \\
       \hline
       DPPE	& GROMOS-CKP    \cite{??}      %&0
           	& 128	& 3655  %&0    
-		& 342  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdppe} \\
+		& 342  & 2$\times$500 & 2$\times$400 & \citenum{gromosCKPdppe} \\
 %      POPE  & GROMOS-CKP    \cite{??}      %&0
 %    		& 128	& 3552  &0    & 313  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPpope} \\
       POPE	& GROMOS-CKP    \cite{??}      %&0
           	& 500	& 25000 %&0    
-		& 310  & 500 & 100 & \cite{gromosCKPpopeT310} \\
+		& 310  & 500 & 100 & \citenum{gromosCKPpopeT310} \\
 %      POPE  & GROMOS-CKP    \cite{??}      &0.11 & 500	& 25000 &50   & 310  & 500 & 100 & \cite{gromosCKPpopeT310150mMNaCl} \\
 %      DOPE  & GROMOS-CKP    \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$500 & 2$\times$400 & \cite{gromosCKPdope} \\
       \hline
       POPE	& GROMOS 43A1-S3 \cite{??}     %&0
           	& 128	& 3552     %&0    
-		& 313  & 2$\times$200 & 2$\times$100 & \cite{gromos43a1s3POPEfiles}  \\
+		& 313  & 2$\times$200 & 2$\times$100 & \citenum{gromos43a1s3POPEfiles}  \\
       \hline
       POPE	& OPLS-UA/HG-H \cite{??}   %&0    
       		& 128	& 3328     %&0    
-		& 303  & 2$\times$200 & 2$\times$100 & \cite{OPLSuaWvdWPOPEfiles} \\
+		& 303  & 2$\times$200 & 2$\times$100 & \citenum{OPLSuaWvdWPOPEfiles} \\
       POPE	& OPLS-UA \cite{??}            %&0
       		& 128	& 3328     %&0    
-		& 303  & 2$\times$200 & 2$\times$100 & \cite{OPLSuaPOPEfiles} \\
+		& 303  & 2$\times$200 & 2$\times$100 & \citenum{OPLSuaPOPEfiles} \\
       \hline
       POPE	& OPLS-MacRog \cite{rog16}     %&0    
       		& 144	& 5760     %&0    
-		& 310  & 500 & 350 & \cite{MacRogPOPEfiles} \\
+		& 310  & 500 & 350 & \citenum{MacRogPOPEfiles} \\
 %   POPE	& OPLS-MacRog \cite{rog16}     &0    & 128	& 5120     &0    & 300  & 500 & 300 & \cite{MacRogPOPEfilesT300K} \\
       \hline
       POPE	& Berger-POPE-2004 \cite{??}       %&0    
       		& 128	& 3552  %&0    
-		& 303  & 2$\times$200 & 2$\times$100 & \cite{bergerPOPEfiles}  \\
+		& 303  & 2$\times$200 & 2$\times$100 & \citenum{bergerPOPEfiles}  \\
       POPE	& Berger-POPE-2018 \cite{??}      %&0    
       		& 128	& 3552  %&0    
-		& 303  & 2$\times$200 & 2$\times$100 & \cite{berger2POPEfiles}  \\
+		& 303  & 2$\times$200 & 2$\times$100 & \citenum{berger2POPEfiles}  \\
 %   DOPE  & Berger-POPE-2004 \cite{??}       &0    & 128	& 4789  &0    & 271  & 2$\times$200 & 2$\times$100 & \cite{bergerDOPEfiles}  \\
 %   DOPE  & Berger-POPE-2018 \cite{??}      &0    & 128	& 4789  &0    & 271  & 2$\times$300 & 2$\times$100 & \cite{berger2DOPEfiles} \\ 
       \hline
       POPE	& Lipid17 \cite{gould18} %& 0      
       		& 500 & 25000 %& 0  
-		&  310  & 500 & 100 & \cite{POPElipid17} \\
+		&  310  & 500 & 100 & \citenum{POPElipid17} \\
 %      POPE             & Lipid17 \cite{gould18} & 0.11   & 500 & 25000 & 50  &  310  & 500 & 100 & \cite{POPElipid17150mMNaCl} \\
     \end{tabular}
     }
@@ -512,22 +528,22 @@ For united atom simulations, we first constructed trajectories including hydroge
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
-      lipid/counter-ions & force field for lipids / ions & NaCl (M) &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$  & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
+      lipid/counter-ions & force field for lipids / ions &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
-      POPG/K$^+$  & CHARMM36 \cite{venable13}       &0         & 118& 4110   &0    & 298  & 100 & 100 & \cite{CHARMM36popg}  \\
+      POPG/K$^+$  & CHARMM36 \cite{venable13}        & 118& 4110    & 298  & 100 & 100 & \citenum{CHARMM36popg}  \\
 %      POPG             & CHARMM36 \cite{venable13}        & 0.11           & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGcharmm150mMNaCl} \\
-      POPG             & CHARMM36 \cite{venable13}        & 0              & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPGcharmm} \\
+      POPG             & CHARMM36 \cite{venable13}                & 500 & 25000  &  310  & 500 & 100 & \citenum{POPGcharmm} \\
       \hline
-      POPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    &0         & 288 	& 10664   &0     & 298  & 250 & 100 & \cite{slipidsPOPGfiles} \\
-      DPPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    &0         & 288 	& 11232  &0     & 314  & 200 & 100 & \cite{slipidsDPPGfiles} \\
-      DPPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    &0         & 288 	& 11232   &0     & 298  & 400 & 100 & \cite{slipidsDPPGfilesT298K} \\
-      POPG         & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    & 0    & 500 & 25000 & 0  &  310  & 500 & 100 & \cite{POPGslipids} \\
+      POPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}            & 288 	& 10664   & 298  & 250 & 100 & \citenum{slipidsPOPGfiles} \\
+      DPPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}           & 288 	& 11232   & 314  & 200 & 100 & \citenum{slipidsDPPGfiles} \\
+      DPPG/Na$^+$  & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}           & 288 	& 11232   & 298  & 400 & 100 & \citenum{slipidsDPPGfilesT298K} \\
+      POPG         & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}      & 500 & 25000  &  310  & 500 & 100 & \citenum{POPGslipids} \\
 %      POPG         & Slipids / {\AA}qvist \cite{jambeck13,aqvist90}    & 0.11    & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGslipids150mMNaCl} \\
       \hline
-      POPG             & LIPID17 / Dang \cite{gould18,smith94,dang06}         & 0              & 500 & 25000 & 0   &  310  & 500 & 100 & \cite{POPGlipid17} \\
+      POPG             & LIPID17 / Dang \cite{gould18,smith94,dang06}     & 500 & 25000  &  310  & 500 & 100 & \citenum{POPGlipid17} \\
 %      POPG             & LIPID17 \cite{gould18}         & 0.11           & 500 & 25000 & 49  &  310  & 500 & 100 & \cite{POPGlipid17150mMNaCl} \\
       \hline
-      POPG             & GROMOS-CKP \cite{??}         & 0              & 500 & 25000 & 0  &  310  & 500 & 100 & \cite{POPGgromosCKP} \\
+      POPG             & GROMOS-CKP \cite{??}         & 500 & 25000 &  310  & 500 & 100 & \citenum{POPGgromosCKP} \\
 %      POPG             & GROMOS-CKP \cite{??}         & 0.11           & 500 & 25000 & 49 &  310  & 500 & 100 & \cite{POPGgromosCKP150mMNaCl} \\
     \end{tabular}
     }
@@ -550,38 +566,38 @@ For united atom simulations, we first constructed trajectories including hydroge
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
-      lipid/counter-ions & force field for lipids / ions & NaCl (M) & CaCl$_2$\,(M) &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$  & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
+      lipid/counter-ions & force field for lipids / ions & CaCl$_2$\,(M) &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$  & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
 %      POPC                   & CHARMM36 \cite{??}        & 0.11      & 0  & 500     & 25000 & 48  &  310  & 500 & 100 & \cite{POPCcharmm150mMNaCl301K}  \\
 %      POPC:POPG (7:3)        & CHARMM36 \cite{??}        & 0.11      & 0  & 350     & ?     & ?   &  310  & 500 & 100 & \cite{POPC7POPG1charmm36NaCl}  \\
-      POPC                   & CHARMM36 \cite{klauda10}        & 0         & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCcharmmT310K}  \\
-      POPC:POPG (7:3)        & CHARMM36 \cite{klauda10,venable13}        & 0         & 0  & 350     & 25000 & 0   &  310  & 500 & 100 & \cite{POPC7POPG1charmm36}  \\
-      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0  & 150:150 & 31500 & 0   &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG5050} \\ 
-      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0.1 & 150:150 & 31329 & 57 &  298  & 400 & 300 & \cite{CHARMM36POPCPOPG5050100mMCaCl} \\
-      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 1.08 & 150:150 & 29766 & 578  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG50501000mMCaCl} \\
-      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0  & 350:88 & 26280 & 0  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010} \\
-      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 0.1 & 350:88 & 26280 & 47  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010100mMCaCl} \\
-      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}        &0          & 1.0 & 350:88 & 24927 & 451  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG40101000mMCaCl} \\
+      POPC                   & CHARMM36 \cite{klauda10}            & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCcharmmT310K}  \\
+      POPC:POPG (7:3)        & CHARMM36 \cite{klauda10,venable13}    & 0  & 350     & 25000 & 0   &  310  & 500 & 100 & \cite{POPC7POPG1charmm36}  \\
+      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}     & 0  & 150:150 & 31500 & 0   &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG5050} \\ 
+      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}     & 0.1 & 150:150 & 31329 & 57 &  298  & 400 & 300 & \cite{CHARMM36POPCPOPG5050100mMCaCl} \\
+      POPC:POPG (1:1)        & CHARMM36 \cite{klauda10,venable13}     & 1.08 & 150:150 & 29766 & 578  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG50501000mMCaCl} \\
+      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}    & 0  & 350:88 & 26280 & 0  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010} \\
+      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}    & 0.1 & 350:88 & 26280 & 47  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG4010100mMCaCl} \\
+      POPC:POPG (4:1)        & CHARMM36 \cite{klauda10,venable13}    & 1.0 & 350:88 & 24927 & 451  &  298  & 500 & 400 & \cite{CHARMM36POPCPOPG40101000mMCaCl} \\
       \hline
-      POPC             & CHARMM36 \cite{klauda10}        &0          & 0  & 256 & 8704 & 0  &  300  & 300 & 250 & \cite{POPCcharmm300K} \\
-      POPC:POPE (1:1)  & CHARMM36 \cite{klauda10,venable13}        &0          & 0  & 128 & 8704 & 0  &  300  & 300 & 250 & \cite{POPC1POPE1charmm36} \\
+      POPC             & CHARMM36 \cite{klauda10}        &0          & 256 & 8704 & 0  &  300  & 300 & 250 & \cite{POPCcharmm300K} \\
+      POPC:POPE (1:1)  & CHARMM36 \cite{klauda10,venable13}         & 0  & 128 & 8704 & 0  &  300  & 300 & 250 & \cite{POPC1POPE1charmm36} \\
       \hline
-      POPC             & OPLS-MacRog \cite{rog16}     &0          & 0  & 128 & 5120 & 0  &  300  & 500 & 300 & \cite{POPCmacrog300K} \\
-      POPC:POPE (1:1)  & OPLS-MacRog \cite{rog16}     &0          & 0  & 128 & 5120 & 0  &  300  & 500 & 300 & \cite{POPC1POPE1macrogT300K} \\
+      POPC             & OPLS-MacRog \cite{rog16}     &0           & 128 & 5120 & 0  &  300  & 500 & 300 & \cite{POPCmacrog300K} \\
+      POPC:POPE (1:1)  & OPLS-MacRog \cite{rog16}     &0           & 128 & 5120 & 0  &  300  & 500 & 300 & \cite{POPC1POPE1macrogT300K} \\
       \hline
-      POPC             & Slipid \cite{jambeck12b}     &0          & 0  & 512 & 23943 & 0  &  298  & 170 & 100 & \cite{POPCslipid298K} \\
-      POPC:POPE (1:1)  & Slipid \cite{jambeck12b}     &0          & 0  & 128 & 5120  & 0  &  298  & 500 & 300 & \cite{POPC1POPE1slipidT298K} \\
+      POPC             & Slipid \cite{jambeck12b}     &0          & 512 & 23943 & 0  &  298  & 170 & 100 & \cite{POPCslipid298K} \\
+      POPC:POPE (1:1)  & Slipid \cite{jambeck12b}     &0          & 128 & 5120  & 0  &  298  & 500 & 300 & \cite{POPC1POPE1slipidT298K} \\
      \hline
-      POPC                   & GROMOS-CKP / ?? \cite{??,??}  & 0         & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCgromosCKPT310K}  \\
-      POPC:POPG (7:3)        & GROMOS-CKP / ?? \cite{??,??}  & 0         & 0  & 350:150 & 25000 & 0   &  310  & 500 & 100 & \cite{POPC7POPG3gromosCKPT310K} \\
+      POPC                   & GROMOS-CKP / ?? \cite{??,??}  & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCgromosCKPT310K}  \\
+      POPC:POPG (7:3)        & GROMOS-CKP / ?? \cite{??,??}  & 0  & 350:150 & 25000 & 0   &  310  & 500 & 100 & \cite{POPC7POPG3gromosCKPT310K} \\
      \hline
-      POPC                   & Slipid \cite{jambeck12b}  & 0         & 0  & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCslipid301K}  \\
-      POPC:POPG (7:3)        & Slipid / {\AA}qvist \cite{jambeck12b,aqvist90}  & 0         & 0  & 350:150 & 25000 & 0   &  310  & 500 & 100 & \cite{slipidPOPC70POPG30T310K} \\
-      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 0  & 128:128 & 12800 & 0   &  298  & 500 & 400 & \cite{slipidPOPC50POPG50T298K} \\
-      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 0.1  & 128:128 & 12800 & 23  &  298  & 500 & 400 & \cite{slipidPOPC50POPG50T298K} \\
-      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 0.2  & 128:128 & 12800 & 46  &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
-      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 0.5  & 128:128 & 12800 & 115 &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
-      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0         & 1.0  & 128:128 & 12800 & 230 &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
+      POPC                   & Slipid \cite{jambeck12b}  & 0      & 500     & 25000 & 0   &  310  & 500 & 100 & \cite{POPCslipid301K}  \\
+      POPC:POPG (7:3)        & Slipid / {\AA}qvist \cite{jambeck12b,aqvist90} & 0  & 350:150 & 25000 & 0   &  310  & 500 & 100 & \cite{slipidPOPC70POPG30T310K} \\
+      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0  & 128:128 & 12800 & 0   &  298  & 500 & 400 & \cite{slipidPOPC50POPG50T298K} \\
+      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0.1  & 128:128 & 12800 & 23  &  298  & 500 & 400 & \cite{slipidPOPC50POPG50T298K} \\
+      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0.2  & 128:128 & 12800 & 46  &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
+      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 0.5  & 128:128 & 12800 & 115 &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
+      POPC:POPG (1:1)        & Slipid / Dang \cite{jambeck12b,jambeck2012another,smith94,dang06} & 1.0  & 128:128 & 12800 & 230 &  298  & 1500 & 500 & \cite{slipidPOPC50POPG50T298K} \\
     \end{tabular}
     }
   \end{minipage}
@@ -602,24 +618,24 @@ For united atom simulations, we first constructed trajectories including hydroge
     \begin{tabular}{l c c r r r r r r c c}
       %\hline
       % some footnotes are not visible in typeset-MS (pdf)
-      lipid/counter-ions & force field for lipids / ions & NaCl (M) & CaCl$_2$\,(M) &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$  & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
+      lipid/counter-ions & force field for lipids / ions & CaCl$_2$\,(M) &  \footnote{Number of lipid molecules with largest mole fraction}N$_{\rm l}$   &  \footnote{Number of water molecules}N$_{\rm w}$   & \footnote{Number of additional cations}N$_{\rm c}$  & \footnote{Simulation temperature}T (K)  & \footnote{Total simulation time}t$_{{\rm sim}}$(ns) & \footnote{Time used for analysis}t$_{{\rm anal}}$ (ns) &   \footnote{Reference for simulation files}files\\
       \hline
-      POPC:POPG (4:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}        &0          & 0  & 350:88 & 26265 & 0  &  298  & 400 & 350 & \cite{Lipid17POPCPOPG8020} \\
-      POPC:POPG (4:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}        &0          & 0.1& 350:88 & 26124 & 47 &  298  & 400 & 250 & \cite{Lipid17POPCPOPG8020100mMCaCl} \\
-      POPC:POPG (4:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}        &0          & 1.0& 350:88 & 24840 & 475 &  298  & 1200 & 200 & \cite{Lipid17POPCPOPG80201000mMCaCl} \\
-      POPC:POPG (1:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}        &0          & 0  & 150:150 & 31572 & 0  &  298  & 320 & 200 & \cite{Lipid17POPCPOPG5050} \\
-      POPC:POPG (1:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}        &0          & 0.1& 150:150 & 31401 & 57 &  298  & 718 & 198 & \cite{Lipid17POPCPOPG5050100mMCaCl} \\
-      POPC:POPG (1:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}        &0          & 1.0& 150:150 & 29865 & 569 &  298  & 720 & 200 & \cite{Lipid17POPCPOPG50501000mMCaCl} \\
+      POPC:POPG (4:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}       & 0  & 350:88 & 26265 & 0  &  298  & 400 & 350 & \cite{Lipid17POPCPOPG8020} \\
+      POPC:POPG (4:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}    & 0.1& 350:88 & 26124 & 47 &  298  & 400 & 250 & \cite{Lipid17POPCPOPG8020100mMCaCl} \\
+      POPC:POPG (4:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}    & 1.0& 350:88 & 24840 & 475 &  298  & 1200 & 200 & \cite{Lipid17POPCPOPG80201000mMCaCl} \\
+      POPC:POPG (1:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}   & 0  & 150:150 & 31572 & 0  &  298  & 320 & 200 & \cite{Lipid17POPCPOPG5050} \\
+      POPC:POPG (1:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}   & 0.1& 150:150 & 31401 & 57 &  298  & 718 & 198 & \cite{Lipid17POPCPOPG5050100mMCaCl} \\
+      POPC:POPG (1:1)        & Lipid17 / Dang \cite{gould18,smith94,dang06}  & 1.0& 150:150 & 29865 & 569 &  298  & 720 & 200 & \cite{Lipid17POPCPOPG50501000mMCaCl} \\
       \hline
-      POPC:POPG (4:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0          & 0  & 350:88 & 26265 & 0  &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG8020} \\
-      POPC:POPG (4:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0          & 0.1& 350:88 & 26124 & 47 &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG8020100mMCaCl} \\
-      POPC:POPG (4:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0          & 1.0& 350:88 & 24840 & 475 &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG80201000mMCaCl} \\
-      POPC:POPG (1:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0          & 0  & 150:150 & 31572 & 0  &  298  & 347.8 & 333 & \cite{Lipid17eccPOPCPOPG5050} \\
-      POPC:POPG (1:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0          & 0.1& 150:150 & 29865 & 54 &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG5050100mMCaCl} \\
-      POPC:POPG (1:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0          & 1.0& 150:150 & 29865 & 569 &  298  & 600 & 400 & \cite{Lipid17eccPOPCPOPG50501000mMCaCl} \\
+      POPC:POPG (4:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     &0     & 350:88 & 26265 & 0  &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG8020} \\
+      POPC:POPG (4:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     & 0.1& 350:88 & 26124 & 47 &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG8020100mMCaCl} \\
+      POPC:POPG (4:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     & 1.0& 350:88 & 24840 & 475 &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG80201000mMCaCl} \\
+      POPC:POPG (1:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     & 0  & 150:150 & 31572 & 0  &  298  & 347.8 & 333 & \cite{Lipid17eccPOPCPOPG5050} \\
+      POPC:POPG (1:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     & 0.1& 150:150 & 29865 & 54 &  298  & 400 & 300 & \cite{Lipid17eccPOPCPOPG5050100mMCaCl} \\
+      POPC:POPG (1:1)        & Lipid17ecc / ECC-ions \cite{pluharova14,kohagen16,martinek18}     & 1.0& 150:150 & 29865 & 569 &  298  & 600 & 400 & \cite{Lipid17eccPOPCPOPG50501000mMCaCl} \\
       \hline
-      POPC             & Berger \cite{??} \todoi{This is probable not plain berger, correct force filed should be described.}  &0  & 0  & 256 & 10240 & 0  &  300  & 300 & 200 & \cite{POPCberger300K} \\
-      POPC:POPE (1:1)  & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 128 & 11008 & 0  &  300  & 300 & 200 & \cite{POPC1POPE1berger} \\
+      POPC             & Berger-POPC-?? \cite{??} \todoi{This is probable not plain berger, correct force filed should be described.}  & 0  & 256 & 10240 & 0  &  300  & 300 & 200 & \cite{POPCberger300K} \\
+      POPC:POPE (1:1)  & Berger-POPE-04~\cite{devries04}  & 0  & 128 & 11008 & 0  &  300  & 300 & 200 & \cite{POPC1POPE1berger} \\
       %POPC:DOPE (1:1)  & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 128 & 10240 & 0  &  300  & 300 & 200 & \cite{POPC1DOPE1berger} \\
     % \hline
     %  DOPC             & Berger \cite{??}  \todoi{This is probable not plain berger, correct force filed should be described.} &0          & 0  & 256 & 11008 & 0  &  300  & 300 & 200 & \cite{DOPCberger300K} \\
@@ -627,7 +643,7 @@ For united atom simulations, we first constructed trajectories including hydroge
     \end{tabular}
     }
   \end{minipage}
-  \todo{Citation and description for ''Berger'' model?} \\
+  \todo{Citation and description for Berger-POPC-?? model?} \\
 \end{table*}
 %\end{sidewaystable*}
 
@@ -635,11 +651,9 @@ For united atom simulations, we first constructed trajectories including hydroge
 
 \subsection{CHARMM36}
 
-\noindent {\it POPE} A lipid bilayer, consisting of a total of 144 POPE molecules, distributed equally between the two leaflets was set using CHARMM-GUI \cite{lee2016charmm}. The bilayer was solvated by 5760 water molecules (40 per lipid). The random initial configuration and topologies were generated using the CHARMM-GUI web portal, which provides  GROMACS-compatible simulation input files \cite{lee16}. CHARMM36 lipid parameters \cite{klauda10} were used for POPE, whereas the CHARMM-specific TIP3P water model \cite{jorgensen1983comparison} was used for water. The bilayer was simulated for 500~ns using GROMACS 2018.6 at 310~K.
+\noindent {\it POPE} A lipid bilayer, consisting of a total of 144 POPE molecules, distributed equally between the two leaflets was set using CHARMM-GUI \cite{lee16}. The bilayer was solvated by 5760 water molecules (40 per lipid). The random initial configuration and topologies were generated using the CHARMM-GUI web portal, which provides  GROMACS-compatible simulation input files \cite{lee16}. CHARMM36 lipid parameters \cite{klauda10} were used for POPE, whereas the CHARMM-specific TIP3P water model \cite{jorgensen83} was used for water. The bilayer was simulated for 500~ns using GROMACS 2018.6 at 310~K.
 
-The recommended simulation parameters for CHARMM36 force field in GROMACS were used \cite{lee16}. Namely, buffered Verlet lists were used to keep track of neighbouring atoms \cite{Pall13}. The Lennard-Jones potential was cut off at 1.2~nm with the forces switched to 0 between 1.0~nm and the cutoff value. The smooth PME algorithm \cite{darden93,essman95} was used to account for long-range electrostatics. The temperatures of the lipid and the solvent were separately coupled to a Nos\'{e}-Hoover thermostat \cite{nose84,hoover85} with a time constant of 1~ps and a target temperature of 310~K. The system was coupled to a semi-isotropic (isotropic on the membrane plane) Parrinello--Rahman barostat \cite{parrinello81} with a time constant of 5~ps, a reference pressure of 1~bar, and compressibility of 4.5$\times$10$^{-5}$~1/bar. The bonds with hydrogen atoms were constrained using p-LINCS \cite{hess07,hess97}.
-
-The simulation files are available at Ref.~\citenum{charmm36POPEfiles}.
+The recommended simulation parameters for CHARMM36 force field in GROMACS were used \cite{lee16}. Namely, buffered Verlet lists were used to keep track of neighbouring atoms \cite{Pall13}. The Lennard-Jones potential was cut off at 1.2~nm with the forces switched to 0 between 1.0~nm and the cutoff value. The smooth PME algorithm \cite{darden93,essman95} was used to account for long-range electrostatics. The temperatures of the lipid and the solvent were separately coupled to a Nos\'{e}-Hoover thermostat \cite{nose84,hoover85} with a time constant of 1~ps and a target temperature of 310~K. The system was coupled to a semi-isotropic (isotropic on the membrane plane) Parrinello--Rahman barostat \cite{parrinello81} with a time constant of 5~ps, a reference pressure of 1~bar, and compressibility of 4.5$\times$10$^{-5}$~1/bar. The bonds with hydrogen atoms were constrained using p-LINCS \cite{hess07,hess97}. The simulation files are available at Ref.~\citenum{charmm36POPEfiles}.
 
 %\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}
 
@@ -653,20 +667,20 @@ The used files are available from \citenum{CHARMM36popg}.
 
 %\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
 
-\noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCcharmm300K,POPC1POPE1charmm36}.
-A pure POPC system and a 50:50 POPC:POPE mixture were built and equilibrated using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935].
+\noindent {\it POPC:POPE mixtures} 
+A pure POPC system and a 50:50 POPC:POPE mixture were built and equilibrated using CHARMM-GUI~\cite{lee16}.
 They contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and 34 water molecules per lipid.
 No ions were added.
 The production simulations were run for 300 ns with a time step of 2 fs.
 The first 50 ns were discarded for the analysis.
-The simulations were run with the GROMACS 2016.4 [https://doi.org/10.1016/j.softx.2015.06.001] version.
-The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 1 ps; lipids and water were coupled separately to the heat bath.
-Pressure was kept constant at 1 bar using a semi-isotropic Parrinello--Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 5.0 ps.
-A real space cut-off of 1.2 nm was employed for electrostatic interactions while the long-range part was evaluated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117].
+The simulations were run with the GROMACS 2016.4~\cite{abraham2015gromacs} version.
+The v-rescale thermostat~\cite{bussi07} was used with a temperature of 300 K and a time constant of 1 ps; lipids and water were coupled separately to the heat bath.
+Pressure was kept constant at 1 bar using a semi-isotropic Parrinello--Rahman barostat~\cite{parrinello81} with a time constant of 5.0 ps.
+A real space cut-off of 1.2 nm was employed for electrostatic interactions while the long-range part was evaluated using the PME method~\cite{darden93,essman95}.
 A force-based switching function was used to switch the Lennard-Jones forces to zero over a range of 1--1.2 nm.
-All bonds with hydrogen atoms were constrained with the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H].
-Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805].
-The simulation files are available from ref 64 [https://doi.org/10.5281/zenodo.1306800] (pure POPC) and 65 [https://doi.org/10.5281/zenodo.1306821] (POPC:POPE mixture).
+All bonds with hydrogen atoms were constrained with the LINCS algorithm~\cite{hess07,hess97}.
+Water molecules were kept rigid with the SETTLE algorithm~\cite{miyamoto92}.
+The simulation files are available from Ref.~\citenum{POPCcharmm300K} (pure POPC) and~\citenum{POPC1POPE1charmm36} (POPC:POPE mixture).
 
 \noindent {\it POPC:POPG 1:1 and POPC:POPG 4:1 mixtures with additional calcium} 
 The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}. The TIP3P water model was used to solvate the systems. The simulations were run for 400~ns with timestep 2~fs and the first 100~ns were discarded as equilibration time. The simulations were run with GROMACS version 2020.2~\cite{pall20}. The Nose-Hoover thermostat~\cite{nose84,hoover85} was used with temperature of 298~K and the time constant for temperature coupling was 1.0~ps. The semi-isotropic Parrinello-Rahman barostat~\cite{parrinello81} was used with reference pressure 1.0~bar and with a time constant of 5.0~ps with compressibility of 4.5e-5~bar$^{-1}$. Long range electrostatic interactions were calculated with the PME method. All bonds with hydrogen atoms were constrained with LINCS algorithm.
@@ -723,9 +737,7 @@ was constructed with the MEMBRANE BUILDER website~\cite{ghahremanpour13}. The TI
 
 \noindent{\it POPC:POPE mixture}
 A POPC/POPE bilayer with its lipids distributed evenly among the leaflets was generated by from a pure POPC bilayer by removing and renaming atoms in the head group region. The bilayer contained a total of 100 POPC and 100 POPE lipids, and it was solvated by 45 water molecules per lipid (for a total of 9000 water molecules).
-
-The Slipids force field \cite{jambeck12,jambeck12b,jambeck13} was used for lipids, and the TIP3P model \cite{jorgensen1983comparison} for water. A 300~ns-long simulation was performed using GROMACS 2019.4 \cite{abraham2015gromacs}. The simulation parameters were equal to those used for the POPC/POPG mixture with additional CaCl$_2$ (see below). 
-
+The Slipids force field \cite{jambeck12,jambeck12b,jambeck13} was used for lipids, and the TIP3P model \cite{jorgensen83} for water. A 300~ns-long simulation was performed using GROMACS 2019.4 \cite{abraham2015gromacs}. The simulation parameters were equal to those used for the POPC/POPG mixture with additional CaCl$_2$ (see below). 
 The simulation data are available at Ref.~\citenum{POPC1POPE1slipidT298K}.
 
 %\noindent {\it POPC:POPG mixture with additional NaCl} \todo{Simulation details by A. Peon.
@@ -752,9 +764,10 @@ Berger - \{{\it molecule name}\} - \{{\it year when model published first time}\
 
 %\noindent {\it DOPE} Data is available at \cite{bergerDOPEfiles,berger2DOPEfiles}. \todo{Simulation details by  T. Piggot.}
 
-\noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCberger300K,POPC1POPE1berger}. 
-Two systems were simulated using the Berger force field [https://doi.org/10.1016/S0006-3495(97)78845-3], pure POPC and a mixture 50:50 POPC:POPE. For POPE, we additionnally used the de Vries modification implementing a repulsion of the hydrogen atoms located on the amino group of ethanolamine [https://doi.org/10.1021/jp0366926].
-Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 POPC:POPE mixture was built by mutating randomly methyl groups to hydrogens (POPC -> POPE). Each system contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and about 40 water molecules per lipid. No ions were added. Both systems were minimized and equilibrated. The production simulations were run for 300 ns with a time step of 2 fs. The first 100 ns were discarded for the analysis (@Samuli: this sentence may be removed if the analysis was done on a different time window). The simulations were run with GROMACS 4.5.3 [https://doi.org/10.1093/bioinformatics/btt055] version. The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 0.1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 4.0 ps. A real space cut-off of 1.0 nm was employed for van der Waals and electrostatic interactions. The long-range part of electrostatic interactions was evaluated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117] with a grid spacing of 0.12 nm and an interpolation order of 4. All bonds with hydrogen atoms were constrained with the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H]. Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805]. The simulation files are available from ref 91 [https://doi.org/10.5281/zenodo.1402417] (pure POPC) and 92 [https://doi.org/10.5281/zenodo.1402449] (POPC:POPE mixture).
+\noindent {\it POPC:POPE mixtures} 
+Two systems were simulated using the Berger force field~\cite{Berger97}, pure POPC and a mixture 50:50 POPC:POPE. For POPE, we additionnally used the de Vries modification implementing a repulsion of the hydrogen atoms located on the amino group of ethanolamine~\cite{devries04}.
+Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 POPC:POPE mixture was built by mutating randomly methyl groups to hydrogens (POPC -> POPE). Each system contained 256 lipids (for the mixture 64 lipids per leaflet for each species) and about 40 water molecules per lipid. No ions were added. Both systems were minimized and equilibrated. The production simulations were run for 300 ns with a time step of 2 fs. The first 100 ns were discarded for the analysis. The simulations were run with GROMACS 4.5.3~\cite{pronk13} version. The v-rescale thermostat~\cite{bussi07} was used with a temperature of 300 K and a time constant of 0.1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat~\cite{parrinello81} with a time constant of 4.0 ps. A real space cut-off of 1.0 nm was employed for van der Waals and electrostatic interactions. The long-range part of electrostatic interactions was evaluated using the PME method~\cite{darden93,essman95} with a grid spacing of 0.12 nm and an interpolation order of 4. All bonds with hydrogen atoms were constrained with the LINCS algorithm~\cite{hess07,hess97}. Water molecules were kept rigid with the SETTLE algorithm~\cite{miyamoto92}. The simulation files are available from
+Ref.~\citenum{POPCberger300K} (pure POPC) and~\citenum{POPC1POPE1berger} (POPC:POPE mixture).
 
 
 \subsection{GROMOS 43A1-S3}
@@ -783,37 +796,29 @@ Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 P
 
 \subsection{OPLS-MacRog}
 
-\noindent {\it POPE} 
+\noindent {\it POPE} A bilayer patch with a total of 144 POPE molecules, distributed evenly between two leaflets, was created by reordering atoms in a final structure of a POPE simulation performed using the CHARMM36 force field. The bilayer was hydrated by 40 water molecules per lipid for a total of 5760 water molecules. The OPLS-based MacRog force field was used \cite{Kulig15b} for lipids and the TIP3P model \cite{jorgensen83} for water. 
 
-A bilayer patch with a total of 144 POPE molecules, distributed evenly between two leaflets, was created by reordering atoms in a final structure of a POPE simulation performed using the CHARMM36 force field. The bilayer was hydrated by 40 water molecules per lipid for a total of 5760 water molecules. The OPLS-based MacRog force field was used \cite{Kulig15b} for lipids and the TIP3P model \cite{jorgensen1983comparison} for water. 
-
-Buffered Verlet lists \cite{Pall13} were used to keep track of neighbours. The Lennard-Jones potential was cut off at 1.0~nm, and dispersion corrections were applied to energy and pressure \cite{shirts07}. Smooth PME algorithm was used to calculate long-range electrostatics \cite{darden93,essman95}. The Nos\'{e}--Hoover thermostat was used to keep the temperatures of the lipids and water at 310~K. These groups were coupled separately, and a time constat of 0.4~ps was used. The Parrinello--Rahman barostat was used to keep the pressures in the membrane plane as well as normal to it constant at 1~bar. For the barostat, a time constant of 10~ps was used, and the membrane compressibility was set to 4.5$\times$10$^{-5}$~1/bar. All bonds were constrained using p-LINCS \cite{hess97,hess07}.
+Buffered Verlet lists \cite{Pall13} were used to keep track of neighbours. The Lennard-Jones potential was cut off at 1.0~nm, and dispersion corrections were applied to energy and pressure \cite{shirts07}. Smooth PME algorithm was used to calculate long-range electrostatics \cite{darden93,essman95}. The Nos\'{e}--Hoover thermostat was used to keep the temperatures of the lipids and water at 310~K. These groups were coupled separately, and a time constat of 0.4~ps was used. The Parrinello--Rahman barostat~\cite{parrinello81} was used to keep the pressures in the membrane plane as well as normal to it constant at 1~bar. For the barostat, a time constant of 10~ps was used, and the membrane compressibility was set to 4.5$\times$10$^{-5}$~1/bar. All bonds were constrained using p-LINCS \cite{hess97,hess07}.
 
 The system was simulated for 500~ns using GROMACS 2019.2 \cite{abraham2015gromacs}, and the simulation data are available at Ref.~\citenum{MacRogPOPEfiles}.
 
 
-\noindent {\it POPC:POPE mixtures} 
-
-Force field details
-Simulations of POPC:POPE mixtures using the OPLS-MacRog force field [https://doi.org/10.1021/jp5016627] were performed. 
-The initial force field parameter files in GROMACS format were taken from ref [https://doi.org/10.1016/j.dib.2016.03.067]. 
+\noindent {\it POPC:POPE mixtures} The initial force field parameter files in GROMACS format were taken from Ref.~\citenum{rog16}. 
 However, a number of errors were detected in the published files so we fixed them in the following way. 
 For POPE, the two aliphatic chains sn-1 and sn-2 were switched (in the file the lipid was in fact OPPE); 
 one atom (named C27) was not connected to the previous atom in the aliphatic chain so bonds, angles, dihedrals, 
 pairs were included to create the connection; two atoms were called C27 thus one of them was renamed C28. 
 For POPC, some impropers were missing leading to non planar systems for double bonds 
 (in particular the carbonyls of sn-1 and sn-2 as well as the double bond of the oleoyl chain), 
-we thus added back those impropers. The resulting fixed files can be found on 
-Zenodo (https://zenodo.org/record/3741793/files/popc\_fixed.itp, https://zenodo.org/record/3725637/files/pope\_fixed.itp). 
-To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results 
-of ref [https://doi.org/10.1021/acs.jpcb.5b04878]. We found very similar values.
+we thus added back those impropers. The resulting fixed files can be found from Refs.~\citenum{POPCmacrog300K} (popc\_fixed.itp) and~\citenum{POPC1POPE1macrogT300K} (pope\_fixed.itp). 
+To check our fix, one simulation of pure POPC was also run and the order parameter compared to previous published results~\cite{botan15}. We found very similar values.
 All the details of the procedure described here are described 
-in https://www.dsimb.inserm.fr/~fuchs/project\_Samuli/POPC\_POPE/report\_results\_comparison.pdf.
+in file {\it scratch/report\_results\_comparison.pdf} in Ref.~\citenum{NMRlipidsIVbgit}.
 
-The data for pure POPC are available from [https://zenodo.org/record/3741793], for the POPC:POPE mixture from [https://zenodo.org/record/3725637].
+Two systems of pure POPC and 50:50 POPC:POPE mixture were built using CHARMM-GUI~\cite{lee16}. They contained 128 lipids and 5120 TIP3 water molecules. The initial PDB file was modified to match OPLS-MacRog nomenclature and atom order. No ions were added. The production simulations were run for 500 ns with a time step of 2 fs. The first 200 ns were discarded for the analysis. The simulations were run with the GROMACS 2018.5~\cite{abraham2015gromacs} version. The v-rescale thermostat~\cite{bussi07} was used with a temperature of 300 K and a time constant of 0.1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat~\cite{parrinello81} with a time constant of 4.0 ps. Long-range electrostatic interactions were calculated using the PME method~\cite{darden93,essman95}. A real space cut-off of 1.0 nm was employed with a grid spacing of 0.1 nm in the reciprocal space. Lennard-Jones potentials were cut off at 1.0 nm. All covalent bonds in lipids were constrained using the LINCS algorithm~\cite{hess07,hess97}. Water molecules were kept rigid with the SETTLE algorithm~\cite{miyamoto92}. The simulation files are available from ref 66 [https://doi.org/10.5281/zenodo.3741793] (pure POPC) and 67 [https://doi.org/10.5281/zenodo.3725637] (POPC:POPE mixture).
 
-Simulation details
-Two systems of pure POPC and 50:50 POPC:POPE mixture were built using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935]. They contained 128 lipids and 5120 TIP3 water molecules. The initial PDB file was modified to match OPLS-MacRog nomenclature and atom order. No ions were added. The production simulations were run for 500 ns with a time step of 2 fs. The first 200 ns were discarded for the analysis (@Samuli: this sentence may be removed if the analysis was done on a different time window). The simulations were run withthe GROMACS 2018.5 [https://doi.org/10.1016/j.softx.2015.06.001] version. The v-rescale thermostat [http://dx.doi.org/10.1063/1.2408420] was used with a temperature of 300 K and a time constant of 0.1 ps; lipids and water were coupled separately to the heat bath. Pressure was kept constant at 1 bar using a semi–isotropic Parrinello–Rahman barostat [https://doi.org/10.1103/PhysRevLett.45.1196] with a time constant of 4.0 ps. Long-range electrostatic interactions were calculated using the PME method [https://doi.org/10.1063/1.464397, https://doi.org/10.1063/1.470117]. A real space cut-off of 1.0 nm was employed with a grid spacing of 0.1 nm in the reciprocal space. Lennard-Jones potentials were cut off at 1.0 nm. All covalent bonds in lipids were constrained using the LINCS algorithm [https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%3C1463::AID-JCC4%3E3.0.CO;2-H]. Water molecules were kept rigid with the SETTLE algorithm [https://doi.org/10.1002/jcc.540130805]. The simulation files are available from ref 66 [https://doi.org/10.5281/zenodo.3741793] (pure POPC) and 67 [https://doi.org/10.5281/zenodo.3725637] (POPC:POPE mixture).
+The data for pure POPC are available from Refs.~\citenum{POPCmacrog300K}, and for the POPC:POPE mixture from Ref.~\citenum{POPC1POPE1macrogT300K}.
+
 
 
 \subsection{Lipid17}
@@ -874,19 +879,21 @@ Refs.~\citenum{Lipid17eccPOPCPOPG8020,Lipid17eccPOPCPOPG8020100mMCaCl,Lipid17ecc
 \noindent
 {\it Pavel Buslaev}
 %% Please write description of your contribution here
-Performed the analysis of dihedrals and isomers of lipids. Analysed lipid structures from Protein Data Bank. Prepared panels for figures 2 and 4. Participated in discussions.
+performed the analysis of dihedrals and isomers of lipids. Analysed lipid structures from Protein Data Bank. Prepared panels for figures 2 and 4. Participated in discussions.
 
 \noindent
 {\it Rebeca Garc{\'i}a Fandi{\~n}o}
+designed and supervised the molecular dynamics simulations carried out by Antonio Pe{\'o}n, and contributed to some discussions.
 %% Please write description of your contribution here
 
 \noindent
-{\it Fernando Favela-Rosales} set up and performed DPPE, POPG and DPPG simulations with the Slipids Force Field.
+{\it Fernando Favela-Rosales} 
+set up and performed DPPE, POPG and DPPG simulations with the Slipids Force Field.
 %% Please write description of your contribution here
 
 \noindent
 {\it Tiago M. Ferreira}
-performed and analysed the R-PDLF and S-DROSS experiments. Wrote p  
+was responsible for the solid-state NMR experiments/figures and took part in writing the manuscript.
 
 \noindent
 {\it Patrick F.J. Fuchs} supervised Paula Mil{\'a}n Rodr{\'i}guez, Am{\'e}lie Bacle and Chris Papadopoulos, created the buildH software, contributed to many discussions.
@@ -940,6 +947,7 @@ Ran and analysed several simulations. Wrote the manuscript.
 
 \noindent
 {\it {\'A}ngel Pi{\~n}eiro}
+Created the opAAUA\_prod.py code for the calculation of order parameters. Contributed to some discussions. 
 %% Please write description of your contribution here
 
 \noindent
