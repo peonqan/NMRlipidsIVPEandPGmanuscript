@@ -84,7 +84,7 @@ University of Groningen, 9747 AG Groningen, The Netherlands}
 
 
 \author{Antonio Pe{\'o}n}
-\affiliation[]{Spain}
+\affiliation{CIQUP, Centro de Investigação em Qu\'{i}mica, Departamento de Qu\'{i}mica e Bioqu\'{i}mica, Faculdade de Ciências, Universidade do Porto, Porto, Portugal}
 
 \author{Thomas J. Piggot}
 \affiliation[University of Southampton]{Chemistry, University of Southampton, Highfield, Southampton SO17 1BJ, United Kingdom}
@@ -492,7 +492,8 @@ For united atom simulations, we first constructed trajectories including hydroge
   \end{minipage}
   \todo{Citation for CHARMM36ua?} \\
   %\todo{Which ion model is used in \cite{POPEcharmm150mMNaCl}?} \\
-  \todo{Citation for GROMOS-CKP?} \\
+  \todo{Citation for GROMOS-CKP?  } \\
+  \todo{Citation for GROMOS-CKP POPE AND POPG  http://pubs.acs.org/doi/abs/10.1021/jp207013v  } \\
   \todo{Citation for GROMOS 43A1-S3?} \\
   \todo{Citation for OPLS-UA models?} \\
   \todo{Citations for Berger-* simulations?} \\
@@ -586,6 +587,7 @@ For united atom simulations, we first constructed trajectories including hydroge
     }
   \end{minipage}
     \todo{Citation and ion model for GROMOS-CKP?} \\
+    \todo{Citation and ion model for GROMOS-CKP POPC https://pubs.acs.org/doi/abs/10.1021/ct3003157 } \\
 \end{table*}
 %\end{sidewaystable*}
 
@@ -641,7 +643,8 @@ The recommended simulation parameters for CHARMM36 force field in GROMACS were u
 
 The simulation files are available at Ref.~\citenum{charmm36POPEfiles}.
 
-%\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}
+%\noindent {\it POPE with additional NaCl} \todo{Simulation details by A. Peon.}. A pure POPE system was built with CHARMM-GUI Membrane builder [https://doi.org/10.1021/acs.jctc.5b00935]. A symmetric lipid distribution was used. The bilayer contains 500 lipids and 50 CHARMM TIP3P Water model per lipid. The simulated system was minimized, equilibrated and production run. Production simulation was 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. The simulation was performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
 
 \noindent {\it POPG} Lipid bilayer containing 118 POPG molecules, 4110 TIP3P water molecules, and 118 potassium ions was build using CHARMM-GUI \cite{lee16}.
 The system was simulated 100~ns, coupled to 298 K using Nose-Hoover~\cite{nose84,hoover85} thermostat and 1 bar with
@@ -651,7 +654,8 @@ The used files are available from \citenum{CHARMM36popg}.
 
 \todo{Simulation details for larger simulation by A. Peon.}
 
-%\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.}
+%\noindent {\it POPG with additional NaCl} \todo{Simulation details by A. Peon.} A pure POPG system was built with CHARMM-GUI Membrane builder [https://doi.org/10.1021/acs.jctc.5b00935]. A symmetric lipid distribution was used. The bilayer contains 500 lipids and 50 CHARMM TIP3P Water model per lipid. The simulated system was minimized, equilibrated and production run. The production simulation was 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. The simulation was performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
 
 \noindent {\it POPC:POPE mixtures} Data is available at \cite{POPCcharmm300K,POPC1POPE1charmm36}.
 A pure POPC system and a 50:50 POPC:POPE mixture were built and equilibrated using CHARMM-GUI [https://doi.org/10.1021/acs.jctc.5b00935].
@@ -673,7 +677,10 @@ The initial structures were built with CHARMM-GUI Membrane Builder \cite{lee16}.
 The simulation files are available from Refs.~\citenum{CHARMM36POPCPOPG5050,CHARMM36POPCPOPG5050100mMCaCl,CHARMM36POPCPOPG50501000mMCaCl,CHARMM36POPCPOPG4010,CHARMM36POPCPOPG4010100mMCaCl,CHARMM36POPCPOPG40101000mMCaCl}.
 
 
-\noindent {\it POPC and POPC:POPG (7:3) mixture} \todo{Simulation details by A. Peon.}
+\noindent {\it POPC and POPC:POPG (7:3) mixture} \todo{Simulation details by A. Peon.} A pure POPC and POPC:POPG (7:3) mixture were built with CHARMM-GUI Membrane builder [https://doi.org/10.1021/acs.jctc.5b00935]. Bilayer contains 500 lipids and 50 CHARMM TIP3P Water model per lipid. All simulated systems were minimized, equilibrated and production run. Production simulations were 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. All simulations were performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
+
+
 
 \noindent {\it POPC and cationic surfactant (dihexadecyldimethylammonium) mixture}
 Intial structures were taken from similar previously published \cite{melcr18} simulations with Amber lipid14 force field,
@@ -772,13 +779,16 @@ Starting from a PDB file of a pure POPC system with Berger atom names, a 50:50 P
 \subsection{GROMOS-CKP and GROMOS-CKPM}
 
 \noindent {\it POPE} Data is available at \cite{gromosCKPpopeT310}. \todo{Simulation details by  A. Peon.}
+A pure POPE system was built with CHARMM-GUI Membrane builder [https://doi.org/10.1021/acs.jctc.5b00935]. A symmetric lipid distribution was used. The bilayer contains 500 lipids and 50 SPC Water model per lipid. GROMOS-CKP force field was used for lipid and GROMOS54A7 for the rest. The simulated system was minimized, equilibrated and production run. The production simulation was 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. The simulation was performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
 
 %\noindent {\it DOPE} Data is available at \cite{gromosCKPdope}. \todo{Simulation details by  T. Piggot.}
 
 \noindent {\it DPPE} Data is available at \cite{gromosCKPdppe}. \todo{Simulation details by  T. Piggot.}
 
 \noindent {\it POPG} \todo{Simulation details by A. Peon.}
-
+A pure L-POPG system was built with CHARMM-GUI Membrane builder [https://doi.org/10.1021/acs.jctc.5b00935]. A symmetric lipid distribution was used. The bilayer contains 500 lipids (http://pubs.acs.org/doi/abs/10.1021/jp207013v) and 50 SPC Water model per lipid with 500 sodium ions. GROMOS-CKP force field was used for lipid and GROMOS54A7 for the rest. The simulated system was minimized, equilibrated and production run. The production simulation was 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. The simulation was performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
 \noindent {\it POPC:POPG mixture} \todo{Simulation details by A. Peon.}
 
 \subsection{OPLS-MacRog}
@@ -819,8 +829,14 @@ Two systems of pure POPC and 50:50 POPC:POPE mixture were built using CHARMM-GUI
 \subsection{Lipid17}
 
 \noindent {\it POPE} \todo{Simulation details by A. Peon.}
+From a pure POPE system built with CHARMM-GUI was used to create the Amber input files. Amber prmtop and inpcrd files were obtained with LEaP from AmberTools 16 distribution (http://ambermd.org/). Then, in order to create the Gromacs input files, ParmEd (v 3.0.0, Swails J. ParmEd [Internet]. https://github.com/ParmEd/ParmEd; https://dx.doi.org/10.1007/s10822-016-9977-1) was used to convert the Amber prmtop and inpcrd files into Gromacs top and gro files. 
+The bilayer contains 500 lipids and 50 TIP3P waters per lipid. The simulated system was minimized, equilibrated and production run. Production simulation was 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. The simulation was performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
 
 \noindent {\it POPG} \todo{Simulation details by A. Peon.}
+From a pure POPG system built with CHARMM-GUI was used to create the Amber input files. Amber prmtop and inpcrd files were obtained with LEaP from AmberTools 16 distribution (http://ambermd.org/). Then, in order to create the Gromacs input files, ParmEd (v 3.0.0, Swails J. ParmEd [Internet]. https://github.com/ParmEd/ParmEd; https://dx.doi.org/10.1007/s10822-016-9977-1) was used to convert the Amber prmtop and inpcrd files into Gromacs top and gro files. 
+The bilayer contains 500 lipids and 50 TIP3P waters per lipid and 500 sodium ions. The simulated system was minimized, equilibrated and production run. Production simulation was 500-ns-long, which the last 100 ns were analysed.
+For production simulation, a Leap-Frog algorithm was applied for integrating Newton’s equations of motion, and the LINCS algorithm was used to constrain all covalent bonds, allowing a time step of 2 fs. For water, the SETTLE method was applied. The simulation was performed in the NPT ensemble where the temperature was kept constant with the V-rescale thermostat (JCP 126, 014101, https://doi.org/10.1063/1.2408420) with water together with eventual ions and lipids coupled to separate thermostats with a coupling constant of 0.1 ps. The pressure was kept constant with a semi-isotropic scheme. The Parrinello–Rahman barostat was used to keep the pressure at 1 bar with a coupling constant of 1 ps and a compressibility of 4.6 × 10–5 bar–1. Long-range electrostatic interactions with a real-space cutoff of 1.0 nm were treated by a particle mesh Ewald scheme (PME) with a Fourier spacing of 0.12 nm and a fourth-order interpolation to the Ewald mesh. van der Waals interactions were treated with a Lennard-Jones (LJ) potential with a cutoff of 1.0 nm. Long-range dispersion correction to the pressure and energy was added.
 
 \noindent {\it POPC:POPG 4:1 and POPC:POPG 1:1 mixtures with different CaCl$_2$ concentrations}
 Initial structures were build by removing appropriate amount of lipids from POPC:POPG 7:3 mixture available from Ref.~\citenum{POPCPOPG73lipid17}.
@@ -931,7 +947,7 @@ Ran and analysed several simulations. Wrote the manuscript.
 %% Please write description of your contribution here
 
 \noindent
-{\it Antonio Pe{\'o}n}
+{\it Antonio Pe{\'o}n} set up, performed and analysed POPC, POPE, POPG and POPC:POPG (7:3) simulations with the CHARMM36, SLIPIDS, GROMOS-CKP and Lipid17 Force Fields.
 %% Please write description of your contribution here
 
 \noindent
